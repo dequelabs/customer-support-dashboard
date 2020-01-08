@@ -1,4 +1,21 @@
 
+.App {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-bar {
+  min-height: 7vh;
+  font-size: calc(6px + vmin);
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+
 .App-header {
   background-color: white;
   min-height: 50vh;
@@ -8,6 +25,18 @@
   justify-content: top;
   font-size: calc(11px + 2vmin);
   color: blue;
+}
+
+.home {
+  align-items: center;
+  color:orange;
+  
+
+}
+
+.profile {
+  align-items: center;
+  color: green;
 }
 
 /* .logo {
