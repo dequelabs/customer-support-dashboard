@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <p>
           Welcome to the Deque Customer Support Center!
+        </p>
       </header>
       <p className="logo" id="html">
           <img src={logo} />
