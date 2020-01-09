@@ -1,44 +1,76 @@
 
 .App {
   background-color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.App-bar {
-  min-height: 7vh;
-  font-size: calc(6px + vmin);
-  background-color: white;
+.App-Nav {
   display: flex;
   flex-direction: row;
-  
-  
 }
 
 .App-header {
   background-color: white;
-  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: top;
-  font-size: calc(11px + 2vmin);
+  font-size: 32px;
   color: blue;
 }
 
-.home {
+.App-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  color:orange;
-  
-
 }
 
-.profile {
+.Nav-Btn {
+  justify-content: center;
   align-items: center;
-  color: green;
+  color: white;
+  background-color: blue;
+  width: 200px;
+  font-size: medium;
+  border-radius: 10px;
+  margin-top: 10px;
+  border-width: 2px;
+  border-color: blue;
 }
 
-/* .logo {
+.Nav-Btn:hover {
+  background-color: darkblue;
+  border-color: darkblue;
+}
 
-} */
+.Nav-Btn:focus {
+  border-width: 2px;
+  border-color: orange;
+  outline:0;
+}
+
+.Esc-Btn {
+  font-size: medium;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: blue;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-width: 2px;
+  border-color: blue;
+}
+
+.Esc-Btn:hover {
+  background-color: darkblue;
+  border-color: darkblue;
+}
+
+.Esc-Btn:focus {
+  border-width: 2px;
+  border-color: orange;
+  outline: 0;
+}
