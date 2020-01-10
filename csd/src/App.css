@@ -6,8 +6,7 @@
 }
 
 .App-Nav {
-  display: flex;
-  flex-direction: row;
+  
 }
 
 .App-header {
@@ -15,9 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: top;
+  justify-content: center;
   font-size: 32px;
-  color: blue;
+  color: #3c7aae;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .App-body {
@@ -28,49 +29,10 @@
 }
 
 .Nav-Btn {
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: blue;
-  width: 200px;
-  font-size: medium;
-  border-radius: 10px;
   margin-top: 10px;
-  border-width: 2px;
-  border-color: blue;
-}
-
-.Nav-Btn:hover {
-  background-color: darkblue;
-  border-color: darkblue;
-}
-
-.Nav-Btn:focus {
-  border-width: 2px;
-  border-color: orange;
-  outline:0;
 }
 
 .Esc-Btn {
-  font-size: medium;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: blue;
-  border-radius: 10px;
   margin-top: 5px;
   margin-left: 5px;
-  border-width: 2px;
-  border-color: blue;
-}
-
-.Esc-Btn:hover {
-  background-color: darkblue;
-  border-color: darkblue;
-}
-
-.Esc-Btn:focus {
-  border-width: 2px;
-  border-color: orange;
-  outline: 0;
 }

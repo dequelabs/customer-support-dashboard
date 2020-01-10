@@ -1,22 +1,90 @@
-import React from 'react';
+import React, { Component }from 'react';
 import './App.css';
 import 'typeface-roboto';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col, Button} from "react-bootstrap";
+import { Button } from 'cauldron-react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+document.title = "Deque Customer Support";
 
 function App() {
   return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/request">
+            <Request />
+          </Route>
+          <Route path="/view">
+            <View />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+  <div className="App">
+     <div className="App-Nav">
+      <Link to="/home">
+        <Button className="Esc-Btn" type="button" onClick = {() => {
+          console.log("return home");
+          }}>Home</Button>
+      </Link> 
+    </div>
+    <header className="App-header">
+        Welcome to the Deque Customer Support Center!
+    </header>
+    <div className="App-body">
+      <Link to="/request">
+        <Button className="Esc-Btn" type="button">Submit Request</Button>
+      </Link> 
+
+      <Link to="/view">
+        <Button className="Esc-Btn" type="button">View Requests</Button>
+      </Link> 
+    </div>     
+  </div>);
+}
+
+function Request() {
+  return (
     <div className="App">
       <div className="App-Nav">
-        <button className="Esc-Btn" type="button">Home</button>
+        <Link to="/home">
+          <Button className="Esc-Btn" type="button" onClick = {() => {
+            console.log("return home");
+          }}>Home</Button>
+        </Link>
       </div>
       <header className="App-header">
-          Welcome to the Deque Customer Support Center!
-      </header>
-      <div className="App-body">
-        <button className="Nav-Btn" type="button">Submit Request</button>
-        <button className="Nav-Btn" type="button">View Request</button>      
-      </div>     
+        Deque Customer Support Center - Submit Request
+    </header>
+    </div>
+  );
+}
+
+function View() {
+  return (
+    <div className="App">
+      <div className="App-Nav">
+        <Link to="/home">
+          <Button className="Esc-Btn" type="button" onClick = {() => {
+            console.log("return home");
+          }}>Home</Button>
+        </Link>
+      </div>
+      <header className="App-header">
+        Deque Customer Support Center - View Requests
+    </header>
     </div>
   );
 }
