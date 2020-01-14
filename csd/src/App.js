@@ -6,9 +6,8 @@ import Home from './components/Home';
 import SubmitRequest from './components/SubmitRequest';
 import ViewRequests from './components/ViewRequests';
 
-document.title = "Deque Customer Support";
-
 export default class App extends Component {
+  
   render() {
     return (
       <Router>

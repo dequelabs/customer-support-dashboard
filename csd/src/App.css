@@ -29,6 +29,10 @@
 }
 
 .Esc-Btn {
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.Submit {
+  margin-left: 15px;
 }

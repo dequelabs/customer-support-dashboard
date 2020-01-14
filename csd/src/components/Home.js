@@ -4,10 +4,20 @@ import { Link, } from "react-router-dom";
 
 import '../App.css';
 
-document.title = "Deque Customer Support";
-
 export default class Home extends Component {
 
+    componentDidMount() {
+        document.title = "Home - Deque Customer Support";
+    }
+
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          
+        }
+    }
+    
     render() {
         return (
             <div className="App">
@@ -16,9 +26,9 @@ export default class Home extends Component {
                         <Button className="Esc-Btn" type="button">Home</Button>
                     </Link> 
                 </div>
-                <header className="App-header">
+                <h1 className="App-header">
                     Welcome to the Deque Customer Support Center!
-                </header>
+                </h1>
                 <div className="App-body">
                     <Link to="/request">
                         <Button className="Esc-Btn" type="button">Submit Request</Button>
