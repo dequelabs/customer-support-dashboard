@@ -5,6 +5,7 @@ import './App.css';
 import Home from './components/Home';
 import SubmitRequest from './components/SubmitRequest';
 import ViewRequests from './components/ViewRequests';
+import LogIn from './components/LogIn'
 
 export default class App extends Component {
   
@@ -14,7 +15,8 @@ export default class App extends Component {
         <Switch>
           <Route path="/request"> <SubmitRequest/> </Route>
           <Route path="/view"> <ViewRequests/> </Route>
-          <Route path="/"> <Home/> </Route>
+          <Route path="/home"> <Home/> </Route>
+          <Route path="/"> <LogIn/> </Route>
         </Switch>
       </Router>
     );

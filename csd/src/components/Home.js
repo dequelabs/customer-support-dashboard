@@ -1,8 +1,10 @@
 import React, { Component }from 'react';
 import { Button, } from 'cauldron-react';
 import { Link, } from "react-router-dom";
-
 import '../App.css';
+
+
+
 
 export default class Home extends Component {
 
@@ -14,11 +16,12 @@ export default class Home extends Component {
         super(props);
     
         this.state = {
-          
+            
         }
     }
-    
+
     render() {
+
         return (
             <div className="App">
                 <div className="App-Nav">

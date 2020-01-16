@@ -2,12 +2,21 @@ import React, { Component } from 'react';
 import { Button, } from 'cauldron-react';
 import { Link, } from "react-router-dom";
 import base64 from 'react-native-base64';
+import requests from '../assets/issues.json';
 
 import '../App.css';
 
 document.title = "Deque Customer Support";
 
 export default class ViewRequests extends Component {
+    
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          
+        }
+    }
 
     getRequests() {
         fetch('https://dequecsddev.atlassian.net/rest/servicedeskapi/request', {
@@ -30,6 +39,19 @@ export default class ViewRequests extends Component {
         .catch(error => {
           console.log(error);
           return { name: "network error", description: "" };
+        });
+
+        //console.log(requests.values[0]);
+
+        requests.values.forEach(request => {
+            console.log('request id: '+request.issueId);
+            console.log('type: '+request.requestTypeId);
+            console.log('reference: '+request.issueKey);
+            console.log('summary: '+request.requestFieldValues[0].value);
+            console.log('status: '+request.currentStatus.status);
+            console.log('requester: '+request.reporter.displayName);
+            console.log('date: '+request.createdDate.friendly);
+            console.log('');
         });
     }
 
@@ -55,17 +77,12 @@ export default class ViewRequests extends Component {
           return { name: "network error", description: "" };
         });
     }
+
     
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          
-        }
-    }
 
     componentDidMount() {
         document.title = "View Requests - Deque Customer Support";
+        this.getRequests();
     }
 
     render() {

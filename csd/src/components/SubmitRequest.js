@@ -64,7 +64,6 @@ export default class SubmitRequest extends Component {
                     <Select
                         label='What Can We Help You With?'
                         value=''
-                        //onSelect={selected => console.log('Selected: ', selected)}
                         options={[
                             { label: 'Provide Feedback' },
                             { label: 'Ask A Question' },
@@ -84,7 +83,6 @@ export default class SubmitRequest extends Component {
                     <Select
                         label='Product'
                         value=''
-                        //onSelect={selected => console.log('Selected: ', selected)}
                         options={[
                             { label: 'Test Product' },
                         ]}/>
