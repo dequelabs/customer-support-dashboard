@@ -1,11 +1,23 @@
 
+.Header {
+  background-color: #003349;
+  padding-top: 15px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+}
+
+.Col{
+  align-items: center;
+  justify-content: center;
+}
+
 .App {
   background-color: white;
   display: flex;
   flex-direction: column;
 }
 
-.App-header {
+/* .App-header {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -35,4 +47,4 @@
 
 .Submit {
   margin-left: 15px;
-}
+} */
