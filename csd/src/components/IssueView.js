@@ -1,9 +1,10 @@
 import React, { Component }from 'react';
 import Grid from '@material-ui/core/Grid';
-//import requests from '../assets/issues.json';
+import { Link, } from 'cauldron-react';
 import '../App.css';
+import {TableRow } from '@material-ui/core';
 
-export default class ViewIssue extends Component {
+export default class IssueView extends Component {
 
     constructor(props) {
         super(props);
@@ -21,37 +22,36 @@ export default class ViewIssue extends Component {
 
 
     render() {
-
         return (
-            <div className="App">
-                <Grid container spacing={2}>
-                    <Grid item xs={4}>
-                        <div>
+            <TableRow >
+                <Grid container spacing={1} className='TableElement'>
+                    <Grid item xs={3}>
+                        <Link>
                             {this.state.summary}
-                        </div>
+                        </Link>
                     </Grid>
                     <Grid item xs={2}>
-                        <div>
+                        
                             {this.state.status}
-                        </div>
+                        
                     </Grid>
                     <Grid item xs={2}>
-                        <div>
+                        
                             {this.state.type}
-                        </div>
+                        
                     </Grid>
-                    <Grid item xs={2}>
-                        <div>
+                    <Grid item xs={3}>
+                        
                             {this.state.date}
-                        </div>
+                        
                     </Grid>
                     <Grid item xs={2}>
-                        <div>
+                
                             {this.state.requester}
-                        </div>
+                        
                     </Grid>
                 </Grid>
-            </div>
+            </TableRow>
         );
     }
 }

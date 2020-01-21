@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Button, TopBar, Workspace, } from 'cauldron-react';
+import { Button, TopBar, Workspace, Link, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
 import '../App.css';
@@ -26,54 +26,28 @@ export default class Home extends Component {
                     </a>
                 </TopBar>
                 <Workspace className='Col'>
-                    <Grid container spacing={1}>
-                        <Grid item xs={5}>
-                                <h1>
+                    <Grid container spacing={1} >
+                        <Grid item xs={5} >
+                                <h1 className='HeadText'>
                                     Deque Customer Support
                                 </h1>
-                                <p>
-                                    Welcome to the Deque Customer support center. Here, you can raise a new customer support request, view the status of your pending requests, and modify any submitted requests.
+                                <p className='BodyText'>
+                                    Welcome to the Deque Customer support center. Here, you can raise a new customer support request, view the status of your pending requests, or modify submitted requests.
                                 </p>
-                                <p>
-                                    Contact Support with any product questions you have or issues you encounter. Our Deque Support team will respond within 1 working day of receiving your request.
-                                </p>
-                                <h2>
+                                <h2 className='ThirdHead'>
                                     You can raise a Customer Support Request at the link below
                                 </h2>
-                                <Button>Make A Request</Button>
+                                <a href="/request" className='RequestLink' alt="Link to make new support request">
+                                    Make a Request
+                                </a>
+                                
                         </Grid>
                         <Grid item xs={7}>
-                            <h2>
+                            <h2 className='SecondHead'>
                                 Open Requests
                             </h2>
-                            <Grid container spacing={2}>
-                                <Grid item xs={4}>
-                                    <p>
-                                        summary
-                                    </p>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <p>
-                                        status
-                                    </p>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <p>
-                                        type
-                                    </p>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <p>
-                                        date
-                                    </p>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <p>
-                                        requester
-                                    </p>
-                                </Grid>
-                            </Grid>
-                            <div>
+                            
+                            <div >
                                 <IssueTable></IssueTable>
                             </div>
                         </Grid>
