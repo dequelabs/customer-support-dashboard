@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Button, TextField, Select, TopBar, Workspace} from 'cauldron-react';
+import { TextField, Select, TopBar, Workspace} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
 
@@ -25,24 +25,29 @@ export default class SubmitRequest extends Component {
     e.preventDefault();
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
+
+    
     
     this.setState({
-      summaryError: summaryEmpty ? 'Name must not be blank.' : null,
-      descriptionError: descriptionEmpty ? 'Description must not be blank.' : null,
+      summaryError: summaryEmpty ? 'Please complete this required field.' : null,
+      descriptionError: descriptionEmpty ? 'Please complete this required field.' : null,
     });
     
-    if (summaryEmpty) {
+    if (summaryEmpty && descriptionEmpty) {
       this.summaryInput.focus();
+      this.summaryInput.className = 'OneLineInput-invalid';
+      this.descriptionInput.className = 'MultiLineInput-invalid';
+    } else if (summaryEmpty) {
+      this.summaryInput.focus();
+      this.summaryInput.className = 'OneLineInput-invalid';
+      this.descriptionInput.className = 'MultiLineInput';
     } else if (descriptionEmpty) {
       this.descriptionInput.focus();
+      this.summaryInput.className = 'OneLineInput';
+      this.descriptionInput.className = 'MultiLineInput-invalid';
     } else {
-      console.log("valid, will sumbit");
-      console.log("request type:", this.state.requestInput);
-      console.log("product:", this.state.productInput);
-      console.log("summary:", this.summaryInput.value);
-      console.log("description:", this.descriptionInput.value);
-      console.log("additional info:", this.additionalInfoInput.value);
-      console.log();
+      this.summaryInput.className = 'OneLineInput';
+      this.descriptionInput.className = 'MultiLineInput';
     }
   }
 
@@ -55,18 +60,19 @@ export default class SubmitRequest extends Component {
               </a>
             </TopBar>
             <Workspace className='Col'>
-              <Grid container spacing={1}>
-                <Grid item xs={8}>
-                  <h1>
+              <Grid container spacing={10}>
+                <Grid item xs={7}>
+                  <h1 className='HeadText'>
                     How Can We Help?
                   </h1>
-                  <p>
-                    Complete this form with your product or services questions. Our Deque Support team will respond within 1 (one) working day of receiving your contact.
+                  <p className='BodyText'>
+                    Complete this form with your product or services questions. <br/>
+                    Our Deque Support team will respond within 1 (one) working day of receiving your contact.
                   </p>
                 </Grid>
                 <Grid item xs={4}>
                   <p></p>
-                <form onSubmit={this.validate} noValidate className="Submit">
+                <form onSubmit={this.validate} noValidate>
                   <Select
                     label='Request Type'
                     value=''
@@ -82,6 +88,7 @@ export default class SubmitRequest extends Component {
                     onSelect={selected => this.setState({
                       requestInput: selected.label
                     })}
+                    className='Select'
                   />
                   <Select
                     label='Product'
@@ -93,12 +100,14 @@ export default class SubmitRequest extends Component {
                     onSelect={selected => this.setState({
                       productInput: selected.label
                     })}
+                    
                   />
                   <TextField
                     required
                     label="Summary"
                     error={this.state.summaryError}
                     fieldRef={el => this.summaryInput = el}
+                    className="OneLineInput"
                   />
                   <TextField 
                     required
@@ -106,15 +115,19 @@ export default class SubmitRequest extends Component {
                     label="Description" 
                     error={this.state.descriptionError}
                     fieldRef={el => this.descriptionInput = el}
+                    className="MultiLineInput"
                     />
                   <TextField 
                     multiline 
                     label="Additional Info" 
-                    fieldRef={el => this.additionalInfoInput = el}/>
+                    fieldRef={el => this.additionalInfoInput = el}
+                    className="MultiLineInput"
+                    />
                   <TextField 
                     multiline 
-                    label="Attachment" />
-                  <Button type="submit">Submit</Button>
+                    label="Attachment" 
+                    className="MultiLineInput"/>
+                  <button className='FormSubmitButton' type="submit">Submit</button>
                 </form>     
                 </Grid>
               </Grid>

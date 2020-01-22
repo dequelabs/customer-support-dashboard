@@ -2,7 +2,7 @@ import React, { Component }from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Link, } from 'cauldron-react';
 import '../App.css';
-import {TableRow } from '@material-ui/core';
+
 
 export default class IssueView extends Component {
 
@@ -23,12 +23,14 @@ export default class IssueView extends Component {
 
     render() {
         return (
-            <TableRow >
-                <Grid container spacing={1} className='TableElement'>
+           
+                <Grid container spacing={1}>
                     <Grid item xs={3}>
-                        <Link>
-                            {this.state.summary}
-                        </Link>
+                        
+                            <Link href={'/detail/'+this.state.issueId}>
+                                {this.state.summary}
+                            </Link>
+                        
                     </Grid>
                     <Grid item xs={2}>
                         
@@ -43,15 +45,56 @@ export default class IssueView extends Component {
                     <Grid item xs={3}>
                         
                             {this.state.date}
-                        
+                       
                     </Grid>
                     <Grid item xs={2}>
-                
+                        
                             {this.state.requester}
                         
                     </Grid>
                 </Grid>
-            </TableRow>
+          
+
+            // <TableRow >
+            //     <Grid container spacing={1} className='TableElement'>
+            //         <Grid item xs={3}>
+            //             <TableCell>
+            //                 <Link>
+            //                     {this.state.summary}
+            //                 </Link>
+            //             </TableCell>
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             <TableCell>
+            //                 {this.state.status}
+            //             </TableCell>
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             <TableCell>
+            //                 {this.state.type}
+            //             </TableCell>
+            //         </Grid>
+            //         <Grid item xs={3}>
+            //             <TableCell>
+            //                 {this.state.date}
+            //             </TableCell>
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             <TableCell>
+            //                 {this.state.requester}
+            //             </TableCell>
+            //         </Grid>
+            //     </Grid>
+            // </TableRow>
+
+
+            // <tr>
+            //     <th scope='row'>SummaryEl</th>
+            //     <td >StatusEl</td>
+            //     <td >TypeEl</td>
+            //     <td >DateEl</td>
+            //     <td >RequesterEl</td>
+            // </tr>
         );
     }
 }
