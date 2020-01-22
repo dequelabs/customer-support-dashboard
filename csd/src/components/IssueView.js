@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { Link, } from 'cauldron-react';
 import '../App.css';
 
-
 export default class IssueView extends Component {
 
     constructor(props) {
@@ -19,7 +18,6 @@ export default class IssueView extends Component {
             date: props.date,
         }
     }
-
 
     render() {
         return (

@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import requests from '../assets/issues.json';
-import Grid from '@material-ui/core/Grid';
+import { Link, } from 'cauldron-react';
 import '../App.css';
 import IssueView from './IssueView';
 
@@ -17,43 +17,57 @@ export default class IssueTable extends Component {
 
     render() {
         let elements = [];
+        // this.state.issues.forEach(element => {
+        //     elements.push(<IssueView
+        //         issueId={element.issueId}
+        //         key={element.issueId}
+        //         type={element.requestTypeId}
+        //         reference={element.issueKey}
+        //         summary={element.requestFieldValues[0].value}
+        //         status={element.currentStatus.status}
+        //         requester={element.reporter.displayName}
+        //         date={element.createdDate.friendly}
+        //     ></IssueView>);
         this.state.issues.forEach(element => {
-            elements.push(<IssueView
-                issueId={element.issueId}
-                key={element.issueId}
-                type={element.requestTypeId}
-                reference={element.issueKey}
-                summary={element.requestFieldValues[0].value}
-                status={element.currentStatus.status}
-                requester={element.reporter.displayName}
-                date={element.createdDate.friendly}
-            ></IssueView>);
+            elements.push(
+                <tr className='Table'>
+                    <td>
+                        <Link href={'/detail/'+element.issueId}>
+                            {element.requestFieldValues[0].value}
+                        </Link>
+                    </td>
+                    <td>{element.currentStatus.status}</td>
+                    <td>{element.requestTypeId}</td>
+                    <td>{element.createdDate.friendly}</td>
+                    <td>{element.reporter.displayName}</td>
+                </tr>
+            );
         });
         
         return (
-            <div>
-                <Grid container spacing={1} className='TableHead '>
-                    <Grid item xs={3}>
-                      Summary
-                    </Grid>
-                    <Grid item xs={2}>
-                        Status
-                    </Grid>
-                    <Grid item xs={2}>
-                        Type
-                     </Grid>
-                    <Grid item xs={3}>
-                        Date
-                    </Grid>
-                    <Grid item xs={2}>
-                        Requester
-                    </Grid> 
-                </Grid>
-                <div className='Table'>
-                    {elements}
-                </div>
+            // <div role='Submitted Requests - Quick View' aria-labelledby="aria lable" aria-describedby="aria describe">
+            //     <Grid container spacing={1} className='TableHead '>
+            //         <Grid item xs={3}>
+            //           Summary
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             Status
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             Type
+            //          </Grid>
+            //         <Grid item xs={3}>
+            //             Date
+            //         </Grid>
+            //         <Grid item xs={2}>
+            //             Requester
+            //         </Grid> 
+            //     </Grid>
+            //     <div className='Table'>
+            //         {elements}
+            //     </div>
                 
-            </div>
+            // </div>
             
 
 
@@ -95,16 +109,16 @@ export default class IssueTable extends Component {
             // </Table>
 
 
-            // <table>
-            //     <tr>
-            //         <th scope="col">Summary</th>
-            //         <th scope="col">Status</th>
-            //         <th scope="col">Type</th>
-            //         <th scope="col">Date</th>
-            //         <th scope="col">Requester</th>
-            //     </tr>
-            //     {elements}
-            // </table>
+            <table>
+                <tr className='TableHead '>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Requester</th>
+                </tr>
+                {elements}
+            </table>
         );
     }
 }

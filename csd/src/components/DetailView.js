@@ -14,17 +14,19 @@ export default class DetailView extends Component {
         }  
     }
 
-
     render() {
 
         let request = null;
-
+        //retreive ticket object
         requests.values.forEach(element => {
             if(element.issueId === this.state.issueRef) {
                 request = element;
             } 
         });
 
+        console.log(request)
+
+        //if ticket can't be found, render "not found" page
         if (request === null) {
             return(
                 <div className="App">
@@ -40,6 +42,7 @@ export default class DetailView extends Component {
                     </Workspace>
                 </div>
             );
+        //else, ticket found. render detail page
         } else {
             return (
             <div className="App">
@@ -52,17 +55,27 @@ export default class DetailView extends Component {
                     <Grid container spacing={1} >
                         <Grid item xs={8} >
                                 <h1 className='HeadText'>
-                                    Detail view
+                                    Request: {request.requestFieldValues[0].value}
                                 </h1>
-                                <p className='bodyText'>
-                                    ticketRef={request.issueId}
+                                <p className='BodyText'>
+                                    Description: {request.requestFieldValues[1].value}
                                 </p>
+                                <h2 className='SecondHead'>
+                                    Follow Up:
+                                </h2>
                         </Grid>
                         <Grid item xs={4}>
                             <h2 className='SecondHead'>
-                                Status Elements
+                                Status
                             </h2>
-                            
+                            <div className='BodyText'>
+                                <p>Request type: {request.requestTypeId}</p>
+                                <p>Status: {request.currentStatus.status}</p>
+                                <p>Date Created: {request.createdDate.friendly}</p>
+                                <p>Shared With: {}</p>
+                                <p>Notification Status: {}</p>
+                                <p>Issue Key: {request.issueKey}</p>
+                            </div>
                         </Grid>
                     </Grid>
                 </Workspace>

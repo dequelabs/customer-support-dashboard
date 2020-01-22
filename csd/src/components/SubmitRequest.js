@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { TextField, Select, TopBar, Workspace} from 'cauldron-react';
+import {Button, TextField, Select, TopBar, Workspace, Toast} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
 
@@ -100,7 +100,6 @@ export default class SubmitRequest extends Component {
                     onSelect={selected => this.setState({
                       productInput: selected.label
                     })}
-                    
                   />
                   <TextField
                     required
@@ -127,7 +126,7 @@ export default class SubmitRequest extends Component {
                     multiline 
                     label="Attachment" 
                     className="MultiLineInput"/>
-                  <button className='FormSubmitButton' type="submit">Submit</button>
+                  <button className='FormSubmitButton' type="submit" >Submit</button>
                 </form>     
                 </Grid>
               </Grid>
