@@ -14,35 +14,10 @@ export default class Home extends Component {
 
     constructor(props) {
         super(props);
-        
+
         this.state = {
             
         }
-    }
-
-    jiraLogin() {
-        console.log("attempting Jira Login");
-
-        fetch('https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=PUh5rE3P6qbHlVTD4xHAivGCxpS3YW3r&scope=read%3Aservicedesk-request%20write%3Aservicedesk-request&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2F&state=asdfghjkl&response_type=code&prompt=consent', {
-            method: 'GET',
-            headers: {
-                'origin': 'https://dequecsddev.atlassian.net',
-                'sec-fetch-mode': 'cors',
-                'sec-fetch-site': 'same-origin'
-            }
-        })
-        .then(response => {
-            const statusCode = response.status;
-            const data = response.json();
-            return Promise.all([statusCode, data]);
-        })
-        .then(([res, data]) => {
-            console.log(res);
-            console.log(data);
-        })
-        .catch(error => {
-            console.log(error);
-        });
     }
 
     render() {
@@ -68,7 +43,6 @@ export default class Home extends Component {
                                 <a href="/request" className='RequestLink' alt="Link to make new support request">
                                     Make a Request
                                 </a>
-                                {/* <Button onClick={() => this.jiraLogin()}>log into jira</Button> */}
                         </Grid>
                         <Grid item xs={7}>
                             <h2 className='SecondHead'>
