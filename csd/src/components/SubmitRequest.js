@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import {Button, TextField, Select, TopBar, Workspace, Toast} from 'cauldron-react';
+import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
 
@@ -122,10 +122,6 @@ export default class SubmitRequest extends Component {
                     fieldRef={el => this.additionalInfoInput = el}
                     className="MultiLineInput"
                     />
-                  <TextField 
-                    multiline 
-                    label="Attachment" 
-                    className="MultiLineInput"/>
                   <button className='FormSubmitButton' type="submit" >Submit</button>
                 </form>     
                 </Grid>

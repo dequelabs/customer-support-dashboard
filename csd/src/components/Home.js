@@ -4,14 +4,17 @@ import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
 import '../App.css';
 
+
 export default class Home extends Component {
 
     componentDidMount() {
         document.title = "Support | Deque Systems";
+
     }
 
     constructor(props) {
         super(props);
+        
         this.state = {
             
         }
@@ -39,7 +42,6 @@ export default class Home extends Component {
         })
         .catch(error => {
             console.log(error);
-            
         });
     }
 

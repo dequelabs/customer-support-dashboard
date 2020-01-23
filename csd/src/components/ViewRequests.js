@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, } from 'cauldron-react';
 import { Link, } from "react-router-dom";
 import base64 from 'react-native-base64';
-import requests from '../assets/issues.json';
 
 import '../App.css';
 
@@ -18,13 +17,17 @@ export default class ViewRequests extends Component {
         }
     }
 
+    //attempts to make an authenticated request via basic auth using username and api key
     getRequests() {
         fetch('https://dequecsddev.atlassian.net/rest/servicedeskapi/request', {
           method: 'GET',
           headers: {
             'Authorization': 'Basic ' + base64.encode("jonathan.thickens@deque.com:j0VEP5Ia8BngJnzcIm6pC00B"),
             'Accept': 'application/json',
-            'responseType':'application/json',
+            'Access-Control-Allow-Origin':'localhost:4000',
+            'origin': 'https://dequecsddev.atlassian.net',
+            'sec-fetch-mode': 'cors',
+            'sec-fetch-site': 'same-origin'
           },
         })
         .then(response => {
@@ -40,27 +43,18 @@ export default class ViewRequests extends Component {
           console.log(error);
           return { name: "network error", description: "" };
         });
-
-        //console.log(requests.values[0]);
-
-        requests.values.forEach(request => {
-            console.log('request id: '+request.issueId);
-            console.log('type: '+request.requestTypeId);
-            console.log('reference: '+request.issueKey);
-            console.log('summary: '+request.requestFieldValues[0].value);
-            console.log('status: '+request.currentStatus.status);
-            console.log('requester: '+request.reporter.displayName);
-            console.log('date: '+request.createdDate.friendly);
-            console.log('');
-        });
     }
 
+    //attempts to make an unauthenticated request.
     getInfo() {
         fetch('https://dequecsddev.atlassian.net/rest/servicedeskapi/info', {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
             'Access-Control-Allow-Origin':'localhost:4000',
+            'origin': 'https://dequecsddev.atlassian.net',
+            'sec-fetch-mode': 'cors',
+            'sec-fetch-site': 'same-origin'
           },
         })
         .then(response => {
@@ -76,13 +70,6 @@ export default class ViewRequests extends Component {
           console.log(error);
           return { name: "network error", description: "" };
         });
-    }
-
-    
-
-    componentDidMount() {
-        document.title = "View Requests - Deque Customer Support";
-        this.getRequests();
     }
 
     render() {

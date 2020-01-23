@@ -11,6 +11,7 @@
     "bootstrap": "^4.4.1",
     "cauldron-react": "^5.0.0",
     "deque-pattern-library": "^7.0.0",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "ngrok": "^3.2.7",
     "react": "^16.12.0",
