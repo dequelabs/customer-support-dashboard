@@ -13,6 +13,14 @@ export default class LogIn extends Component {
         }
     }
 
+    //README
+    // This file attempts to initiate OAuth2 authentication with the JSD API
+    // There are currently two functions which try to do the same thing, but use two different ways to do it
+    // oauthSignIn() uses a form submission. It successfully redirects to Jira, but blocks data
+    // getURL attempts to accomplish this via the axios api
+    // Since the Jira cloud API app registration tool spits out a fully formed token request URL, both functions are implemented building the URL themselves AND using the Jira supplied URL.
+    // In its current state, oauthSignIn submits a preformed URL and getURL builds the url itself.
+
     oauthSignIn() {
         //let endpoint = 'https://auth.atlassian.com/authorize';
         let endpoint = 'https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=PUh5rE3P6qbHlVTD4xHAivGCxpS3YW3r&scope=read%3Aservicedesk-request%20write%3Aservicedesk-request&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2F&state=asdfghjkl&response_type=code&prompt=consent';
