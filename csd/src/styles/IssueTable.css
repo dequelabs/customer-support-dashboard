@@ -8,6 +8,7 @@ table {
     color: #1e1e1e;
     font-weight: normal;
     color: #1e1e1e;
+    text-align: left;
 }
 
 th {
@@ -17,7 +18,7 @@ th {
 }
 
 td {
-    padding: 5px 0px;
+    padding: 5px 5px 5px 0px;
 }
 
 .buttonContainer {
@@ -35,6 +36,6 @@ td {
   /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
   @media screen and (max-width: 960px) {
     table {
-        font-size:calc(12px + 1vw);
+        font-size:calc(8px + 1.2vw);
     }
   }
