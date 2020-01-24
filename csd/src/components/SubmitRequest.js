@@ -22,12 +22,14 @@ export default class SubmitRequest extends Component {
   }
 
   validate = e => {
-    e.preventDefault();
+    //e.preventDefault();
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
 
-    
-    
+    if (summaryEmpty || descriptionEmpty) {
+      e.preventDefault();
+    }
+
     this.setState({
       summaryError: summaryEmpty ? 'Please complete this required field.' : null,
       descriptionError: descriptionEmpty ? 'Please complete this required field.' : null,
@@ -48,6 +50,13 @@ export default class SubmitRequest extends Component {
     } else {
       this.summaryInput.className = 'OneLineInput';
       this.descriptionInput.className = 'MultiLineInput';
+      console.log("SUBMISSION DETAILS:");
+      console.log("Request Type:", this.state.requestInput);
+      console.log("Product:", this.state.productInput);
+      console.log("Summary:", this.summaryInput.value);
+      console.log("Description:", this.descriptionInput.value);
+      console.log("Additional Info:", this.additionalInfoInput.value);
+      e.preventDefault();
     }
   }
 
@@ -60,8 +69,8 @@ export default class SubmitRequest extends Component {
               </a>
             </TopBar>
             <Workspace className='Col'>
-              <Grid container spacing={10}>
-                <Grid item xs={7}>
+              <Grid container spacing={0}>
+                <Grid item xs={12} md={7}>
                   <h1 className='HeadText'>
                     How Can We Help?
                   </h1>
@@ -70,7 +79,7 @@ export default class SubmitRequest extends Component {
                     Our Deque Support team will respond within 1 (one) working day of receiving your contact.
                   </p>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                   <p></p>
                 <form onSubmit={this.validate} noValidate>
                   <Select

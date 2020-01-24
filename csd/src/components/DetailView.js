@@ -2,7 +2,8 @@ import React, { Component }from 'react';
 import { TopBar, Workspace,} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
-import requests from '../assets/issues.json';
+import { get, } from '../services/api';
+import IssueType from './IssueType';
 
 export default class DetailView extends Component {
 
@@ -11,23 +12,93 @@ export default class DetailView extends Component {
     
         this.state = {
             issueRef: window.location.pathname.split('/')[2],
+            issue: null,
+            issueComments: []
         }  
+    }
+
+    getIssueInfo() {
+        get('request').then((result) => {
+            result.values.forEach(element => {
+                if(element.issueId === this.state.issueRef) {
+                    this.setState({
+                        issue: element,
+                    })
+                } 
+            });
+        });
+    }
+
+    getIssueComments() {
+        get('request/'+this.state.issueRef+'/comment').then((result) => {
+            this.setState({
+                issueComments: result.values,
+            })
+         });
+    }
+
+    detailBuilder() {
+        let details = [];
+        let key = 0;
+        if(this.state.issue.requestFieldValues[3].value !== '') {
+            details.push(
+                <p className='BodyText' key={key++}>
+                    Product <br/>
+                    <span>
+                        {this.state.issue.requestFieldValues[3].value}
+                    </span>
+                </p>
+            );
+        }
+        if(this.state.issue.requestFieldValues[1].value !== '') {
+            details.push(
+                <p className='BodyText' key={key++}>
+                    Description <br/>
+                    <span>
+                        {this.state.issue.requestFieldValues[1].value}
+                    </span>
+                </p>
+            );
+        }
+        if(this.state.issue.requestFieldValues[2].value !== '') {
+            console.log()
+            details.push(
+                <p className='BodyText' key={key++}>
+                    Additional Info <br/>
+                    <span>
+                        {this.state.issue.requestFieldValues[2].value}
+                    </span>
+                </p>
+            );
+        }
+        return details
+    }
+
+    commentsBuilder() {
+        let comments = [];
+        let key = 0;
+        this.state.issueComments.forEach(element => {
+            comments.push(
+                <p className='BodyText' key={key++}>
+                    {element.author.displayName} {element.created.friendly}<br/>
+                    <span>
+                        {element.body}
+                    </span>
+                </p>
+            );
+        });
+        return comments;
+    }
+
+    componentDidMount() {
+        this.getIssueInfo();
+        this.getIssueComments();
     }
 
     render() {
 
-        let request = null;
-        //retreive ticket object
-        requests.values.forEach(element => {
-            if(element.issueId === this.state.issueRef) {
-                request = element;
-            } 
-        });
-
-        console.log(request)
-
         //if ticket can't be found, render "not found" page
-        if (request === null) {
+        if (this.state.issue === null) {
             return(
                 <div className="App">
                     <TopBar className='Header'>
@@ -42,6 +113,7 @@ export default class DetailView extends Component {
                     </Workspace>
                 </div>
             );
+
         //else, ticket found. render detail page
         } else {
             return (
@@ -53,28 +125,35 @@ export default class DetailView extends Component {
                 </TopBar>
                 <Workspace className='Col'>
                     <Grid container spacing={1} >
-                        <Grid item xs={8} >
+                        <Grid item xs={12} md={8}>
                                 <h1 className='HeadText'>
-                                    Request: {request.requestFieldValues[0].value}
+                                    {this.state.issue.requestFieldValues[0].value}
                                 </h1>
                                 <p className='BodyText'>
-                                    Description: {request.requestFieldValues[1].value}
+                                    Request raised by {this.state.issue.reporter.displayName} {this.state.issue.createdDate.friendly}
                                 </p>
+                                <div>
+                                    {this.detailBuilder()}
+                                </div>
                                 <h2 className='SecondHead'>
                                     Follow Up:
                                 </h2>
+                                <div>
+                                    {this.commentsBuilder()}
+                                </div>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} md={4}>
                             <h2 className='SecondHead'>
                                 Status
                             </h2>
+                            
                             <div className='BodyText'>
-                                <p>Request type: {request.requestTypeId}</p>
-                                <p>Status: {request.currentStatus.status}</p>
-                                <p>Date Created: {request.createdDate.friendly}</p>
-                                <p>Shared With: {}</p>
-                                <p>Notification Status: {}</p>
-                                <p>Issue Key: {request.issueKey}</p>
+                                <p>Request type: <IssueType type={this.state.issue.requestTypeId}/></p>
+                                <p>Status: {this.state.issue.currentStatus.status}</p>
+                                <p>Date Created: {this.state.issue.createdDate.friendly}</p>
+                                <p>Shared With: {this.state.issue.reporter.displayName}</p>
+                                <p>Notification Status: Subscribed</p>
+                                <p>Issue Key: {this.state.issue.issueKey}</p>
                             </div>
                         </Grid>
                     </Grid>

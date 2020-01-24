@@ -30,7 +30,7 @@ export default class Home extends Component {
                 </TopBar>
                 <Workspace className='Col'>
                     <Grid container spacing={1} >
-                        <Grid item xs={5} >
+                        <Grid item xs={12} md={5}>
                                 <h1 className='HeadText'>
                                     Deque Customer Support
                                 </h1>
@@ -44,7 +44,7 @@ export default class Home extends Component {
                                     Make a Request
                                 </a>
                         </Grid>
-                        <Grid item xs={7}>
+                        <Grid item xs={12} md={7}>
                             <h2 className='SecondHead'>
                                 Open Requests
                             </h2>

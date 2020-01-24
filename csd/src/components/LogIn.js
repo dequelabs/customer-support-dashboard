@@ -81,6 +81,7 @@ export default class LogIn extends Component {
         fetch('https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=PUh5rE3P6qbHlVTD4xHAivGCxpS3YW3r&scope=read%3Aservicedesk-request%20write%3Aservicedesk-request&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2F&state=asdfghjkl&response_type=code&prompt=consent', {
             method: 'GET',
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'origin': 'https://dequecsddev.atlassian.net',
                 'sec-fetch-mode': 'cors',
                 'sec-fetch-site': 'same-origin'
