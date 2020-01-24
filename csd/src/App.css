@@ -25,14 +25,7 @@
   
 }
 
-.Col{
-  align-items: center;
-  justify-content: center;
-  margin-left: 15px;
-}
-
 .HeadText {
-  font-size: 46px;
   font-weight: 300;
   line-height: 1.25;
   color: #003349;
@@ -54,172 +47,35 @@
 
 .BodyText {
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 400;
   color: #1e1e1e;
   font-weight: normal;
-  font-size: 18px;
 }
 
-.TableHead {
-  color: #1e1e1e;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: left;
+@media screen and (min-width: 961px) {
+  .BodyText {
+    font-size:calc(10px + .6vw);
+  }
+  .HeadText {
+    font-size: calc(14px + 2.1vw);
+  }
+  .SecondHead {
+    font-size: calc(12px + 2.1vw);
+  }
 }
 
-.Table {
-  border-bottom: 2px solid #1e1e1e;
-  border-top: 2px solid #1e1e1e;
-  line-height: 1.5;
-  color: #1e1e1e;
-  font-weight: normal;
-  font-size: 18px;
+@media screen and (max-width: 960px) {
+  .BodyText {
+      font-size:calc(12px + 1vw);
+  }
+  .HeadText {
+    font-size: calc(18px + 3.5vw);
+  }
+  .SecondHead {
+    font-size: calc(16px + 3.5vw);
+  }
 }
 
-.RequestLink {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #0077c8;
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 12px 40px;
-  border: 3px solid #0077c8;
-  outline: none;
-  transition-duration: 125ms;
-}
 
-.RequestLink:hover {
-  background-color: white;
-  color: black;
-  border: 3px solid black;
-  outline: none;
-}
 
-.RequestLink:focus {
-  background-color: white;
-  color: black;
-  border: 3px solid black;
-  outline: none;
-}
 
-.TableElement {
-  padding: 5px 0px;
-}
-
-.OneLineInput {
-  font-size: 18px;
-  height: 28px;
-  width: 320px;
-  border: 3px solid black;
-  border-radius: 6px;
-  padding: 6px 6px 6px 6px;
-}
-.OneLineInput:focus-within {
-  border: 3px solid black;
-}
-
-.OneLineInput:hover {
-  border: 3px solid black;
-}
-
-.OneLineInput-invalid {
-  font-size: 18px;
-  height: 28px;
-  width: 320px;
-  border-radius: 6px;
-  padding: 6px 6px 6px 6px;
-  border: 3px solid #d93251;
-}
-
-.OneLineInput-invalid:focus-within {
-  border: 3px solid #d93251;
-}
-
-.OneLineInput-invalid:hover {
-  border: 3px solid #d93251;
-}
-
-.MultiLineInput {
-  font-size: 18px;
-  height: 64px;
-  width: 326px;
-  padding: 6px 0px 6px 6px;
-  border: 3px solid black;
-  border-radius: 6px;
-}
-
-.MultiLineInput:focus-within {
-  border: 3px solid black;
-}
-
-.MultiLineInput:hover {
-  border: 3px solid black;
-}
-
-.MultiLineInput-invalid {
-  font-size: 18px;
-  height: 64px;
-  width: 326px;
-  border-radius: 6px;
-  padding: 6px 0px 6px 6px;
-  border: 3px solid #d93251;
-}
-
-.MultiLineInput-invalid:focus-within {
-  border: 3px solid #d93251;
-}
-
-.MultiLineInput-invalid:hover {
-  border: 3px solid #d93251;
-}
-
-.Select {
-  font-size: 18px;
-  height: 64px;
-  width: 320px;
-  max-width: 700px;
-  border: 3px solid black;
-  border-radius: 6px;
-  padding: 10px 20px;
-  color:green;
-  background-color: hotpink;
-
-}
-
-.Select:focus-within {
-  border: 3px solid #d93251;
-}
-
-.Select:hover {
-  border: 3px solid #d93251;
-}
-
-.FormSubmitButton {
-  border-radius: 2px;
-  height: 64px;
-  width: 338px;
-  background-color: #0077c8;
-  color: white;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  border: 6px solid #0077c8;
-  transition-duration: 125ms;
-  box-shadow: none;
-}
-
-.FormSubmitButton:focus {
-  background-color: white;
-  color: black;
-  border: 3px solid black;
-  outline: none;
-}
-
-.FormSubmitButton:hover {
-  background-color: white;
-  color: black;
-  border: 3px solid black;
-  outline: none;
-}
 

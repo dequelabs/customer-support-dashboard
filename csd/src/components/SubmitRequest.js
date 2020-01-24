@@ -2,6 +2,7 @@ import React, { Component }from 'react';
 import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
+import '../styles/submitRequest.css'
 
 
 export default class SubmitRequest extends Component {
