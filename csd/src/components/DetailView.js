@@ -12,6 +12,7 @@ export default class DetailView extends Component {
         super(props);
     
         this.state = {
+            commentError: null,
             issueRef: window.location.pathname.split('/')[2],
             issue: null,
             issueComments: []
@@ -91,6 +92,21 @@ export default class DetailView extends Component {
         return comments;
     }
 
+    handleSubmit = e => {
+        const commentEmpty = !this.commentInput.value.trim();
+    
+        if (commentEmpty) {
+          e.preventDefault();
+          this.setState({
+            commentError: commentEmpty ? 'Can not submit empty comment.' : null,
+          });
+        }
+        else {
+            console.log("COMMENT VALUE:");
+            console.log(this.commentInput.value);
+        }  
+    }
+
     componentDidMount() {
         this.getIssueInfo();
         this.getIssueComments();
@@ -147,11 +163,13 @@ export default class DetailView extends Component {
                                 <div className='Comments'>
                                     {this.commentsBuilder()}
                                 </div>
-                                <form>
+                                <form onSubmit={this.handleSubmit} noValidate>
                                     <TextField 
                                         multiline 
                                         label="Add Comment" 
                                         className='CommentInput'
+                                        error={this.state.commentError}
+                                        fieldRef={el => this.commentInput = el}
                                     />
                                     <button type='submit' className='SaveButton Text'>Save</button>
                                 </form>
