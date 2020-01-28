@@ -15,3 +15,22 @@ export async function get(endpoint) {
     return ret;
 }
 
+
+export async function post(endpoint, value) {
+
+    console.log('post called with value', value);
+
+    await fetch(baseEndpoint+endpoint, {
+        method: 'POST',
+        headers: {
+            
+        },
+        body: JSON.stringify({
+            comment: "hard code test comment",
+        })
+    })
+    .then(response => {
+        console.log(response)
+    })
+}
+

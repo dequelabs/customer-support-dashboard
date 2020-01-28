@@ -10,7 +10,6 @@ export default class Home extends Component {
 
     componentDidMount() {
         document.title = "Support | Deque Systems";
-
     }
 
     constructor(props) {
@@ -23,13 +22,13 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div>
                 <TopBar className='Header'>
                     <a href="http://www.deque.com" className='HomeLink'>
                         <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
                     </a>
                 </TopBar>
-                <Workspace className='Col'>
+                <Workspace className='Page'>
                     <Grid container spacing={1} >
                         <Grid item xs={12} md={5}>
                                 <h1 className='HeadText'>

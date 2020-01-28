@@ -15,6 +15,7 @@ export default class SubmitRequest extends Component {
       descriptionError: null,
       requestInput: '',
       productInput: '',
+      submitStatus: null,
     }
   }
 
@@ -22,13 +23,25 @@ export default class SubmitRequest extends Component {
     document.title = "Submit Request | Deque Systems";
   }
 
+  submitMessage() {
+    if (this.state.submitStatus === null) {
+      return "";
+    } else if (this.state.submitStatus === true) {
+      return (<div className='SuccessMessage'>Thanks, We've recieved your request</div>);
+    } else if (this.state.submitStatus === false) {
+      return (<div className='FailMessage'>Missing required information - please complete all required fields</div>);
+    }
+  }
+
   validate = e => {
-    //e.preventDefault();
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
 
     if (summaryEmpty || descriptionEmpty) {
       e.preventDefault();
+      this.setState({
+        submitStatus: false,
+      })
     }
 
     this.setState({
@@ -57,33 +70,39 @@ export default class SubmitRequest extends Component {
       console.log("Summary:", this.summaryInput.value);
       console.log("Description:", this.descriptionInput.value);
       console.log("Additional Info:", this.additionalInfoInput.value);
-      e.preventDefault();
+      this.setState({
+        submitStatus: true,
+      })
     }
+    e.preventDefault();
   }
+  
 
     render() {
         return (
           <div className="App">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <TopBar className='Header'>
               <a href="http://www.deque.com" className='HomeLink'>
                 <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
               </a>
             </TopBar>
-            <Workspace className='Col'>
-              <Grid container spacing={0}>
+            <Workspace className='Page'>
+              <Grid container spacing={2}>
                 <Grid item xs={12} md={7}>
                   <h1 className='HeadText'>
                     How Can We Help?
                   </h1>
                   <p className='BodyText'>
                     Complete this form with your product or services questions. <br/>
-                    Our Deque Support team will respond within 1 (one) working day of receiving your contact.
+                    Our Deque Support team will respond within one working day of receiving your contact.
                   </p>
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <p></p>
                 <form onSubmit={this.validate} noValidate>
                   <Select
+                    required
                     label='Request Type'
                     value=''
                     options={[
@@ -101,6 +120,7 @@ export default class SubmitRequest extends Component {
                     className='Select'
                   />
                   <Select
+                    required
                     label='Product'
                     value=''
                     options={[
@@ -110,6 +130,7 @@ export default class SubmitRequest extends Component {
                     onSelect={selected => this.setState({
                       productInput: selected.label
                     })}
+                    className='Select'
                   />
                   <TextField
                     required
@@ -132,7 +153,10 @@ export default class SubmitRequest extends Component {
                     fieldRef={el => this.additionalInfoInput = el}
                     className="MultiLineInput"
                     />
-                  <button className='FormSubmitButton' type="submit" >Submit</button>
+                  {this.submitMessage()}
+                  <button className='FormSubmitButton' type="submit" >
+                    Submit
+                  </button>
                 </form>     
                 </Grid>
               </Grid>

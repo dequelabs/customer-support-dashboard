@@ -1,5 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 const port = 3000;
 
 const fs = require('fs');
@@ -39,5 +43,16 @@ app.get('/request/*/comment', (req, res) => {
         }
     });
 })
+
+app.post('/', (req, res) => {
+    console.log('Got body:', req.body);
+    res.append('Access-Control-Allow-Origin', '*');
+    res.append('Content-Type', 'application/json');
+    res.send('POST request to homepage');
+})
+
+
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

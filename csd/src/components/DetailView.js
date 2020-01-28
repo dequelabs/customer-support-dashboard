@@ -3,7 +3,7 @@ import { TopBar, Workspace, TextField} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
 import '../styles/detailView.css'
-import { get, } from '../services/api';
+import { get, post, } from '../services/api';
 import IssueType from './IssueType';
 
 export default class DetailView extends Component {
@@ -93,6 +93,7 @@ export default class DetailView extends Component {
     }
 
     handleSubmit = e => {
+        e.preventDefault();
         const commentEmpty = !this.commentInput.value.trim();
     
         if (commentEmpty) {
@@ -102,14 +103,14 @@ export default class DetailView extends Component {
           });
         }
         else {
-            console.log("COMMENT VALUE:");
-            console.log(this.commentInput.value);
+            post('', this.commentInput.value);    
         }  
     }
 
     componentDidMount() {
         this.getIssueInfo();
         this.getIssueComments();
+        document.title = "View Request | Deque Systems";
     }
 
     render() {
@@ -140,7 +141,7 @@ export default class DetailView extends Component {
                         <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
                     </a>
                 </TopBar>
-                <Workspace className='DetailPage'>
+                <Workspace className='Page'>
                     <Grid container spacing={0} >
                         <Grid item xs={12} md={8}>
                                 <h1 className='HeadText'>

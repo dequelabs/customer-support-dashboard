@@ -1,120 +1,190 @@
-.OneLineInput {
-    font-size: 18px;
-    height: 28px;
-    width: 320px;
-    border: 3px solid black;
-    border-radius: 6px;
-    padding: 6px 6px 6px 6px;
-    margin: auto;
-  }
-  .OneLineInput:focus-within {
-    border: 3px solid black;
-  }
-  
-  .OneLineInput:hover {
-    border: 3px solid black;
-  }
-  
-  .OneLineInput-invalid {
-    font-size: 18px;
-    height: 28px;
-    width: 320px;
-    border-radius: 6px;
-    padding: 6px 6px 6px 6px;
-    border: 3px solid #d93251;
-  }
-  
-  .OneLineInput-invalid:focus-within {
-    border: 3px solid #d93251;
-  }
-  
-  .OneLineInput-invalid:hover {
-    border: 3px solid #d93251;
-  }
-  
-  .MultiLineInput {
-    font-size: 18px;
-    height: 64px;
-    width: 326px;
-    padding: 6px 0px 6px 6px;
-    border: 3px solid black;
-    border-radius: 6px;
-  }
-  
-  .MultiLineInput:focus-within {
-    border: 3px solid black;
-  }
-  
-  .MultiLineInput:hover {
-    border: 3px solid black;
-  }
-  
-  .MultiLineInput-invalid {
-    font-size: 18px;
-    height: 64px;
-    width: 326px;
-    border-radius: 6px;
-    padding: 6px 0px 6px 6px;
-    border: 3px solid #d93251;
-  }
-  
-  .MultiLineInput-invalid:focus-within {
-    border: 3px solid #d93251;
-  }
-  
-  .MultiLineInput-invalid:hover {
-    border: 3px solid #d93251;
-  }
-  
-  .Select {
-    font-size: 18px;
-    height: 64px;
-    width: 320px;
-    max-width: 700px;
-    border: 3px solid black;
-    border-radius: 6px;
-    padding: 10px 20px;
-    color:green;
-    background-color: hotpink;
-  
-  }
-  
-  .Select:focus-within {
-    border: 3px solid #d93251;
-  }
-  
-  .Select:hover {
-    border: 3px solid #d93251;
-  }
-  
-  .FormSubmitButton {
-    border-radius: 2px;
-    height: 64px;
-    width: 338px;
-    background-color: #0077c8;
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: 600;
-    border: 6px solid #0077c8;
-    transition-duration: 125ms;
-    box-shadow: none;
-  }
-  
-  .FormSubmitButton:focus {
-    background-color: white;
-    color: black;
-    border: 3px solid black;
-    outline: none;
-  }
-  
-  .FormSubmitButton:hover {
-    background-color: white;
-    color: black;
-    border: 3px solid black;
-    outline: none;
-  }
+.dqpl-label {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-weight: normal;
+  color: #1e1e1e;
+  margin-bottom: 4px;
+  cursor: default;
+}
 
-  form {
-    margin: auto;
+.dqpl-error-wrap {
+  min-height: 24px;
+  color: #d93251;
+  text-align: left;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.OneLineInput {
+  font-size: 18px;
+  height: 30px;
+  border: 3px solid black;
+  border-radius: 6px;
+  width: 92%;
+  padding: 1%;
+  margin-right: 2%;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+  
+.OneLineInput:focus-within {
+  border: 3px solid black;
+}
+  
+.OneLineInput:hover {
+  border: 3px solid black;
+}
+  
+.OneLineInput-invalid {
+  font-size: 18px;
+  height: 30px;
+  border-radius: 6px;
+  border: 3px solid #d93251;
+  width: 92%;
+  padding: 1%;
+  margin-right: 2%;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+  
+.OneLineInput-invalid:focus-within {
+  border: 3px solid #d93251;
+}
+  
+.OneLineInput-invalid:hover {
+  border: 3px solid #d93251;
+}
+
+.dqpl-field-wrap {
+  margin-bottom: 0px;
+}
+  
+.MultiLineInput {
+  font-size: 18px;
+  height: 96px;
+  border: 3px solid black;
+  border-radius: 6px;
+  width: 92%;
+  padding: 1%;
+  margin-right: 2%;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+  
+.MultiLineInput:focus-within {
+  border: 3px solid black;
+}
+  
+.MultiLineInput:hover {
+  border: 3px solid black;
+}
+  
+.MultiLineInput-invalid {
+  font-size: 18px;
+  height: 96px;
+  border-radius: 6px;
+  border: 3px solid #d93251;
+  width: 92%;
+  padding: 1%;
+  margin-right: 2%;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+  
+.MultiLineInput-invalid:focus-within {
+  border: 3px solid #d93251;
+}
+  
+.MultiLineInput-invalid:hover {
+  border: 3px solid #d93251;
+}
+  
+.Select {
+  border: 3px solid black;
+  border-radius: 6px;
+  height: 40px !important;
+  width: 96%!important;
+  margin-right: 2%!important;
+  font-size: 18px!important;
+  color: black!important;
+  margin-bottom: 24px !important;
+  margin-top: 0px !important;
+}
+  
+.Select:focus-within {
+  border: 3px solid black;
+}
+  
+.Select:hover {
+  border: 3px solid black;
+}
+
+.dqpl-select [role="listbox"] {
+  top: 37px;
+  width: 96%;
+}
+
+.dqpl-select [role="option"] {
+  font-size: 18px!important;
+  color: #1e1e1e;
+}
+ 
+.FormSubmitButton {
+  border-radius: 2px;
+  height: 46px;
+  background-color: #0077c8;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border: 6px solid #0077c8;
+  transition-duration: 125ms;
+  box-shadow: none;
+  width: 96%;
+  margin-right: 2%;
+}
+  
+.FormSubmitButton:focus {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  outline: none;
+}
+  
+.FormSubmitButton:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  outline: none;
+}
+
+@media screen and (min-width: 961px) {
+  .FormSubmitButton {
+      font-size:calc(13px + .6vw);
   }
+}
+
+@media screen and (max-width: 960px) {
+  .FormSubmitButton {
+      font-size:calc(14px + 1vw);
+  }
+}
+
+.SuccessMessage {
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.FailMessage {
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #d93251;
+}
+
+form {
+  margin: auto;
+  margin-left: 2%;
+}
