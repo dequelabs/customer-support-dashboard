@@ -26,6 +26,6 @@ export default class IssueType extends Component {
             <span>
                 {value}
             </span> 
-        )
+        );
     }
 }

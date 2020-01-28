@@ -22,12 +22,9 @@ export async function post(endpoint, value) {
 
     await fetch(baseEndpoint+endpoint, {
         method: 'POST',
-        headers: {
-            
-        },
-        body: JSON.stringify({
+        body: {
             comment: "hard code test comment",
-        })
+        },
     })
     .then(response => {
         console.log(response)

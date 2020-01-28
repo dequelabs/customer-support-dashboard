@@ -18,6 +18,10 @@
   font-weight: normal;
 }
 
+.dqpl-field-wrap {
+  margin-bottom: 0px;
+}
+
 .OneLineInput {
   font-size: 18px;
   height: 30px;
@@ -58,10 +62,7 @@
   border: 3px solid #d93251;
 }
 
-.dqpl-field-wrap {
-  margin-bottom: 0px;
-}
-  
+
 .MultiLineInput {
   font-size: 18px;
   height: 96px;

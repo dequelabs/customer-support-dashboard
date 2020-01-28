@@ -51,8 +51,4 @@ app.post('/', (req, res) => {
     res.send('POST request to homepage');
 })
 
-
-
-
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

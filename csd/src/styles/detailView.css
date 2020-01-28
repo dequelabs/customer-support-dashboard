@@ -4,7 +4,7 @@
     font-weight: normal;
     color: #1e1e1e;
     margin-bottom: 4px;
-  }
+}
 
 .Details {
     border: 1px solid #1e1e1e;
@@ -87,22 +87,22 @@
     width: 16%;
     min-width: 74px;
     margin-bottom: 10px;
-  }
+}
   
-  .SaveButton:hover {
+.SaveButton:hover {
     background-color: white;
     color: black;
     border: 3px solid black;
     outline: none;
-  }
+}
   
-  .SaveButton:focus {
+.SaveButton:focus {
     background-color: white;
     color: black;
     border: 3px solid black;
     outline: none;
-  }
+}
 
-  form {
-      margin-left: 0;
-  }
+form {
+    margin-left: 0;
+}

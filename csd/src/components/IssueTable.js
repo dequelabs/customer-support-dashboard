@@ -29,7 +29,6 @@ export default class IssueTable extends Component {
     }
 
     render() {
-
         let elements = [];
         let key = 0;
         this.state.issues.forEach(element => {

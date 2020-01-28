@@ -31,20 +31,20 @@ export default class Home extends Component {
                 <Workspace className='Page'>
                     <Grid container spacing={1} >
                         <Grid item xs={12} md={5}>
-                                <h1 className='HeadText'>
-                                    Deque Customer Support
-                                </h1>
-                                <p className='BodyText'>
-                                    Welcome to the Deque Customer support center. Here, you can raise a new customer support request, view the status of your pending requests, or modify submitted requests.
-                                </p>
-                                <p className='BodyText'>
-                                    You can raise a Customer Support Request at the link below
-                                </p>
-                                <p className='ButtonContainer'>
-                                    <a href="/request" className='RequestLink' alt="Link to make new support request">
-                                        Make a Request
-                                    </a>
-                                </p>
+                            <h1 className='HeadText'>
+                                Deque Customer Support
+                            </h1>
+                            <p className='BodyText'>
+                                Welcome to the Deque Customer support center. Here, you can raise a new customer support request, view the status of your pending requests, or modify submitted requests.
+                            </p>
+                            <p className='BodyText'>
+                                You can raise a Customer Support Request at the link below
+                            </p>
+                            <p className='ButtonContainer'>
+                                <a href="/request" className='RequestLink' alt="Link to make new support request">
+                                    Make a Request
+                                </a>
+                            </p>
                         </Grid>
                         <Grid item xs={12} md={7}>
                             <h2 className='SecondHead'>

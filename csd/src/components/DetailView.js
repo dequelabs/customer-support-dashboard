@@ -1,10 +1,10 @@
 import React, { Component }from 'react';
 import { TopBar, Workspace, TextField} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
+import IssueType from './IssueType';
 import '../App.css';
 import '../styles/detailView.css'
 import { get, post, } from '../services/api';
-import IssueType from './IssueType';
 
 export default class DetailView extends Component {
 
@@ -114,7 +114,6 @@ export default class DetailView extends Component {
     }
 
     render() {
-
         //if ticket can't be found, render "not found" page
         if (this.state.issue === null) {
             return(
@@ -131,7 +130,6 @@ export default class DetailView extends Component {
                     </Workspace>
                 </div>
             );
-
         //else, ticket found. render detail page
         } else {
             return (
@@ -157,7 +155,6 @@ export default class DetailView extends Component {
                                         {this.detailBuilder()}
                                     </div>
                                 </div>
-                                
                                 <h2 className='SecondHead'>
                                     Follow Up:
                                 </h2>
@@ -222,7 +219,6 @@ export default class DetailView extends Component {
                 </Workspace>
             </div>
             );
-
         }
     }
 }
