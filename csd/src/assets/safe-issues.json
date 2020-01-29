@@ -1,0 +1,285 @@
+{
+    "_expands": [
+        "participant",
+        "status",
+        "sla",
+        "requestType",
+        "serviceDesk",
+        "attachment",
+        "action",
+        "comment"
+    ],
+    "size": 3,
+    "start": 0,
+    "limit": 50,
+    "isLastPage": true,
+    "_links": {
+        "self": "https://dequecsddev.atlassian.net/rest/servicedeskapi/request",
+        "base": "https://dequecsddev.atlassian.net",
+        "context": ""
+    },
+    "values": [
+        {
+            "_expands": [
+                "participant",
+                "status",
+                "sla",
+                "requestType",
+                "serviceDesk",
+                "attachment",
+                "action",
+                "comment"
+            ],
+            "issueId": "10011",
+            "issueKey": "DC-11",
+            "requestTypeId": "Ask A Question",
+            "serviceDeskId": "1",
+            "createdDate": {
+                "iso8601": "2020-01-23T11:07:45-0500",
+                "jira": "2020-01-23T11:07:45.870-0500",
+                "friendly": "Today 11:07 AM",
+                "epochMillis": 1579795665870
+            },
+            "reporter": {
+                "accountId": "5e0a1b0762aed90daa485bf4",
+                "name": "admin",
+                "key": "admin",
+                "emailAddress": "jonathan.thickens@deque.com",
+                "displayName": "Jonathan Thickens",
+                "active": true,
+                "timeZone": "America/New_York",
+                "_links": {
+                    "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=32&s=32"
+                    },
+                    "self": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4"
+                }
+            },
+            "requestFieldValues": [
+                {
+                    "fieldId": "summary",
+                    "label": "Summary",
+                    "value": "I need help installing axe"
+                },
+                {
+                    "fieldId": "description",
+                    "label": "Description",
+                    "value": "I want to install axe coconut but I cant figure it out. ",
+                    "renderedValue": {
+                        "html": "<p>I want to install axe coconut but I cant figure it out. </p>"
+                    }
+                },
+                {
+                    "fieldId": "additionalInfo",
+                    "label": "Additional Info",
+                    "value": ""
+                },
+                {
+                    "fieldId": "product",
+                    "label": "Product",
+                    "value": "axe"
+                },
+                {
+                    "fieldId": "customfield_10032",
+                    "label": "Component"
+                },
+                {
+                    "fieldId": "attachment",
+                    "label": "Attachment",
+                    "value": []
+                }
+            ],
+            "currentStatus": {
+                "status": "Completed",
+                "statusCategory": "DONE",
+                "statusDate": {
+                    "iso8601": "2020-01-23T11:07:45-0500",
+                    "jira": "2020-01-23T11:07:45.870-0500",
+                    "friendly": "Today 11:07 AM",
+                    "epochMillis": 1579795665870
+                }
+            },
+            "_links": {
+                "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/issue/10011",
+                "web": "https://dequecsddev.atlassian.net/servicedesk/customer/portal/1/DC-11",
+                "self": "https://dequecsddev.atlassian.net/rest/servicedeskapi/request/10011"
+            }
+        },
+        {
+            "_expands": [
+                "participant",
+                "status",
+                "sla",
+                "requestType",
+                "serviceDesk",
+                "attachment",
+                "action",
+                "comment"
+            ],
+            "issueId": "10010",
+            "issueKey": "DC-10",
+            "requestTypeId": "Report A Problem",
+            "serviceDeskId": "1",
+            "createdDate": {
+                "iso8601": "2020-01-23T11:06:05-0500",
+                "jira": "2020-01-23T11:06:05.995-0500",
+                "friendly": "Today 11:06 AM",
+                "epochMillis": 1579795565995
+            },
+            "reporter": {
+                "accountId": "5e0a1b0762aed90daa485bf4",
+                "name": "admin",
+                "key": "admin",
+                "emailAddress": "jonathan.thickens@deque.com",
+                "displayName": "Jonathan Thickens",
+                "active": true,
+                "timeZone": "America/New_York",
+                "_links": {
+                    "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=32&s=32"
+                    },
+                    "self": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4"
+                }
+            },
+            "requestFieldValues": [
+                {
+                    "fieldId": "summary",
+                    "label": "Summary",
+                    "value": "Issue with detail page"
+                },
+                {
+                    "fieldId": "description",
+                    "label": "Symptom",
+                    "value": "I found an issue with the detail page. The bug is causing me problems. Here is how you replicate it: 1...",
+                    "renderedValue": {
+                        "html": "<p>I found an issue with the detail page. The bug is causing me problems. Here is how you replicate it: 1...</p>"
+                    }
+                },
+                {
+                    "fieldId": "additionalInfo",
+                    "label": "Additional Info",
+                    "value": ""
+                },
+                {
+                    "fieldId": "product",
+                    "label": "Product",
+                    "value": "Customer Service Desk"
+                },
+                {
+                    "fieldId": "attachment",
+                    "label": "Attachment",
+                    "value": []
+                }
+            ],
+            "currentStatus": {
+                "status": "Work in progress",
+                "statusCategory": "INDETERMINATE",
+                "statusDate": {
+                    "iso8601": "2020-01-23T11:06:05-0500",
+                    "jira": "2020-01-23T11:06:05.995-0500",
+                    "friendly": "Today 11:06 AM",
+                    "epochMillis": 1579795565995
+                }
+            },
+            "_links": {
+                "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/issue/10010",
+                "web": "https://dequecsddev.atlassian.net/servicedesk/customer/portal/1/DC-10",
+                "self": "https://dequecsddev.atlassian.net/rest/servicedeskapi/request/10010"
+            }
+        },
+        {
+            "_expands": [
+                "participant",
+                "status",
+                "sla",
+                "requestType",
+                "serviceDesk",
+                "attachment",
+                "action",
+                "comment"
+            ],
+            "issueId": "10009",
+            "issueKey": "DC-9",
+            "requestTypeId": "Request A Feature",
+            "serviceDeskId": "1",
+            "createdDate": {
+                "iso8601": "2020-01-23T11:00:40-0500",
+                "jira": "2020-01-23T11:00:40.683-0500",
+                "friendly": "Today 11:00 AM",
+                "epochMillis": 1579795240683
+            },
+            "reporter": {
+                "accountId": "5e0a1b0762aed90daa485bf4",
+                "name": "admin",
+                "key": "admin",
+                "emailAddress": "jonathan.thickens@deque.com",
+                "displayName": "Jonathan Thickens",
+                "active": true,
+                "timeZone": "America/New_York",
+                "_links": {
+                    "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/0dedafdc6a5c91bcacf938a91ddc3511?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJT-3.png&size=32&s=32"
+                    },
+                    "self": "https://dequecsddev.atlassian.net/rest/api/2/user?accountId=5e0a1b0762aed90daa485bf4"
+                }
+            },
+            "requestFieldValues": [
+                {
+                    "fieldId": "summary",
+                    "label": "Summary",
+                    "value": "Make requests searchable"
+                },
+                {
+                    "fieldId": "description",
+                    "label": "Description",
+                    "value": "I think it would help users of the tool if they could search or filter their requests",
+                    "renderedValue": {
+                        "html": "<p>I think it would help users of the tool if they could search or filter their requests by date or status, etc</p>"
+                    }
+                },
+                {
+                    "fieldId": "additionalInfo",
+                    "label": "Additional Info",
+                    "value": "I think there are lots of good ways to filter, here are some: filter by date, status, or type"
+                },
+                {
+                    "fieldId": "product",
+                    "label": "Product",
+                    "value": "Customer Support Desk"
+                },
+                {
+                    "fieldId": "attachment",
+                    "label": "Attachment",
+                    "value": []
+                }
+            ],
+            "currentStatus": {
+                "status": "Open",
+                "statusCategory": "NEW",
+                "statusDate": {
+                    "iso8601": "2020-01-23T11:00:40-0500",
+                    "jira": "2020-01-23T11:00:40.683-0500",
+                    "friendly": "Today 11:00 AM",
+                    "epochMillis": 1579795240683
+                }
+            },
+            "_links": {
+                "jiraRest": "https://dequecsddev.atlassian.net/rest/api/2/issue/10009",
+                "web": "https://dequecsddev.atlassian.net/servicedesk/customer/portal/1/DC-9",
+                "self": "https://dequecsddev.atlassian.net/rest/servicedeskapi/request/10009"
+            }
+        }
+    ]
+}

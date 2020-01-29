@@ -66,13 +66,25 @@ export default class SubmitRequest extends Component {
 
       this.summaryInput.className = 'OneLineInput';
       this.descriptionInput.className = 'MultiLineInput';
-      console.log("SUBMISSION DETAILS:");
-      console.log("Request Type:", this.state.requestInput);
-      console.log("Product:", this.state.productInput);
-      console.log("Summary:", this.summaryInput.value);
-      console.log("Description:", this.descriptionInput.value);
-      console.log("Additional Info:", this.additionalInfoInput.value);
-      post('', this.summaryInput.value);
+      // console.log("SUBMISSION DETAILS:");
+      // console.log("Request Type:", this.state.requestInput);
+      // console.log("Product:", this.state.productInput);
+      // console.log("Summary:", this.summaryInput.value);
+      // console.log("Description:", this.descriptionInput.value);
+      // console.log("Additional Info:", this.additionalInfoInput.value);
+
+      let requestValues = {
+        type: this.state.requestInput,
+        product: this.state.productInput,
+        summary: this.summaryInput.value,
+        description: this.descriptionInput.value,
+        additional: this.additionalInfoInput.value,
+      }
+
+      post('requests', requestValues);
+
+
+
       this.setState({
         submitStatus: true,
       })
@@ -105,7 +117,6 @@ export default class SubmitRequest extends Component {
                 <p></p>
               <form onSubmit={this.validate} noValidate>
                 <Select
-                  className='dqpl-label-required'
                   required
                   label='Request Type'
                   value=''
@@ -113,7 +124,6 @@ export default class SubmitRequest extends Component {
                     { label: 'Provide Feedback' },
                     { label: 'Ask A Question' },
                     { label: 'Report A Problem' },
-                    { label: 'Report A Severe Problem' },
                     { label: 'Request Training' },
                     { label: 'Request A Feature'},
                     { label: 'Other' }

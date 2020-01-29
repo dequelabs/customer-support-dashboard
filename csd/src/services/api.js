@@ -18,16 +18,17 @@ export async function get(endpoint) {
 
 export async function post(endpoint, value) {
 
-    console.log('post called with value', value);
+    console.log('post called with value:', value);
 
     await fetch(baseEndpoint+endpoint, {
         method: 'POST',
-        body: {
-            comment: "hard code test comment",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
         },
+        body: JSON.stringify(value),
     })
     .then(response => {
         console.log(response)
     })
 }
-

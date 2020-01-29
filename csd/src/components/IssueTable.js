@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import { Link, } from 'cauldron-react';
 import { get } from '../services/api';
-import IssueType from './IssueType'
+//import IssueType from './IssueType'
 import '../App.css';
 import '../styles/IssueTable.css';
 
@@ -29,6 +29,7 @@ export default class IssueTable extends Component {
     }
 
     render() {
+        this.getIssues();
         let elements = [];
         let key = 0;
         this.state.issues.forEach(element => {
@@ -40,7 +41,8 @@ export default class IssueTable extends Component {
                         </Link>
                     </td>
                     <td>{element.currentStatus.status}</td>
-                    <td><IssueType type={element.requestTypeId}/></td>
+                    {/* <td><IssueType type={element.requestTypeId}/></td> */}
+                    <td>{element.requestTypeId}</td>
                     <td>{element.createdDate.friendly}</td>
                     <td>{element.reporter.displayName}</td>
                 </tr>

@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import { TopBar, Workspace, TextField} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
-import IssueType from './IssueType';
+//import IssueType from './IssueType';
 import '../App.css';
 import '../styles/detailView.css'
 import { get, post, } from '../services/api';
@@ -21,6 +21,7 @@ export default class DetailView extends Component {
 
     getIssueInfo() {
         get('request').then((result) => {
+            console.log(result.values);
             result.values.forEach(element => {
                 if(element.issueId === this.state.issueRef) {
                     this.setState({
@@ -93,7 +94,6 @@ export default class DetailView extends Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault();
         const commentEmpty = !this.commentInput.value.trim();
     
         if (commentEmpty) {
@@ -103,7 +103,13 @@ export default class DetailView extends Component {
           });
         }
         else {
-            post('', this.commentInput.value);    
+            let commentDetails = {
+                name:'Jonathan Thickens',
+                date:'Today 2:32 PM',
+                value:this.commentInput.value,
+                requestId:this.state.issueRef
+            }
+            post('comments', commentDetails);    
         }  
     }
 
@@ -114,6 +120,7 @@ export default class DetailView extends Component {
     }
 
     render() {
+
         //if ticket can't be found, render "not found" page
         if (this.state.issue === null) {
             return(
@@ -180,7 +187,8 @@ export default class DetailView extends Component {
                                 <p className='Descriptor Text'>
                                     Request type<br/> 
                                     <span className='Content Text'>
-                                        <IssueType type={this.state.issue.requestTypeId}/>
+                                        {/* <IssueType type={this.state.issue.requestTypeId}/> */}
+                                        {this.state.issue.requestTypeId}
                                     </span>
                                 </p>
                                 <p className='Descriptor Text'>
