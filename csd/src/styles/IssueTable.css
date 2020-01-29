@@ -4,14 +4,17 @@ table {
     width: 100%;
     color: #1e1e1e;
     font-weight: normal;
-    color: #1e1e1e;
     text-align: left;
+    border-collapse: collapse;
 }
 
 th {
-    border-bottom: 2px solid #1e1e1e;
     font-weight: bold;
     text-align: left;
+}
+
+thead {
+    border-bottom: 2px solid #1e1e1e;
 }
 
 td {

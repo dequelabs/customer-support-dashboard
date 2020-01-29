@@ -1,4 +1,5 @@
 .RequestLink {
+    position: relative;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #0077c8;
     color: white;
@@ -38,5 +39,72 @@
 
 .ButtonContainer{
   text-align: center;
+  
 }
+
+::before, ::after {
+  box-sizing: border-box;
+}
+
+.RequestLink:focus::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.RequestLink:focus::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 2px 0px 0px 2px;
+}
+
+.RequestLink:hover::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.RequestLink:hover::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 2px 0px 0px 2px;
+}
+
+
   

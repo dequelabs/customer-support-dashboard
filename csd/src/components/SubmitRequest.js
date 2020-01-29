@@ -105,6 +105,7 @@ export default class SubmitRequest extends Component {
                 <p></p>
               <form onSubmit={this.validate} noValidate>
                 <Select
+                  className='dqpl-label-required'
                   required
                   label='Request Type'
                   value=''
@@ -127,7 +128,16 @@ export default class SubmitRequest extends Component {
                   label='Product'
                   value=''
                   options={[
-                    { label: 'Test Product' },
+                    { label: 'Aget' },
+                    { label: 'Amaze' },
+                    { label: 'Attest Mobile 2.0' },
+                    { label: 'Attest HTML' },
+                    { label: 'aXe' },
+                    { label: 'aXePro' },
+                    { label: 'Deque University' },
+                    { label: 'WorldSpace Assure' },
+                    { label: 'WorldSpace Attest' },
+                    { label: 'WorldSpace Comply' },
                     { label: 'Other' }
                   ]}
                   onSelect={selected => this.setState({

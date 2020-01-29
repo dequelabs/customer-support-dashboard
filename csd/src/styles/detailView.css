@@ -75,6 +75,7 @@
 }
 
 .SaveButton {
+    position: relative;
     border: 3px solid #0077c8;
     outline: none;
     transition-duration: 125ms;
@@ -102,6 +103,67 @@
     border: 3px solid black;
     outline: none;
 }
+
+.SaveButton:focus::after {
+    position: absolute;
+    content: "";
+    display: block;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 0px 2px 2px 0px;
+  }
+  
+  .SaveButton:focus::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 2px 0px 0px 2px;
+  }
+  
+  .SaveButton:hover::after {
+    position: absolute;
+    content: "";
+    display: block;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 0px 2px 2px 0px;
+  }
+  
+  .SaveButton:hover::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 2px 0px 0px 2px;
+  }
+  
 
 form {
     margin-left: 0;

@@ -81,6 +81,7 @@
   
 .MultiLineInput:hover {
   border: 3px solid black;
+
 }
   
 .MultiLineInput-invalid {
@@ -132,8 +133,17 @@
   font-size: 18px!important;
   color: #1e1e1e;
 }
+
+/* .dqpl-option:hover {
+  background-color: coral!important;
+}
+
+.dqpl-option-active {
+  background-color: purple!important;
+} */
  
 .FormSubmitButton {
+  position: relative;
   border-radius: 2px;
   height: 46px;
   background-color: #0077c8;
@@ -188,4 +198,64 @@
 form {
   margin: auto;
   margin-left: 2%;
+}
+
+.FormSubmitButton:focus::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.FormSubmitButton:focus::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 2px 0px 0px 2px;
+}
+
+.FormSubmitButton:hover::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.FormSubmitButton:hover::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  /* opacity: 1; */
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-radius: 2px 0px 0px 2px;
 }
