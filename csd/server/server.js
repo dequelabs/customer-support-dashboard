@@ -127,6 +127,7 @@ app.post('/requests', cors(corsOptions), (req, res) => {
                 status: "Open",
             }
         }];
+        let saveID = newReq[0].issueId;
         fs.readFile('../src/assets/issues.json', "utf8", (err, data) => {
             if (!err) {
                 let existingReq = JSON.parse(data);
@@ -138,9 +139,27 @@ app.post('/requests', cors(corsOptions), (req, res) => {
                         console.log(err);
                     }
                 });
-                res.status(200);
-                res.append('Content-Type', 'application/json');
-                res.send();
+
+                fs.readFile('../src/assets/emptyComment.json', "utf8", (err, data) => {
+                    if (!err) {
+        
+                        fs.writeFile('../src/assets/'+saveID+'-comments.json', data, 'utf8', (err) => {
+                            if (err) {
+                                console.log(err);
+                            }
+                        });
+        
+                        
+        
+                        res.status(200);
+                        res.append('Content-Type', 'application/json');
+                        res.send();
+                    } else {
+                        res.status(500);
+                        res.append('Content-Type', 'application/json');
+                        res.send();
+                    }
+                });
             } else {
                 res.status(500);
                 res.append('Content-Type', 'application/json');
