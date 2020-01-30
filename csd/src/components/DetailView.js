@@ -105,7 +105,7 @@ export default class DetailView extends Component {
         else {
             let commentDetails = {
                 name:'Jonathan Thickens',
-                date:'Today 2:32 PM',
+                date:'Today 10:05 AM',
                 value:this.commentInput.value,
                 requestId:this.state.issueRef
             }

@@ -95,7 +95,7 @@ app.post('/requests', cors(corsOptions), (req, res) => {
             issueKey: 'DC-'+Math.floor((Math.random() * 100) + 11),
             requestTypeId: req.body.type,
             createdDate: {
-                friendly: "Today 5:56 PM",
+                friendly: "Today 10:02 AM",
             },
             reporter: {
                 displayName: "Jonathan Thickens",
