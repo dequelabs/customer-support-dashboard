@@ -2,7 +2,8 @@ const express = require('express');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-
+const fetch = require('node-fetch');
+var JiraClient = require('jira-connector');
 const port = 3000;
 const app = express();
 
@@ -16,18 +17,78 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+
+
+
+
 app.get('/request', (req, res) => {
 
-    fs.readFile('../src/assets/issues/issues.json', "utf8", (err, data) => {
-        if (!err) {
-            res.append('Content-Type', 'application/json');
-            res.send(data);
-        } else {
-            message = 'unsuccessful open of file'
-            res.append('Content-Type', 'application/json');
-            res.send('unsuccessful access attempt');
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
         }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        console.log('Response: ' + response.statusCode);
+        res.send(body);
     });
+
+    // fs.readFile('../src/assets/issues/issues.json', "utf8", (err, data) => {
+    //     if (!err) {
+    //         res.append('Content-Type', 'application/json');
+    //         res.send(data);
+    //     } else {
+    //         message = 'unsuccessful open of file'
+    //         res.append('Content-Type', 'application/json');
+    //         res.send('unsuccessful access attempt');
+    //     }
+    // });
+});
+
+app.get('/issue', async (req, res) => {
+
+
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        console.log('Response: ' + response.statusCode);
+        res.send(body);
+    });
+    //res.send(body.fields.comment.comments[0].body);
+    
+    // var jira = new JiraClient({
+    //     host: 'dequecsddev.atlassian.net',
+    //     basic_auth: {
+    //       email: 'jonathan.thickens@deque.com',
+    //       api_token: 'j0VEP5Ia8BngJnzcIm6pC00B'
+    //     }
+    //   });
+    //   jira.issue.getIssue(
+    //     {
+    //       issueId: '10011'
+    //     },
+    //     function(error, issue) {
+    //         //res.append(issue.fields.summary);
+    //         res.send(issue.fields.comment.comments[0].body);
+    //     }
+    //   );
 });
 
 app.get('/request/*/comment', (req, res) => {

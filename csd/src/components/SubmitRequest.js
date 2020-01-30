@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
+import { Redirect } from "react-router-dom";
 import {post} from '../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
@@ -27,14 +28,13 @@ export default class SubmitRequest extends Component {
   submitMessage() {
     if (this.state.submitStatus === null) {
       return "";
-    } else if (this.state.submitStatus === true) {
-      return (<div className='SuccessMessage'>Thanks, We've recieved your request</div>);
     } else if (this.state.submitStatus === false) {
       return (<div className='FailMessage'>Missing required information - please complete all required fields</div>);
     }
   }
 
   validate = e => {
+    e.preventDefault();
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
 
@@ -66,12 +66,6 @@ export default class SubmitRequest extends Component {
 
       this.summaryInput.className = 'OneLineInput';
       this.descriptionInput.className = 'MultiLineInput';
-      // console.log("SUBMISSION DETAILS:");
-      // console.log("Request Type:", this.state.requestInput);
-      // console.log("Product:", this.state.productInput);
-      // console.log("Summary:", this.summaryInput.value);
-      // console.log("Description:", this.descriptionInput.value);
-      // console.log("Additional Info:", this.additionalInfoInput.value);
 
       let requestValues = {
         type: this.state.requestInput,
@@ -83,13 +77,9 @@ export default class SubmitRequest extends Component {
 
       post('requests', requestValues);
 
-
-
-      this.setState({
-        submitStatus: true,
-      })
+      //return <Route path="/home"> <Home/> </Route>
+      
     }
-    e.preventDefault();
   }
   
 
