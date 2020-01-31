@@ -2,6 +2,7 @@ import React, { Component }from 'react';
 import { Link, } from 'cauldron-react';
 import { get } from '../services/api';
 import IssueType from './IssueType'
+import DateHandler from './DateHandler';
 import '../App.css';
 import '../styles/IssueTable.css';
 
@@ -42,7 +43,7 @@ export default class IssueTable extends Component {
                     </td>
                     <td>{element.currentStatus.status}</td>
                     <td><IssueType type={element.requestTypeId}/></td>
-                    <td>{element.createdDate.friendly}</td>
+                    <td><DateHandler date={element.createdDate.friendly}/></td>
                     <td>{element.reporter.displayName}</td>
                 </tr>
             );

@@ -1,7 +1,8 @@
 import React, { Component }from 'react';
-import { TopBar, Workspace, TextField} from 'cauldron-react';
+import { TopBar, Workspace, TextField, Loader } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueType from './IssueType';
+import DateHandler from './DateHandler';
 import '../App.css';
 import '../styles/detailView.css'
 import { get, post, } from '../services/api';
@@ -20,15 +21,21 @@ export default class DetailView extends Component {
     }
 
     getIssueInfo() {
+        let found = false;
         get('request').then((result) => {
             result.values.forEach(element => {
                 if(element.issueId === this.state.issueRef) {
-                    console.log(element);
+                    found = true;
                     this.setState({
                         issue: element,
                     })
                 } 
             });
+            if(!found) {
+                this.setState({
+                    issue: false,
+                })
+            }
         });
     }
 
@@ -82,7 +89,7 @@ export default class DetailView extends Component {
         this.state.issueComments.forEach(element => {
             comments.push(
                 <p  className='Descriptor Text'key={key++}>
-                    {element.author.displayName} - {element.created.friendly}<br/>
+                    {element.author.displayName} - <DateHandler date={element.created.friendly}/><br/>
                     <span className='Content Text'>
                         {element.body}
                     </span>
@@ -118,8 +125,22 @@ export default class DetailView extends Component {
 
     render() {
 
-        //if ticket can't be found, render "not found" page
+        //if loading render loading page
         if (this.state.issue === null) {
+            return(
+                <div className="App">
+                    <TopBar className='Header'>
+                        <a href="http://www.deque.com" className='HomeLink'>
+                            <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
+                        </a>
+                    </TopBar>
+                    <Workspace>
+                        <Loader label="Loading..." />
+                    </Workspace>
+                </div>
+            );
+        //else, ticket found. render detail page
+        }else if (this.state.issue === false) {
             return(
                 <div className="App">
                     <TopBar className='Header'>
@@ -147,13 +168,13 @@ export default class DetailView extends Component {
                     <Grid container spacing={0} >
                         <Grid item xs={12} md={8}>
                                 <h1 className='HeadText'>
-                                    {/* {this.state.issue.requestFieldValues[0].value} */}
+                                    {this.state.issue.requestFieldValues[1].value}
                                 </h1>
                                 <div className='Details'>
                                     <p className='Content Text'>
                                         <span className='Descriptor Text'>{this.state.issue.reporter.displayName} </span> 
                                         Raised This
-                                        <span className='Descriptor Text'> {this.state.issue.createdDate.friendly}</span>
+                                        <span className='Descriptor Text'> <DateHandler date={this.state.issue.createdDate.friendly}/></span>
                                     </p>
                                     <div >
                                         {this.detailBuilder()}
@@ -196,7 +217,7 @@ export default class DetailView extends Component {
                                 <p className='Descriptor Text'>
                                     Date Created<br/>
                                     <span className='Content Text'>
-                                        {this.state.issue.createdDate.friendly}
+                                        <DateHandler date={this.state.issue.createdDate.friendly}/>
                                     </span>
                                 </p>
                                 {/* <p className='Descriptor Text'>
