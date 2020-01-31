@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
 import { TopBar, Workspace, TextField} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
-//import IssueType from './IssueType';
+import IssueType from './IssueType';
 import '../App.css';
 import '../styles/detailView.css'
 import { get, post, } from '../services/api';
@@ -21,9 +21,9 @@ export default class DetailView extends Component {
 
     getIssueInfo() {
         get('request').then((result) => {
-            console.log(result.values);
             result.values.forEach(element => {
                 if(element.issueId === this.state.issueRef) {
+                    console.log(element);
                     this.setState({
                         issue: element,
                     })
@@ -43,33 +43,32 @@ export default class DetailView extends Component {
     detailBuilder() {
         let details = [];
         let key = 0;
-        if(this.state.issue.requestFieldValues[3].value !== '') {
+        if(this.state.issue.requestFieldValues[0].value !== '') {
             details.push(
                 <p className='Descriptor Text' key={key++}>
                     Product <br/>
                     <span className='Content Text'>
-                        {this.state.issue.requestFieldValues[3].value}
-                    </span>
-                </p>
-            );
-        }
-        if(this.state.issue.requestFieldValues[1].value !== '') {
-            details.push(
-                <p className='Descriptor Text' key={key++}>
-                    Description <br/>
-                    <span className='Content Text'>
-                        {this.state.issue.requestFieldValues[1].value}
+                        {this.state.issue.requestFieldValues[0].value.value}
                     </span>
                 </p>
             );
         }
         if(this.state.issue.requestFieldValues[2].value !== '') {
-            console.log()
+            details.push(
+                <p className='Descriptor Text' key={key++}>
+                    Description <br/>
+                    <span className='Content Text'>
+                        {this.state.issue.requestFieldValues[2].value}
+                    </span>
+                </p>
+            );
+        }
+        if(this.state.issue.requestFieldValues[3].value !== '') {
             details.push(
                 <p className='Descriptor Text' key={key++}>
                     Additional Info <br/>
                     <span className='Content Text'>
-                        {this.state.issue.requestFieldValues[2].value}
+                        {this.state.issue.requestFieldValues[3].value}
                     </span>
                 </p>
             );
@@ -104,8 +103,6 @@ export default class DetailView extends Component {
         }
         else {
             let commentDetails = {
-                name:'Jonathan Thickens',
-                date:'Today 10:05 AM',
                 value:this.commentInput.value,
                 requestId:this.state.issueRef
             }
@@ -150,7 +147,7 @@ export default class DetailView extends Component {
                     <Grid container spacing={0} >
                         <Grid item xs={12} md={8}>
                                 <h1 className='HeadText'>
-                                    {this.state.issue.requestFieldValues[0].value}
+                                    {/* {this.state.issue.requestFieldValues[0].value} */}
                                 </h1>
                                 <div className='Details'>
                                     <p className='Content Text'>
@@ -187,8 +184,7 @@ export default class DetailView extends Component {
                                 <p className='Descriptor Text'>
                                     Request type<br/> 
                                     <span className='Content Text'>
-                                        {/* <IssueType type={this.state.issue.requestTypeId}/> */}
-                                        {this.state.issue.requestTypeId}
+                                        <IssueType type={this.state.issue.requestTypeId}/>
                                     </span>
                                 </p>
                                 <p className='Descriptor Text'>
@@ -199,8 +195,8 @@ export default class DetailView extends Component {
                                 </p>
                                 <p className='Descriptor Text'>
                                     Date Created<br/>
-                                    <span className='Content Text'>{
-                                    this.state.issue.createdDate.friendly}
+                                    <span className='Content Text'>
+                                        {this.state.issue.createdDate.friendly}
                                     </span>
                                 </p>
                                 {/* <p className='Descriptor Text'>

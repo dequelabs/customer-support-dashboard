@@ -1,6 +1,5 @@
 import React, { Component }from 'react';
 import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
-import { Redirect } from "react-router-dom";
 import {post} from '../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../App.css';

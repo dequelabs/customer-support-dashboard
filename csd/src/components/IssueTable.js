@@ -37,7 +37,7 @@ export default class IssueTable extends Component {
                 <tr key={++key}>
                     <td>
                         <Link href={'/detail/'+element.issueId}>
-                            {element.requestFieldValues[0].value}
+                            {element.requestFieldValues[1].value}
                         </Link>
                     </td>
                     <td>{element.currentStatus.status}</td>
