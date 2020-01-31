@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Link, } from 'cauldron-react';
+import { Link, Loader } from 'cauldron-react';
 import { get } from '../services/api';
 import IssueType from './IssueType'
 import DateHandler from './DateHandler';
@@ -49,21 +49,27 @@ export default class IssueTable extends Component {
             );
         });
         
-        return (
-            <table>
-                <thead>
-                <tr className='TableHead '>
-                    <th scope="col">Summary</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Requester</th>
-                </tr>
-                </thead>
-                <tbody className='TableBody'>
-                    {elements}
-                </tbody>
-            </table>
-        );
+        if(this.state.issues.length === 0) {
+            return (
+                <Loader label="Loading..." />
+            );
+        } else {
+            return (
+                <table>
+                    <thead>
+                    <tr className='TableHead '>
+                        <th scope="col">Summary</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Requester</th>
+                    </tr>
+                    </thead>
+                    <tbody className='TableBody'>
+                        {elements}
+                    </tbody>
+                </table>
+            );
+        }
     }
 }

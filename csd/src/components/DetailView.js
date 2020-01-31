@@ -220,7 +220,7 @@ export default class DetailView extends Component {
                                         <DateHandler date={this.state.issue.createdDate.friendly}/>
                                     </span>
                                 </p>
-                                {/* <p className='Descriptor Text'>
+                                <p className='Descriptor Text'>
                                     Shared With<br/>
                                         <span className='Content Text'>
                                             {this.state.issue.reporter.displayName}
@@ -231,7 +231,7 @@ export default class DetailView extends Component {
                                     <span className='Content Text'>
                                         Subscribed
                                     </span>
-                                </p> */}
+                                </p>
                                 <p className='Descriptor Text'>
                                     Issue Key<br/> 
                                     <span className='Content Text'>

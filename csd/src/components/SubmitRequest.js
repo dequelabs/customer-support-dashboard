@@ -1,4 +1,5 @@
 import React, { Component }from 'react';
+import {Redirect} from 'react-router-dom';
 import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
 import {post, get} from '../services/api'
 import Grid from '@material-ui/core/Grid';
@@ -19,15 +20,26 @@ export default class SubmitRequest extends Component {
       submitStatus: null,
       requestTypes: [],
       products: [],
+      shouldRedirect: false,
     }
   }
 
   componentDidMount() {
     document.title = "Submit Request | Deque Systems";
-    this.buildOptions();
+    this.buildSelectOptions();
   }
 
-  buildOptions() {
+  handleRedirect() {
+    if (this.state.shouldRedirect) {
+      return(
+        <Redirect to="/home/success"/>
+      );
+    } else {
+      return <span/>
+    }
+  }
+
+  buildSelectOptions() {
     let productNames = [];
     let requestTypeNames = [];
     get('requesttype').then((result) => {
@@ -56,18 +68,15 @@ export default class SubmitRequest extends Component {
     }
   }
 
-  validate = e => {
-    e.preventDefault();
+  validate() {
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
 
     if (summaryEmpty || descriptionEmpty) {
-      e.preventDefault();
       this.setState({
         submitStatus: false,
       })
     }
-
     this.setState({
       summaryError: summaryEmpty ? 'Please complete this required field.' : null,
       descriptionError: descriptionEmpty ? 'Please complete this required field.' : null,
@@ -86,7 +95,6 @@ export default class SubmitRequest extends Component {
       this.summaryInput.className = 'OneLineInput';
       this.descriptionInput.className = 'MultiLineInput-invalid';
     } else {
-
       this.summaryInput.className = 'OneLineInput';
       this.descriptionInput.className = 'MultiLineInput';
 
@@ -97,8 +105,10 @@ export default class SubmitRequest extends Component {
         description: this.descriptionInput.value,
         additional: this.additionalInfoInput.value,
       }
-
       post('requests', requestValues);
+      this.setState({
+        shouldRedirect: true
+      });
     }
   }
   
@@ -167,12 +177,24 @@ export default class SubmitRequest extends Component {
                   className="MultiLineInput"
                 />
                 {this.submitMessage()}
-                <button className='FormSubmitButton' type="submit" >
-                  Submit
-                </button>
                 </form>     
+                <Grid container spacing={1}>
+                  <Grid item xs={6}>
+                    <button className='FormSubmitButton' type="submit" onClick={() => this.validate()}>
+                      Submit
+                    </button>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <a href="/home">
+                      <button className='FormSubmitButton' >
+                        Cancel
+                      </button>
+                    </a>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
+            {this.handleRedirect()}
           </Workspace>
         </div>  
       );
