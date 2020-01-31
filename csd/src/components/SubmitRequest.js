@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
-import {post} from '../services/api'
+import {post, get} from '../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../App.css';
 import '../styles/submitRequest.css'
@@ -17,11 +17,35 @@ export default class SubmitRequest extends Component {
       requestInput: '',
       productInput: '',
       submitStatus: null,
+      requestTypes: [],
+      products: [],
     }
   }
 
   componentDidMount() {
     document.title = "Submit Request | Deque Systems";
+    this.buildOptions();
+  }
+
+  buildOptions() {
+    let productNames = [];
+    let requestTypeNames = [];
+    get('requesttype').then((result) => {
+      result.values.forEach(element => {
+        if(element.name !== 'Email request') {
+          requestTypeNames.push({ label: element.name });
+        }
+      });
+    });
+    get('requesttypefield').then((result) => {
+      result.requestTypeFields[0].validValues.forEach(element => {
+        productNames.push({ label: element.label });
+      });
+    });
+    this.setState({
+      requestTypes: requestTypeNames,
+      products: productNames
+    })
   }
 
   submitMessage() {
@@ -75,13 +99,9 @@ export default class SubmitRequest extends Component {
       }
 
       post('requests', requestValues);
-
-      //return <Route path="/home"> <Home/> </Route>
-      
     }
   }
   
-
   render() {
       return (
         <div className="App">
@@ -109,14 +129,7 @@ export default class SubmitRequest extends Component {
                   required
                   label='Request Type'
                   value=''
-                  options={[
-                    { label: 'Provide Feedback' },
-                    { label: 'Ask A Question' },
-                    { label: 'Report A Problem' },
-                    { label: 'Request Training' },
-                    { label: 'Request A Feature'},
-                    { label: 'Other' }
-                  ]}
+                  options={this.state.requestTypes}
                   onSelect={selected => this.setState({
                     requestInput: selected.label
                   })}
@@ -126,19 +139,7 @@ export default class SubmitRequest extends Component {
                   required
                   label='Product'
                   value=''
-                  options={[
-                    { label: 'Aget' },
-                    { label: 'Amaze' },
-                    { label: 'Attest Mobile 2.0' },
-                    { label: 'Attest HTML' },
-                    { label: 'aXe' },
-                    { label: 'aXePro' },
-                    { label: 'Deque University' },
-                    { label: 'WorldSpace Assure' },
-                    { label: 'WorldSpace Attest' },
-                    { label: 'WorldSpace Comply' },
-                    { label: 'Other' }
-                  ]}
+                  options={this.state.products}
                   onSelect={selected => this.setState({
                     productInput: selected.label
                   })}
@@ -177,6 +178,3 @@ export default class SubmitRequest extends Component {
       );
     }
 }
-
-
-

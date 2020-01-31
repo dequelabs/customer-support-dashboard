@@ -56,9 +56,47 @@ app.get('/request/*/comment', (req, res) => {
     });
 });
 
-app.post('/comments', cors(corsOptions), (req, res) => {
+app.get('/requesttypefield', (req, res) => {
 
-    console.log(req.body);
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/requesttype/10006/field',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json',
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+
+app.get('/requesttype', (req, res) => {
+
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/requesttype',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json',
+            'X-ExperimentalApi': 'opt-in',
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+app.post('/comments', cors(corsOptions), (req, res) => {
 
     var request = require('request');
 
@@ -100,12 +138,16 @@ app.post('/requests', cors(corsOptions), (req, res) => {
         value = '10009';
     }else if(type === 'Provide Feedback') {
         value = '10012';
-    }else if(type === 'Other') {
+    }else if(type === 'Other' || type === '') {
         value = '10011';
     }else if(type === 'Ask A Question') {
         value = '10010';
     } else {
         value = type;
+    }
+
+    if (req.body.product === '') {
+        req.body.product = 'Other';
     }
 
     var bodyData = {
@@ -134,10 +176,10 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        console.log('Response: ' + response.statusCode + ' ' + response.statusMessage);
+        if (response.statusCode === 400) {
+            console.log(body);
+        }
     });
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-
