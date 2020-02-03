@@ -30,6 +30,10 @@
     font-weight: bold;
 }
 
+form {
+    margin-left: 0;
+}
+
 @media screen and (min-width: 961px) {
     .Text {
         font-size:calc(10px + .6vw);
@@ -39,6 +43,9 @@
     }
     .SaveButton {
         font-size:calc(10px + .6vw);
+    }
+    .ChangeStatus {
+        font-size:calc(8px + .6vw);
     }
   }
   
@@ -51,6 +58,9 @@
     }
     .SaveButton {
         font-size:calc(11px + 1vw);
+    }
+    .ChangeStatus {
+        font-size:calc(9px + 1vw);
     }
   }
 
@@ -164,6 +174,90 @@
     border-radius: 2px 0px 0px 2px;
   }
   
-form {
-    margin-left: 0;
+.ChangeStatus {
+    position: relative;
+    border: 3px solid #0077c8;
+    outline: none;
+    transition-duration: 125ms;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #0077c8;
+    height: 42px;
+    width: 32%;
 }
+
+.ChangeStatus:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    outline: none;
+}
+  
+.ChangeStatus:focus {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+    outline: none;
+}
+
+.ChangeStatus:focus::after {
+    position: absolute;
+    content: "";
+    display: block;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 0px 2px 2px 0px;
+  }
+  
+  .ChangeStatus:focus::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 2px 0px 0px 2px;
+  }
+  
+  .ChangeStatus:hover::after {
+    position: absolute;
+    content: "";
+    display: block;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 0px 2px 2px 0px;
+  }
+  
+  .ChangeStatus:hover::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    /* opacity: 1; */
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 2px 0px 0px 2px;
+  }

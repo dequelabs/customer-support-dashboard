@@ -6,6 +6,7 @@ import DateHandler from '../Utilities/DateHandler';
 import '../../App.css';
 import '../../styles/detailView.css'
 import { get, post, } from '../../services/api';
+import NotificationStatus from './NotificationStatus';
 
 export default class DetailView extends Component {
 
@@ -44,13 +45,13 @@ export default class DetailView extends Component {
             this.setState({
                 issueComments: result.values,
             })
-         });
+        });
     }
 
     detailBuilder() {
         let details = [];
         let key = 0;
-        if(this.state.issue.requestFieldValues[0].value !== '') {
+        if(this.state.issue.requestFieldValues[0].value) {
             details.push(
                 <p className='Descriptor Text' key={key++}>
                     Product <br/>
@@ -60,7 +61,7 @@ export default class DetailView extends Component {
                 </p>
             );
         }
-        if(this.state.issue.requestFieldValues[2].value !== '') {
+        if(this.state.issue.requestFieldValues[2].value) {
             details.push(
                 <p className='Descriptor Text' key={key++}>
                     Description <br/>
@@ -70,7 +71,7 @@ export default class DetailView extends Component {
                 </p>
             );
         }
-        if(this.state.issue.requestFieldValues[3].value !== '') {
+        if(this.state.issue.requestFieldValues[3].value) {
             details.push(
                 <p className='Descriptor Text' key={key++}>
                     Additional Info <br/>
@@ -226,12 +227,7 @@ export default class DetailView extends Component {
                                             {this.state.issue.reporter.displayName}
                                         </span>
                                     </p>
-                                <p className='Descriptor Text'>
-                                    Notification Status<br/>
-                                    <span className='Content Text'>
-                                        Subscribed
-                                    </span>
-                                </p>
+                                <NotificationStatus issueRef={this.state.issueRef}/>
                                 <p className='Descriptor Text'>
                                     Issue Key<br/> 
                                     <span className='Content Text'>

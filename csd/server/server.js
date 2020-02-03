@@ -93,6 +93,67 @@ app.get('/requesttype', (req, res) => {
     });
 });
 
+app.get('/request/*/notification', (req, res) => {
+
+    let issueID = req.url.split('/')[2]
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+issueID+'/notification',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+app.delete('/request/*/notification', (req, res) => {
+
+    let issueID = req.url.split('/')[2]
+    var request = require('request');
+
+    var options = {
+        method: 'DELETE',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+issueID+'/notification',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+app.put('/request/*/notification', (req, res) => {
+
+    let issueID = req.url.split('/')[2]
+    var request = require('request');
+
+    var options = {
+        method: 'PUT',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+issueID+'/notification',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+
 app.post('/comments', cors(corsOptions), (req, res) => {
 
     var request = require('request');
