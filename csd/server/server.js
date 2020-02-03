@@ -113,6 +113,46 @@ app.get('/request/*/notification', (req, res) => {
     });
 });
 
+app.get('/request/*/participant', (req, res) => {
+
+    let issueID = req.url.split('/')[2]
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+issueID+'/participant',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
+app.get('/request/*/transition', (req, res) => {
+
+    let issueID = req.url.split('/')[2]
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+issueID+'/transition',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+    });
+});
+
 app.delete('/request/*/notification', (req, res) => {
 
     let issueID = req.url.split('/')[2]

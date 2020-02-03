@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { TopBar, Workspace, TextField, Loader } from 'cauldron-react';
+import { TopBar, Workspace, TextField, Loader, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueType from '../Utilities/IssueType';
 import DateHandler from '../Utilities/DateHandler';
@@ -7,6 +7,7 @@ import '../../App.css';
 import '../../styles/detailView.css'
 import { get, post, } from '../../services/api';
 import NotificationStatus from './NotificationStatus';
+import SharedWith from './SharedWith';
 
 export default class DetailView extends Component {
 
@@ -17,7 +18,7 @@ export default class DetailView extends Component {
             commentError: null,
             issueRef: window.location.pathname.split('/')[2],
             issue: null,
-            issueComments: []
+            issueComments: [],
         }  
     }
 
@@ -167,6 +168,7 @@ export default class DetailView extends Component {
                 </TopBar>
                 <Workspace className='Page'>
                     <Grid container spacing={0} >
+
                         <Grid item xs={12} md={8}>
                                 <h1 className='HeadText'>
                                     {this.state.issue.requestFieldValues[1].value}
@@ -221,12 +223,13 @@ export default class DetailView extends Component {
                                         <DateHandler date={this.state.issue.createdDate.friendly}/>
                                     </span>
                                 </p>
-                                <p className='Descriptor Text'>
+                                {/* <p className='Descriptor Text'>
                                     Shared With<br/>
                                         <span className='Content Text'>
                                             {this.state.issue.reporter.displayName}
                                         </span>
-                                    </p>
+                                    </p> */}
+                                <SharedWith issueRef= {this.state.issueRef} reporter={this.state.issue.reporter.displayName}/>
                                 <NotificationStatus issueRef={this.state.issueRef}/>
                                 <p className='Descriptor Text'>
                                     Issue Key<br/> 
