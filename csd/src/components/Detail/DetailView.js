@@ -1,11 +1,11 @@
 import React, { Component }from 'react';
 import { TopBar, Workspace, TextField, Loader } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
-import IssueType from './IssueType';
-import DateHandler from './DateHandler';
-import '../App.css';
-import '../styles/detailView.css'
-import { get, post, } from '../services/api';
+import IssueType from '../Utilities/IssueType';
+import DateHandler from '../Utilities/DateHandler';
+import '../../App.css';
+import '../../styles/detailView.css'
+import { get, post, } from '../../services/api';
 
 export default class DetailView extends Component {
 

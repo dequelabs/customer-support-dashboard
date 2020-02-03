@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
 import './App.css';
-import Home from './components/Home';
-import SubmitRequest from './components/SubmitRequest';
+import Home from './components/Home/Home';
+import SubmitRequest from './components/Request/SubmitRequest';
 import ViewRequests from './components/ViewRequests';
 import LogIn from './components/LogIn'
-import DetailView from './components/DetailView';
+import DetailView from './components/Detail/DetailView';
 
 export default class App extends Component {
   

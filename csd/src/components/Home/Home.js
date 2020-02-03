@@ -2,8 +2,8 @@ import React, { Component }from 'react';
 import { TopBar, Workspace,} from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
-import '../App.css';
-import '../styles/home.css'
+import '../../App.css';
+import '../../styles/home.css'
 
 
 export default class Home extends Component {

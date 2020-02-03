@@ -1,10 +1,10 @@
 import React, { Component }from 'react';
 import { Link, Loader } from 'cauldron-react';
-import { get } from '../services/api';
-import IssueType from './IssueType'
-import DateHandler from './DateHandler';
-import '../App.css';
-import '../styles/IssueTable.css';
+import { get } from '../../services/api';
+import IssueType from '../Utilities/IssueType'
+import DateHandler from '../Utilities/DateHandler';
+import '../../App.css';
+import '../../styles/IssueTable.css';
 
 
 export default class IssueTable extends Component {

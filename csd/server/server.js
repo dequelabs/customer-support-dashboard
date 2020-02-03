@@ -1,16 +1,13 @@
 const express = require('express');
 var cors = require('cors');
 const bodyParser = require('body-parser');
-const fs = require('fs');
-const fetch = require('node-fetch');
-var JiraClient = require('jira-connector');
 const port = 3000;
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.options('/comments', cors());
+//app.options('/comments', cors());
 app.use(cors());
 var corsOptions = {
     origin: '*',
