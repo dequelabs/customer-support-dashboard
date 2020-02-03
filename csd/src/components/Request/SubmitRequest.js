@@ -32,7 +32,7 @@ export default class SubmitRequest extends Component {
   handleRedirect() {
     if (this.state.shouldRedirect) {
       return(
-        <Redirect to="/home/success"/>
+        <Redirect to="/home"/>
       );
     } else {
       return <span/>
@@ -185,11 +185,14 @@ export default class SubmitRequest extends Component {
                     </button>
                   </Grid>
                   <Grid item xs={6}>
-                    <a href="/home">
-                      <button className='FormSubmitButton' >
-                        Cancel
-                      </button>
-                    </a>
+                    <button className='FormSubmitButton' onClick={() => {
+                      this.setState({
+                        shouldRedirect: true
+                      });
+                      this.handleRedirect();
+                    }}>
+                      Cancel
+                    </button>
                   </Grid>
                 </Grid>
               </Grid>

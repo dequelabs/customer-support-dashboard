@@ -29,7 +29,7 @@ export default class Home extends Component {
                     </a>
                 </TopBar>
                 <Workspace className='Page'>
-                    <Grid container spacing={1} >
+                    <Grid container spacing={3} >
                         <Grid item xs={12} md={5}>
                             <h1 className='HeadText'>
                                 Deque Customer Support

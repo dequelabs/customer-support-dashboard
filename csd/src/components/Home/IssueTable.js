@@ -13,7 +13,7 @@ export default class IssueTable extends Component {
         super(props);
     
         this.state = {
-            issues: []
+            issues: null
         }
     }
 
@@ -31,9 +31,20 @@ export default class IssueTable extends Component {
 
     render() {
         this.getIssues();
-        let elements = [];
-        let key = 0;
-        this.state.issues.forEach(element => {
+        if(this.state.issues === null) {
+            return (
+                <Loader label="Loading..." />
+            );
+        } else if (this.state.issues.length === 0) {
+            return (
+                <span className='BodyText'>
+                    No Open Requests
+                </span>
+            );
+        } else {
+            let elements = [];
+            let key = 0;
+            this.state.issues.forEach(element => {
             elements.push(
                 <tr key={++key}>
                     <td>
@@ -48,12 +59,6 @@ export default class IssueTable extends Component {
                 </tr>
             );
         });
-        
-        if(this.state.issues.length === 0) {
-            return (
-                <Loader label="Loading..." />
-            );
-        } else {
             return (
                 <table>
                     <thead>
