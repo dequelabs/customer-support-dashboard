@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import './App.css';
 import Home from './components/Home/Home';
 import SubmitRequest from './components/Request/SubmitRequest';
-import ViewRequests from './components/ViewRequests';
-import LogIn from './components/LogIn'
+import LogIn from './components/Auth/LogIn'
 import DetailView from './components/Detail/DetailView';
 
 export default class App extends Component {
@@ -16,7 +15,6 @@ export default class App extends Component {
         <Switch>
           <Route path="/request"> <SubmitRequest/> </Route>
           <Route path="/detail"> <DetailView/> </Route>
-          <Route path="/view"> <ViewRequests/> </Route>
           <Route path="/home"> <Home/> </Route>
           <Route path="/"> <LogIn/> </Route>
         </Switch>
