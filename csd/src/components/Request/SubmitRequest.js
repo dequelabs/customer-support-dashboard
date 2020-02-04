@@ -45,7 +45,7 @@ export default class SubmitRequest extends Component {
     get('requesttype').then((result) => {
       result.values.forEach(element => {
         if(element.name !== 'Email request') {
-          requestTypeNames.push({ label: element.name });
+          requestTypeNames.push({ label: element.name }); 
         }
       });
     });

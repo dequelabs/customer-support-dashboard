@@ -23,7 +23,7 @@ export default class SharedWith extends Component {
                 });
                 this.setState({
                     sharedWith: shared,
-                })
+                });
             }
         });
     }
@@ -39,7 +39,7 @@ export default class SharedWith extends Component {
                     <span className='Content Text' key={key++}>
                         {element}
                     </span>
-                )
+                );
             });
             return (
                 <p className='Descriptor Text'>
@@ -48,18 +48,7 @@ export default class SharedWith extends Component {
                     {shared}
                 </span>
             </p>
-            ) 
-
-        //     if(this.state.issue.requestFieldValues[0].value) {
-        //     details.push(
-        //         <p className='Descriptor Text' key={key++}>
-        //             Product <br/>
-        //             <span className='Content Text'>
-        //                 {this.state.issue.requestFieldValues[0].value.value}
-        //             </span>
-        //         </p>
-        //     );
-        // }
+            );
         }
     }
 
@@ -68,7 +57,6 @@ export default class SharedWith extends Component {
     }
 
     render() {
-
         return (
             <span>
             <p className='Descriptor Text'>
