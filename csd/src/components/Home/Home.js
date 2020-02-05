@@ -1,34 +1,64 @@
 import React, { Component }from 'react';
-import { TopBar, Workspace,} from 'cauldron-react';
+import { Workspace, Toast, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
+import Header from '../Header';
 import '../../App.css';
 import '../../styles/home.css'
+//import Footer from '../Footer';
 
 
 export default class Home extends Component {
 
     componentDidMount() {
         document.title = "Support | Deque Systems";
+        console.log("submitSuccess Value:", this.state.submitSuccess)
     }
 
     constructor(props) {
         super(props);
 
         this.state = {
-            
+            toast: window.location.pathname.split('/')[2],
+            submitSuccess: props.submitSuccess,
         }
+    }
+
+    successToastHandler() {
+        // if (this.state.toast === 'success') {
+        //     return (
+        //         <Toast
+        //                 show
+        //                 autoHide={5000}
+        //                 type="confirmation"
+        //                 className='SuccessToast'>
+        //                 Your Request Has Been Submitted
+        //         </Toast>
+        //     )
+        // }
     }
 
     render() {
         return (
             <div>
-                <TopBar className='Header'>
-                    <a href="http://www.deque.com" className='HomeLink'>
-                        <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
-                    </a>
-                </TopBar>
+                <Header></Header>
+                
                 <Workspace className='Page'>
+                    {this.successToastHandler()}
+                     <Toast
+                        show={this.state.submitSuccess}
+                        autoHide={5000}
+                        type="confirmation"
+                        >
+                        Your Request Has Been Submitted
+                    </Toast>
+                    <Toast
+                        show={this.state.submitSuccess === false}
+                        autoHide={5000}
+                        type="caution"
+                        >
+                        Request Failed, try again later
+                    </Toast>
                     <Grid container spacing={3} >
                         <Grid item xs={12} md={5}>
                             <h1 className='HeadText'>
@@ -55,7 +85,9 @@ export default class Home extends Component {
                             </div>
                         </Grid>
                     </Grid>
+                    {/* <Footer/> */}
                 </Workspace>
+                
             </div>
         );
     }

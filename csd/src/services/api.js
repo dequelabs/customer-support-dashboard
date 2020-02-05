@@ -17,6 +17,8 @@ export async function get(endpoint) {
 
 export async function post(endpoint, value) {
 
+    let ret = '';
+
     await fetch(baseEndpoint+endpoint, {
         method: 'POST',
         headers: {
@@ -26,8 +28,10 @@ export async function post(endpoint, value) {
         body: JSON.stringify(value),
     })
     .then(response => {
-        console.log(response)
+        ret = response;
     })
+
+    return ret;
 }
 
 export async function deletes(endpoint) {

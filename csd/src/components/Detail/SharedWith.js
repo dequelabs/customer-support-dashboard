@@ -47,6 +47,7 @@ export default class SharedWith extends Component {
                 <span className='Content Text'>
                     {shared}
                 </span>
+                
             </p>
             );
         }
@@ -59,13 +60,16 @@ export default class SharedWith extends Component {
     render() {
         return (
             <span>
-            <p className='Descriptor Text'>
-                Reporter<br/>
-                <span className='Content Text'>
-                    {this.state.reporter}
-                </span>
-            </p>
-            {this.sharedUsers()}
+                <p className='Descriptor Text'>
+                    Reporter<br/>
+                    <span className='Content Text'>
+                        {this.state.reporter}
+                    </span>
+                </p>
+                {this.sharedUsers()}
+                <button className = 'ChangeStatus'>
+                    Add Participant
+                </button>
             </span>
         );
     }

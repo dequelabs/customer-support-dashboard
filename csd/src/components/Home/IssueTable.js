@@ -17,8 +17,8 @@ export default class IssueTable extends Component {
         }
     }
 
-    getIssues() {
-        get('request').then((result) => {
+    async getIssues() {
+        await get('request').then((result) => {
             this.setState({
                 issues: result.values,
             })

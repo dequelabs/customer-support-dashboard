@@ -3,6 +3,7 @@ import { TopBar, Workspace, TextField, Loader, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueType from '../Utilities/IssueType';
 import DateHandler from '../Utilities/DateHandler';
+import Header from '../Header';
 import '../../App.css';
 import '../../styles/detailView.css'
 import { get, post, } from '../../services/api';
@@ -131,11 +132,7 @@ export default class DetailView extends Component {
         if (this.state.issue === null) {
             return(
                 <div className="App">
-                    <TopBar className='Header'>
-                        <a href="http://www.deque.com" className='HomeLink'>
-                            <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
-                        </a>
-                    </TopBar>
+                    <Header></Header>
                     <Workspace>
                         <Loader label="Loading..." />
                     </Workspace>

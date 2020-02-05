@@ -1,10 +1,11 @@
 import React, { Component }from 'react';
 import {Redirect} from 'react-router-dom';
-import {TextField, Select, TopBar, Workspace, } from 'cauldron-react';
+import {TextField, Select, Workspace, } from 'cauldron-react';
 import {post, get} from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../../App.css';
-import '../../styles/submitRequest.css'
+import '../../styles/submitRequest.css';
+import Header from '../Header';
 
 
 export default class SubmitRequest extends Component {
@@ -21,7 +22,12 @@ export default class SubmitRequest extends Component {
       requestTypes: [],
       products: [],
       shouldRedirect: false,
+      submitSuccess: null,
     }
+  }
+
+  sendData() {
+    this.props.parentCallback(this.state.submitSuccess);
   }
 
   componentDidMount() {
@@ -31,11 +37,12 @@ export default class SubmitRequest extends Component {
 
   handleRedirect() {
     if (this.state.shouldRedirect) {
+      this.sendData();
       return(
         <Redirect to="/home"/>
       );
     } else {
-      return <span/>
+      return null;
     }
   }
 
@@ -68,7 +75,7 @@ export default class SubmitRequest extends Component {
     }
   }
 
-  validate() {
+  async validate() {
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
 
@@ -105,10 +112,13 @@ export default class SubmitRequest extends Component {
         description: this.descriptionInput.value,
         additional: this.additionalInfoInput.value,
       }
-      post('requests', requestValues);
-      this.setState({
-        shouldRedirect: true
-      });
+      post('requests', requestValues).then((result) => {
+        this.setState({
+            submitSuccess: result.ok,
+            //submitSuccess: false,
+            shouldRedirect: true,
+        });
+     });
     }
   }
   
@@ -116,11 +126,7 @@ export default class SubmitRequest extends Component {
       return (
         <div className="App">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-          <TopBar className='Header'>
-            <a href="http://www.deque.com" className='HomeLink'>
-              <img src="https://accessibility.deque.com/hubfs/logo-white.svg" width="100" alt="Link to Deque Home" title="Deque"></img>
-            </a>
-          </TopBar>
+          <Header></Header>
           <Workspace className='Page'>
             <Grid container spacing={2}>
               <Grid item xs={12} md={7}>
@@ -136,6 +142,7 @@ export default class SubmitRequest extends Component {
                 <p></p>
               <form onSubmit={this.validate} noValidate>
                 <Select
+                  autoFocus
                   required
                   label='Request Type'
                   value=''
@@ -180,7 +187,10 @@ export default class SubmitRequest extends Component {
                 </form>     
                 <Grid container spacing={1}>
                   <Grid item xs={6}>
-                    <button className='FormSubmitButton' type="submit" onClick={() => this.validate()}>
+                    <button className='FormSubmitButton' type="submit" onClick={() => {
+                      this.validate();
+                      //this.handleRedirect();
+                    }}>
                       Submit
                     </button>
                   </Grid>

@@ -21,16 +21,17 @@ export default class NotificationStatus extends Component {
         }
     }
 
-    changeStatus() {
+    async changeStatus() {
         if (this.state.subscribed) {
-            deletes('request/'+this.state.issueRef+'/notification').then((result) => {
-                console.log(result)
+            await deletes('request/'+this.state.issueRef+'/notification').then((result) => {
+                //console.log(result)
             });
         } else {
-            put('request/'+this.state.issueRef+'/notification').then((result) => {
-                console.log(result)
+            await put('request/'+this.state.issueRef+'/notification').then((result) => {
+                //console.log(result)
             });
         }
+        this.getStatus();
     }
 
     getStatus() {
@@ -40,9 +41,12 @@ export default class NotificationStatus extends Component {
             })
         });
     }
+    componentDidMount() {
+        this.getStatus();
+    }
 
     render() {
-        this.getStatus();
+        
         return (
             <p className='Descriptor Text'>
                 {this.statusName()}<br/>

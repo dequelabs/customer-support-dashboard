@@ -7,7 +7,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//app.options('/comments', cors());
 app.use(cors());
 var corsOptions = {
     origin: '*',
@@ -30,6 +29,9 @@ app.get('/request', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Requests Response: ' + response.statusCode + ' ' + response.statusMessage
+        );
     });
 });
 
@@ -50,6 +52,9 @@ app.get('/request/*/comment', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Comments Response: ' + response.statusCode + ' ' + response.statusMessage
+        );
     });
 });
 
@@ -69,6 +74,9 @@ app.get('/requesttypefield', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Products Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -90,6 +98,9 @@ app.get('/requesttype', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Request Types Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -110,6 +121,9 @@ app.get('/request/*/notification', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Notification Status Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -130,6 +144,9 @@ app.get('/request/*/participant', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Shared Users Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -150,6 +167,9 @@ app.get('/request/*/transition', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Get Transitions Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -169,7 +189,10 @@ app.delete('/request/*/notification', (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        res.send(body);
+        res.send(response.statusCode);
+        console.log(
+            'Notifications Unsubscribe Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -190,6 +213,9 @@ app.put('/request/*/notification', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
+        console.log(
+            'Notifications Subscribe Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
     });
 });
 
@@ -217,8 +243,9 @@ app.post('/comments', cors(corsOptions), (req, res) => {
     request(options, function (error, response, body) {
        if (error) throw new Error(error);
        console.log(
-          'Response: ' + response.statusCode + ' ' + response.statusMessage
-       );
+        'Post Comment Response: ' + response.statusCode + ' ' + response.statusMessage
+        );
+        res.send(body);
     });
 });
 
@@ -274,9 +301,10 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        if (response.statusCode === 400) {
-            console.log(body);
-        }
+        console.log(
+            'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
+        );
+        res.send(response.statusCode);
     });
 });
 

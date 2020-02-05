@@ -79,3 +79,20 @@
     font-size: calc(16px + 3.5vw);
   }
 }
+
+.dqpl-toast.dqpl-toast-success{
+  padding-top: 20px;
+  text-align: center;
+}
+
+.dqpl-toast.dqpl-toast-warning{
+  padding-top: 20px;
+  text-align: center;
+}
+
+footer {
+  width:100%;
+  background-color: #003349;
+  color: #cceaff;
+  font-size: 40px;
+}
