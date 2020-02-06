@@ -1,41 +1,25 @@
 import React, { Component }from 'react';
-import { Workspace, Toast, } from 'cauldron-react';
+import { Layout, Main, Toast, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
 import Header from '../Header';
 import '../../App.css';
 import '../../styles/home.css'
-//import Footer from '../Footer';
+import Footer from '../Footer';
 
 
 export default class Home extends Component {
 
     componentDidMount() {
         document.title = "Support | Deque Systems";
-        console.log("submitSuccess Value:", this.state.submitSuccess)
     }
 
     constructor(props) {
         super(props);
 
         this.state = {
-            toast: window.location.pathname.split('/')[2],
             submitSuccess: props.submitSuccess,
         }
-    }
-
-    successToastHandler() {
-        // if (this.state.toast === 'success') {
-        //     return (
-        //         <Toast
-        //                 show
-        //                 autoHide={5000}
-        //                 type="confirmation"
-        //                 className='SuccessToast'>
-        //                 Your Request Has Been Submitted
-        //         </Toast>
-        //     )
-        // }
     }
 
     render() {
@@ -43,8 +27,8 @@ export default class Home extends Component {
             <div>
                 <Header></Header>
                 
-                <Workspace className='Page'>
-                    {this.successToastHandler()}
+                <Layout>
+                    <Main className='Page'>
                      <Toast
                         show={this.state.submitSuccess}
                         autoHide={5000}
@@ -85,9 +69,9 @@ export default class Home extends Component {
                             </div>
                         </Grid>
                     </Grid>
-                    {/* <Footer/> */}
-                </Workspace>
-                
+                    </Main>
+                    <Footer/>
+                </Layout>
             </div>
         );
     }

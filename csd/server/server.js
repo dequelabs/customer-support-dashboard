@@ -13,6 +13,7 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+//get list of requests
 app.get('/request', (req, res) => {
 
     var request = require('request');
@@ -35,6 +36,7 @@ app.get('/request', (req, res) => {
     });
 });
 
+//get request's comments
 app.get('/request/*/comment', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -58,6 +60,7 @@ app.get('/request/*/comment', (req, res) => {
     });
 });
 
+//get products for product field in request
 app.get('/requesttypefield', (req, res) => {
 
     var request = require('request');
@@ -80,7 +83,7 @@ app.get('/requesttypefield', (req, res) => {
     });
 });
 
-
+//get request types
 app.get('/requesttype', (req, res) => {
 
     var request = require('request');
@@ -104,6 +107,7 @@ app.get('/requesttype', (req, res) => {
     });
 });
 
+//get request notification status (subscription status)
 app.get('/request/*/notification', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -127,6 +131,30 @@ app.get('/request/*/notification', (req, res) => {
     });
 });
 
+//get all organization members
+app.get('/organization/*/user', (req, res) => {
+
+    var request = require('request');
+
+    var options = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/organization/1/user',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        res.send(body);
+        console.log(
+            'Get User List Response: ' + response.statusCode + ' ' + response.statusMessage
+         );
+    });
+});
+
+//get request participants (shared with)
 app.get('/request/*/participant', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -150,6 +178,7 @@ app.get('/request/*/participant', (req, res) => {
     });
 });
 
+//get transitions available to user for request (not yet supported)
 app.get('/request/*/transition', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -173,6 +202,7 @@ app.get('/request/*/transition', (req, res) => {
     });
 });
 
+//unsubscribe from request notifications
 app.delete('/request/*/notification', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -196,6 +226,7 @@ app.delete('/request/*/notification', (req, res) => {
     });
 });
 
+//subscribe to request notificatios
 app.put('/request/*/notification', (req, res) => {
 
     let issueID = req.url.split('/')[2]
@@ -219,7 +250,55 @@ app.put('/request/*/notification', (req, res) => {
     });
 });
 
+//add all users to request
+app.post('/organizationuser', (req, res) => {
+    
+    var request = require('request');
 
+    let accountIds=[];
+
+    var getOptions = {
+        method: 'GET',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/organization/1/user',
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json'
+        }
+    };
+
+    request(getOptions, function (error, response, body) {
+        if (error) throw new Error(error);
+        let jsonResponse = JSON.parse(body);
+        jsonResponse.values.forEach(element => {
+            if (element.accountId.startsWith('qm:')) {
+                accountIds.push(element.accountId);
+            }
+        });    
+        console.log(accountIds);
+        var bodyData = {
+            accountIds: ['qm:9eefea27-59e0-4ac7-863f-491db58cb02a:cbc32416-12a3-4c3b-9940-1c863be212ce',],
+        };
+        var newOptions = {
+            method: 'POST',
+            url: 'https://dequecsddev.net/rest/servicedeskapi/request/10103/participant',
+            auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(bodyData),
+        };
+        request(newOptions, function (error, response, body) {
+            if (error) throw new Error(error);
+            res.send(body);
+            console.log(body);
+            console.log(
+                'add all org membersss response: ' + response.statusCode + ' ' + response.statusMessage
+          );
+        });
+    });
+});
+
+//create new comment
 app.post('/comments', cors(corsOptions), (req, res) => {
 
     var request = require('request');
@@ -249,6 +328,7 @@ app.post('/comments', cors(corsOptions), (req, res) => {
     });
 });
 
+//create new request
 app.post('/requests', cors(corsOptions), (req, res) => {
     
     var request = require('request');

@@ -52,6 +52,7 @@ export default class IssueTable extends Component {
                             {element.requestFieldValues[1].value}
                         </Link>
                     </td>
+                    <td>{element.issueKey}</td>
                     <td>{element.currentStatus.status}</td>
                     <td><IssueType type={element.requestTypeId}/></td>
                     <td><DateHandler date={element.createdDate.friendly}/></td>
@@ -64,6 +65,7 @@ export default class IssueTable extends Component {
                     <thead>
                     <tr className='TableHead '>
                         <th scope="col">Summary</th>
+                        <th scope="col">Key</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
                         <th scope="col">Date</th>

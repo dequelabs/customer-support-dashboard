@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import '../../styles/detailView.css';
-import { get, } from '../../services/api';
+import { get, post} from '../../services/api';
 
 export default class SharedWith extends Component {
 
@@ -9,52 +9,41 @@ export default class SharedWith extends Component {
     
         this.state = {
             reporter: this.props.reporter,
-            sharedWith: [],
             issueRef: this.props.issueRef,
+            shared: false,
         }
     }
 
-    getSharedUsers() {
+    isShared() {
         get('request/'+this.state.issueRef+'/participant').then((result) => {
-            if(result.values.length > 0) {
-                let shared = [];
-                result.values.forEach(element => {
-                    shared.push(element.displayName);
-                });
-                this.setState({
-                    sharedWith: shared,
-                });
+            if(result.values.length === 0) {
+                console.log('isnt shared');
+                this.setState({shared:false})
+            } else {
+                console.log('is shared');
+                this.setState({shared:true})
             }
         });
     }
 
-    sharedUsers() {
-        if(this.state.sharedWith.length === 0) {
-            return <span/>
-        } else {
-            let shared = [];
-            let key = 0;
-            this.state.sharedWith.forEach(element => {
-                shared.push(
-                    <span className='Content Text' key={key++}>
-                        {element}
-                    </span>
-                );
-            });
-            return (
-                <p className='Descriptor Text'>
-                Shared With<br/>
-                <span className='Content Text'>
-                    {shared}
-                </span>
-                
-            </p>
-            );
-        }
+    componentDidMount() {
+        this.isShared();
     }
 
-    componentDidMount() {
-        this.getSharedUsers();
+    handleCheckboxChange = changeEvent => {
+        //const { name } = changeEvent.target;
+
+        if(this.state.shared) {
+            //delete shares
+            this.setState({
+                shared: false
+            })
+        } else {
+            post('organizationuser')
+            this.setState({
+                shared: true
+            })
+        }
     }
 
     render() {
@@ -66,10 +55,23 @@ export default class SharedWith extends Component {
                         {this.state.reporter}
                     </span>
                 </p>
-                {this.sharedUsers()}
-                <button className = 'ChangeStatus'>
-                    Add Participant
-                </button>
+                {/* <Checkbox
+                    id="Shared With Organization"
+                    label="Shared With Organization"
+                    name="Shared With Organization"
+                    value="1"
+                    checked={this.state.shared}
+                    checkboxRef={() => this.checkBoxHandler()}
+                /> */}
+                <label>
+                    <input type='checkbox'
+                        checked={this.state.shared}
+                        onChange={this.handleCheckboxChange}
+                    />
+                    Is Shared
+                </label>
+                
+                
             </span>
         );
     }
