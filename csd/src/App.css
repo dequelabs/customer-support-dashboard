@@ -12,6 +12,13 @@
   margin-bottom: 20px;
   min-height: 95%;
 }
+body:not(.dqpl-no-sidebar) .dqpl-layout {
+  left: 0px;
+}
+
+body:not(.dqpl-no-sidebar) .dqpl-toast {
+  left: 0px;
+}
 
 .Header {
   background-color: #003349;

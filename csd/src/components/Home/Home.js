@@ -26,7 +26,6 @@ export default class Home extends Component {
         return (
             <div>
                 <Header></Header>
-                
                 <Layout>
                     <Main className='Page'>
                      <Toast
@@ -41,7 +40,7 @@ export default class Home extends Component {
                         autoHide={5000}
                         type="caution"
                         >
-                        Request Failed, try again later
+                        Create Request Failed, Try Again Later
                     </Toast>
                     <Grid container spacing={3} >
                         <Grid item xs={12} md={5}>
