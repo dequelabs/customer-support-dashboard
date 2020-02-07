@@ -64,6 +64,14 @@ form {
     }
   }
 
+.CommentList {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
 .CommentInput {
     border: 1px solid #1e1e1e;
     width: 90%;

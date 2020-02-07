@@ -5,7 +5,7 @@ import IssueTable from './IssueTable';
 import Header from '../Header';
 import '../../App.css';
 import '../../styles/home.css'
-import Footer from '../Footer';
+// import Footer from '../Footer';
 
 
 export default class Home extends Component {
@@ -54,7 +54,7 @@ export default class Home extends Component {
                                 You can raise a Customer Support Request at the link below
                             </p>
                             <p className='ButtonContainer'>
-                                <a href="/request" className='RequestLink' alt="Link to make new support request">
+                                <a href="/request" id='requestbtn' className='RequestLink' alt="Link to make new support request">
                                     Make a Request
                                 </a>
                             </p>
@@ -69,7 +69,7 @@ export default class Home extends Component {
                         </Grid>
                     </Grid>
                     </Main>
-                    <Footer/>
+                    {/* <Footer/> */}
                 </Layout>
             </div>
         );

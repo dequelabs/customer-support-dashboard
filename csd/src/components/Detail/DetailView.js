@@ -91,15 +91,16 @@ export default class DetailView extends Component {
         let key = 0;
         this.state.issueComments.forEach(element => {
             comments.push(
-                <p  className='Descriptor Text'key={key++}>
+                <li  className='Descriptor Text'key={key++}>
                     {element.author.displayName} - <DateHandler date={element.created.friendly}/><br/>
                     <span className='Content Text'>
                         {element.body}
                     </span>
-                </p>
+                </li>
             );
         });
-        return comments;
+        return <ul className='CommentList' >{comments}</ul>;
+        //return comments;
     }
 
     handleSubmit = e => {
@@ -196,8 +197,9 @@ export default class DetailView extends Component {
                                         className='CommentInput'
                                         error={this.state.commentError}
                                         fieldRef={el => this.commentInput = el}
+                                        id='CommentField'
                                     />
-                                    <button type='submit' className='SaveButton Text'>Save</button>
+                                    <button type='submit' id='SubmitCommentBtn' className='SaveButton Text'>Save</button>
                                 </form>
                         </Grid>
                         <Grid item xs={12} md={4}>

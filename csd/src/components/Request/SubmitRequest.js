@@ -151,6 +151,7 @@ export default class SubmitRequest extends Component {
                     requestInput: selected.label
                   })}
                   className='Select'
+                  id="RequestTypeSelect"
                 />
                 <Select
                   required
@@ -161,6 +162,7 @@ export default class SubmitRequest extends Component {
                     productInput: selected.label
                   })}
                   className='Select'
+                  id="ProductSelect"
                 />
                 <TextField
                   required
@@ -168,6 +170,7 @@ export default class SubmitRequest extends Component {
                   error={this.state.summaryError}
                   fieldRef={el => this.summaryInput = el}
                   className="OneLineInput"
+                  id="SummaryInput"
                 />
                 <TextField 
                   required
@@ -176,18 +179,20 @@ export default class SubmitRequest extends Component {
                   error={this.state.descriptionError}
                   fieldRef={el => this.descriptionInput = el}
                   className="MultiLineInput"
+                  id="DescriptionInput"
                 />
                 <TextField 
                   multiline 
                   label="Additional Info" 
                   fieldRef={el => this.additionalInfoInput = el}
                   className="MultiLineInput"
+                  id="AdtlInfoInput"
                 />
                 {this.submitMessage()}
                 </form>     
                 <Grid container spacing={1}>
                   <Grid item xs={6}>
-                    <button className='FormSubmitButton' type="submit" onClick={() => {
+                    <button id="SubmitButton" className='FormSubmitButton' type="submit" onClick={() => {
                       this.validate();
                       //this.handleRedirect();
                     }}>
@@ -195,7 +200,7 @@ export default class SubmitRequest extends Component {
                     </button>
                   </Grid>
                   <Grid item xs={6}>
-                    <button className='FormSubmitButton' onClick={() => {
+                    <button id="CancelButton" className='FormSubmitButton' onClick={() => {
                       this.setState({
                         shouldRedirect: true
                       });
