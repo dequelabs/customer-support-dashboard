@@ -7,10 +7,10 @@
 }
 
 .Details {
-    border: 1px solid #1e1e1e;
+    border-top: 2px solid #1e1e1e;
+    border-bottom: 2px solid #1e1e1e;
     width: 90%;
     margin-right: 3%;
-    padding-left: 2%;
     padding-right: 2%;
 }
 

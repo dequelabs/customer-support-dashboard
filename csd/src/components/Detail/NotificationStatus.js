@@ -15,9 +15,9 @@ export default class NotificationStatus extends Component {
 
     statusName() {
         if (this.state.subscribed) {
-            return <span>Notifications On</span>
+            return "Notifications On"
         } else {
-            return <span>Notifications Off</span>
+            return "Notifications Off"
         }
     }
 
@@ -49,7 +49,7 @@ export default class NotificationStatus extends Component {
         
         return (
             <p className='Descriptor Text'>
-                {this.statusName()}<br/>
+                <span aria-live="polite" aria-atomic="true" aria-relevant="all">{this.statusName()}</span><br/>
                 <button className = 'ChangeStatus' onClick={() => this.changeStatus()}>
                     Change Status
                 </button>

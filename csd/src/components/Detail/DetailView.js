@@ -171,6 +171,9 @@ export default class DetailView extends Component {
                                     {this.state.issue.requestFieldValues[1].value}
                                 </h1>
                                 <div className='Details'>
+                                    <h2 className='ThirdHead'>
+                                        Request Details
+                                    </h2>
                                     <p className='Content Text'>
                                         <span className='Descriptor Text'>{this.state.issue.reporter.displayName} </span> 
                                         Raised This
@@ -181,7 +184,7 @@ export default class DetailView extends Component {
                                     </div>
                                 </div>
                                 <h2 className='SecondHead'>
-                                    Follow Up:
+                                    Follow Up Comments:
                                 </h2>
                                 <div className='Comments'>
                                     {this.commentsBuilder()}
@@ -220,12 +223,7 @@ export default class DetailView extends Component {
                                         <DateHandler date={this.state.issue.createdDate.friendly}/>
                                     </span>
                                 </p>
-                                {/* <p className='Descriptor Text'>
-                                    Shared With<br/>
-                                        <span className='Content Text'>
-                                            {this.state.issue.reporter.displayName}
-                                        </span>
-                                    </p> */}
+                                
                                 <SharedWith issueRef= {this.state.issueRef} reporter={this.state.issue.reporter.displayName}/>
                                 <NotificationStatus issueRef={this.state.issueRef}/>
                                 <p className='Descriptor Text'>

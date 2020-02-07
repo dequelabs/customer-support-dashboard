@@ -17,10 +17,10 @@ export default class SharedWith extends Component {
     isShared() {
         get('request/'+this.state.issueRef+'/participant').then((result) => {
             if(result.values.length === 0) {
-                console.log('isnt shared');
+                //console.log('isnt shared');
                 this.setState({shared:false})
             } else {
-                console.log('is shared');
+                //console.log('is shared');
                 this.setState({shared:true})
             }
         });
@@ -63,13 +63,13 @@ export default class SharedWith extends Component {
                     checked={this.state.shared}
                     checkboxRef={() => this.checkBoxHandler()}
                 /> */}
-                <label>
+                {/* <label>
                     <input type='checkbox'
                         checked={this.state.shared}
                         onChange={this.handleCheckboxChange}
                     />
                     Is Shared
-                </label>
+                </label> */}
                 
                 
             </span>

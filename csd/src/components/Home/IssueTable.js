@@ -47,11 +47,11 @@ export default class IssueTable extends Component {
             this.state.issues.forEach(element => {
             elements.push(
                 <tr key={++key}>
-                    <td>
+                    <th scope='row'>
                         <Link href={'/detail/'+element.issueId}>
                             {element.requestFieldValues[1].value}
                         </Link>
-                    </td>
+                    </th>
                     <td>{element.issueKey}</td>
                     <td>{element.currentStatus.status}</td>
                     <td><IssueType type={element.requestTypeId}/></td>
