@@ -99,7 +99,7 @@ export default class DetailView extends Component {
                 </li>
             );
         });
-        return <ul className='CommentList' >{comments}</ul>;
+        return <ul className='CommentList' id='CommentsList'>{comments}</ul>;
         //return comments;
     }
 
