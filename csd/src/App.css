@@ -12,6 +12,7 @@
   margin-bottom: 20px;
   min-height: 95%;
 }
+
 body:not(.dqpl-no-sidebar) .dqpl-layout {
   left: 0px;
 }

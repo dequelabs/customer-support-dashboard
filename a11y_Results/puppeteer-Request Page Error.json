@@ -1,0 +1,4800 @@
+{
+  "type": "attest-result",
+  "name": "puppeteer",
+  "id": "Request Page Error",
+  "endTime": "2020-02-11T15:58:59-0500",
+  "platform": {
+    "userAgent": "",
+    "testMachine": ""
+  },
+  "testSubject": {
+    "fileName": "http://localhost:4000/request",
+    "lineNum": -1
+  },
+  "findings": {
+    "testEngine": {
+      "name": "axe-core",
+      "version": "3.5.0"
+    },
+    "testRunner": {
+      "name": "worldspace"
+    },
+    "testEnvironment": {
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.0 Safari/537.36",
+      "windowWidth": 800,
+      "windowHeight": 600,
+      "orientationAngle": 0,
+      "orientationType": "portrait-primary"
+    },
+    "timestamp": "2020-02-11T20:58:59.607Z",
+    "url": "http://localhost:4000/request",
+    "toolOptions": {
+      "reporter": "v1"
+    },
+    "violations": [
+      {
+        "id": "aria-required-children",
+        "impact": "critical",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures elements with an ARIA role that require child roles contain them",
+        "help": "Certain ARIA roles must contain particular children",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-required-children?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-required-children",
+                "data": [
+                  "menuitem",
+                  "menuitemradio",
+                  "menuitemcheckbox"
+                ],
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Required ARIA children role not present: menuitem, menuitemradio, menuitemcheckbox"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "critical",
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Required ARIA children role not present: menuitem, menuitemradio, menuitemcheckbox"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "description": "Ensures all page content is contained by landmarks",
+        "help": "All page content must be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/region?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<div class=\"dqpl-top-bar Header\"><ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul></div>",
+            "target": [
+              ".dqpl-top-bar"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ],
+    "passes": [
+      {
+        "id": "aria-allowed-attr",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures ARIA attributes are allowed for an element's role",
+        "help": "Elements must only use allowed ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-allowed-attr?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-allowed-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-unsupported-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-unsupported-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-unsupported-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-unsupported-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "aria-unsupported-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-allowed-role",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ],
+        "description": "Ensures role attribute has an appropriate value for the element",
+        "help": "ARIA role must be appropriate for the element",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-allowed-role?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul id=\"x_0_183\" aria-labelledby=\"x_2_7358\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\">",
+            "target": [
+              "#x_0_183"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option dqpl-option-active\" role=\"option\" aria-selected=\"false\" id=\"x_9_4324\">Ask A Question</li>",
+            "target": [
+              "#x_9_4324"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_10_1349\">Other</li>",
+            "target": [
+              "#x_10_1349"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_11_7462\">Provide Feedback</li>",
+            "target": [
+              "#x_11_7462"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_12_5514\">Report A Problem</li>",
+            "target": [
+              "#x_12_5514"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_13_3015\">Request A Feature</li>",
+            "target": [
+              "#x_13_3015"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_14_8829\">Request Training</li>",
+            "target": [
+              "#x_14_8829"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul id=\"x_3_5323\" aria-labelledby=\"x_5_3400\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\">",
+            "target": [
+              "#x_3_5323"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option dqpl-option-active\" role=\"option\" aria-selected=\"false\" id=\"x_15_9992\">Aget</li>",
+            "target": [
+              "#x_15_9992"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_16_7343\">Amaze</li>",
+            "target": [
+              "#x_16_7343"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_17_411\">Attest Mobile 2.0</li>",
+            "target": [
+              "#x_17_411"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_18_7213\">Attest HTML</li>",
+            "target": [
+              "#x_18_7213"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_19_318\">aXe</li>",
+            "target": [
+              "#x_19_318"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_20_1041\">aXePro</li>",
+            "target": [
+              "#x_20_1041"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_21_6492\">Customer Support Desk</li>",
+            "target": [
+              "#x_21_6492"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_22_1301\">Deque University</li>",
+            "target": [
+              "#x_22_1301"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_23_5284\">WorldSpace Assure</li>",
+            "target": [
+              "#x_23_5284"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_24_601\">WorldSpace Attest</li>",
+            "target": [
+              "#x_24_601"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_25_7391\">WorldSpace Comply</li>",
+            "target": [
+              "#x_25_7391"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-allowed-role",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "ARIA role is allowed for given element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_26_98\">Other</li>",
+            "target": [
+              "#x_26_98"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-hidden-body",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures aria-hidden='true' is not present on the document body.",
+        "help": "aria-hidden='true' must not be present on the document body",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-hidden-body?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-hidden-body",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "No aria-hidden attribute is present on document body"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<body class=\"dqpl-no-sidebar\">",
+            "target": [
+              "body"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-required-attr",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+        "help": "Required ARIA attributes must be provided",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-required-attr?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-required-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "All required ARIA attributes are present"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-required-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "All required ARIA attributes are present"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-required-children",
+        "impact": "critical",
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures elements with an ARIA role that require child roles contain them",
+        "help": "Certain ARIA roles must contain particular children",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-required-children?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-required-children",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Required ARIA children are present"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-required-parent",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+        "help": "Certain ARIA roles must be contained by particular parents",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-required-parent?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-required-parent",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Required ARIA parent role present"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-required-parent",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Required ARIA parent role present"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-roles",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures all elements with a role attribute use a valid value",
+        "help": "ARIA roles used must conform to valid values",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-roles?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "fallbackrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Only one role value used"
+              },
+              {
+                "id": "invalidrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA role is valid"
+              },
+              {
+                "id": "abstractrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Abstract roles are not used"
+              },
+              {
+                "id": "unsupportedrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA role is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "fallbackrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Only one role value used"
+              },
+              {
+                "id": "invalidrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA role is valid"
+              },
+              {
+                "id": "abstractrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Abstract roles are not used"
+              },
+              {
+                "id": "unsupportedrole",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA role is supported"
+              }
+            ],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures all ARIA attributes have valid values",
+        "help": "ARIA attributes must conform to valid values",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-valid-attr-value?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "aria-valid-attr-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute values are valid"
+              },
+              {
+                "id": "aria-errormessage",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "aria-valid-attr-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute values are valid"
+              },
+              {
+                "id": "aria-errormessage",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "aria-valid-attr-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute values are valid"
+              },
+              {
+                "id": "aria-errormessage",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "aria-valid-attr-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute values are valid"
+              },
+              {
+                "id": "aria-errormessage",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "aria-valid-attr-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute values are valid"
+              },
+              {
+                "id": "aria-errormessage",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aria-valid-attr",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+        "help": "ARIA attributes must conform to valid names",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-valid-attr?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-valid-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute name is valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-valid-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute name is valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-valid-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute name is valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-valid-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute name is valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "aria-valid-attr",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "ARIA attribute name is valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "button-name",
+        "impact": null,
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures buttons have discernible text",
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/button-name?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "button-has-visible-text",
+                "data": "Request Type",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers"
+              },
+              {
+                "id": "aria-labelledby",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "button-has-visible-text",
+                "data": "Product",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers"
+              },
+              {
+                "id": "aria-labelledby",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "button-has-visible-text",
+                "data": "Submit",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"SubmitButton\" class=\"FormSubmitButton\" type=\"submit\">Submit</button>",
+            "target": [
+              "#SubmitButton"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "button-has-visible-text",
+                "data": "Cancel",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"CancelButton\" class=\"FormSubmitButton\">Cancel</button>",
+            "target": [
+              "#CancelButton"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bypass",
+        "impact": null,
+        "tags": [
+          "cat.keyboard",
+          "wcag2a",
+          "wcag241",
+          "section508",
+          "section508.22.o"
+        ],
+        "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+        "help": "Page must have means to bypass repeated blocks",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/bypass?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "header-present",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Page has a header"
+              },
+              {
+                "id": "landmark",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Page has a landmark region"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143"
+        ],
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#000000",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 21,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 21"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#000000",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 21,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 21"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#000000",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 21,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 21"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#ffffff",
+                  "bgColor": "#0077c8",
+                  "contrastRatio": 4.69,
+                  "fontSize": "16.5pt (22px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 4.69"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"SubmitButton\" class=\"FormSubmitButton\" type=\"submit\">Submit</button>",
+            "target": [
+              "#SubmitButton"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#ffffff",
+                  "bgColor": "#0077c8",
+                  "contrastRatio": 4.69,
+                  "fontSize": "16.5pt (22px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 4.69"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"CancelButton\" class=\"FormSubmitButton\">Cancel</button>",
+            "target": [
+              "#CancelButton"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "document-title",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag242"
+        ],
+        "description": "Ensures each HTML document contains a non-empty <title> element",
+        "help": "Documents must have <title> element to aid in navigation",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/document-title?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "doc-has-title",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Document has a non-empty <title> element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "duplicate-id-active",
+        "impact": null,
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag411"
+        ],
+        "description": "Ensures every id attribute value of active elements is unique",
+        "help": "IDs of active elements must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-active?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "duplicate-id-active",
+                "data": "SubmitButton",
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Document has no active elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"SubmitButton\" class=\"FormSubmitButton\" type=\"submit\">Submit</button>",
+            "target": [
+              "#SubmitButton"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-active",
+                "data": "CancelButton",
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Document has no active elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"CancelButton\" class=\"FormSubmitButton\">Cancel</button>",
+            "target": [
+              "#CancelButton"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "duplicate-id-aria",
+        "impact": null,
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag411"
+        ],
+        "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+        "help": "IDs used in ARIA and labels must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-aria?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_1_49",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-label\" id=\"x_1_49\">Request Type</div>",
+            "target": [
+              "#x_1_49"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_2_7358",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "41j645rw",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div>",
+            "target": [
+              "#\\34 1j645rw"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_4_1977",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-label\" id=\"x_4_1977\">Product</div>",
+            "target": [
+              "#x_4_1977"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_5_3400",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "R3tOYhcO",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div>",
+            "target": [
+              "#R3tOYhcO"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "SummaryInput",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_6_6824",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_6824\">Please complete this required field.</div>",
+            "target": [
+              "#x_6_6824"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "DescriptionInput",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_7_5347",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_5347\">Please complete this required field.</div>",
+            "target": [
+              "#x_7_5347"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "AdtlInfoInput",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "duplicate-id",
+        "impact": null,
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag411"
+        ],
+        "description": "Ensures every id attribute value is unique",
+        "help": "id attribute value must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "root",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div id=\"root\">",
+            "target": [
+              "#root"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_0_183",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul id=\"x_0_183\" aria-labelledby=\"x_2_7358\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\">",
+            "target": [
+              "#x_0_183"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_9_4324",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option dqpl-option-active\" role=\"option\" aria-selected=\"false\" id=\"x_9_4324\">Ask A Question</li>",
+            "target": [
+              "#x_9_4324"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_10_1349",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_10_1349\">Other</li>",
+            "target": [
+              "#x_10_1349"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_11_7462",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_11_7462\">Provide Feedback</li>",
+            "target": [
+              "#x_11_7462"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_12_5514",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_12_5514\">Report A Problem</li>",
+            "target": [
+              "#x_12_5514"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_13_3015",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_13_3015\">Request A Feature</li>",
+            "target": [
+              "#x_13_3015"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_14_8829",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_14_8829\">Request Training</li>",
+            "target": [
+              "#x_14_8829"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_3_5323",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul id=\"x_3_5323\" aria-labelledby=\"x_5_3400\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\">",
+            "target": [
+              "#x_3_5323"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_15_9992",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option dqpl-option-active\" role=\"option\" aria-selected=\"false\" id=\"x_15_9992\">Aget</li>",
+            "target": [
+              "#x_15_9992"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_16_7343",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_16_7343\">Amaze</li>",
+            "target": [
+              "#x_16_7343"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_17_411",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_17_411\">Attest Mobile 2.0</li>",
+            "target": [
+              "#x_17_411"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_18_7213",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_18_7213\">Attest HTML</li>",
+            "target": [
+              "#x_18_7213"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_19_318",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_19_318\">aXe</li>",
+            "target": [
+              "#x_19_318"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_20_1041",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_20_1041\">aXePro</li>",
+            "target": [
+              "#x_20_1041"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_21_6492",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_21_6492\">Customer Support Desk</li>",
+            "target": [
+              "#x_21_6492"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_22_1301",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_22_1301\">Deque University</li>",
+            "target": [
+              "#x_22_1301"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_23_5284",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_23_5284\">WorldSpace Assure</li>",
+            "target": [
+              "#x_23_5284"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_24_601",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_24_601\">WorldSpace Attest</li>",
+            "target": [
+              "#x_24_601"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_25_7391",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_25_7391\">WorldSpace Comply</li>",
+            "target": [
+              "#x_25_7391"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_26_98",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<li class=\"dqpl-option\" role=\"option\" aria-selected=\"false\" id=\"x_26_98\">Other</li>",
+            "target": [
+              "#x_26_98"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id",
+                "data": "x_8_9018",
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_9018\"></div>",
+            "target": [
+              "#x_8_9018"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "empty-heading",
+        "impact": null,
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ],
+        "description": "Ensures headings have discernible text",
+        "help": "Headings must not be empty",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/empty-heading?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "has-visible-text",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h1 class=\"HeadText\">How Can We Help?</h1>",
+            "target": [
+              "h1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "form-field-multiple-labels",
+        "impact": null,
+        "tags": [
+          "cat.forms",
+          "wcag2a",
+          "wcag332"
+        ],
+        "description": "Ensures form field does not have multiple label elements",
+        "help": "Form field should not have multiple label elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/form-field-multiple-labels?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "multiple-label",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"dqpl-label dqpl-required dqpl-error\" for=\"SummaryInput\"><span>Summary</span><span class=\"dqpl-required-text\">Required</span></label>",
+                    "target": [
+                      "label[for=\"SummaryInput\"]"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Form field does not have multiple label elements"
+              }
+            ],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "multiple-label",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"dqpl-label dqpl-required dqpl-error\" for=\"DescriptionInput\"><span>Description</span><span class=\"dqpl-required-text\">Required</span></label>",
+                    "target": [
+                      "label[for=\"DescriptionInput\"]"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Form field does not have multiple label elements"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "multiple-label",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"dqpl-label\" for=\"AdtlInfoInput\"><span>Additional Info</span></label>",
+                    "target": [
+                      "label[for=\"AdtlInfoInput\"]"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Form field does not have multiple label elements"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "heading-order",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/heading-order?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "heading-order",
+                "data": 1,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Heading order valid"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h1 class=\"HeadText\">How Can We Help?</h1>",
+            "target": [
+              "h1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "html-has-lang",
+        "impact": null,
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311"
+        ],
+        "description": "Ensures every HTML document has a lang attribute",
+        "help": "<html> element must have a lang attribute",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/html-has-lang?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "has-lang",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "The <html> element has a lang attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "html-lang-valid",
+        "impact": null,
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311"
+        ],
+        "description": "Ensures the lang attribute of the <html> element has a valid value",
+        "help": "<html> element must have a valid value for the lang attribute",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/html-lang-valid?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "valid-lang",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Value of lang attribute is included in the list of valid languages"
+              }
+            ],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "identical-links-same-purpose",
+        "impact": null,
+        "tags": [
+          "wcag2aaa",
+          "wcag249",
+          "best-practice"
+        ],
+        "description": "Ensure that links with the same accessible name serve a similar purpose",
+        "help": "Links with the same name have a similar purpose",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/identical-links-same-purpose?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "identical-links-same-purpose",
+                "data": {
+                  "name": "link to deque home",
+                  "urlProps": {
+                    "protocol": "http:",
+                    "hostname": "www.deque.com",
+                    "port": "",
+                    "pathname": "/",
+                    "search": {},
+                    "hash": "",
+                    "filename": ""
+                  }
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a>",
+                    "target": [
+                      "a"
+                    ]
+                  }
+                ],
+                "impact": "minor",
+                "message": "There are no other links with the same name, that go to a different URL"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a>",
+            "target": [
+              "a"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+        "help": "Images must have alternate text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/image-alt?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "has-alt",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has an alt attribute"
+              },
+              {
+                "id": "non-empty-title",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has a title attribute"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "alt-space-value",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Element has a valid alt attribute value"
+              }
+            ],
+            "impact": null,
+            "html": "<img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\">",
+            "target": [
+              "img"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "image-redundant-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "best-practice"
+        ],
+        "description": "Ensure image alternative is not repeated as text",
+        "help": "Alternative text of images should not be repeated as text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/image-redundant-alt?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "duplicate-img-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Element does not duplicate existing text in <img> alt text"
+              }
+            ],
+            "impact": null,
+            "html": "<img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\">",
+            "target": [
+              "img"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "label-title-only",
+        "impact": null,
+        "tags": [
+          "cat.forms",
+          "best-practice"
+        ],
+        "description": "Ensures that every form element is not solely labeled using the title or aria-describedby attributes",
+        "help": "Form elements should have a visible label",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label-title-only?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "title-only",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Form element does not solely use title attribute for its label"
+              }
+            ],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "title-only",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Form element does not solely use title attribute for its label"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "title-only",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Form element does not solely use title attribute for its label"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "label",
+        "impact": null,
+        "tags": [
+          "cat.forms",
+          "wcag2a",
+          "wcag332",
+          "wcag131",
+          "section508",
+          "section508.22.n"
+        ],
+        "description": "Ensures every form element has a label",
+        "help": "Form elements must have labels",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has an explicit <label>"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "hidden-explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has a visible explicit <label>"
+              }
+            ],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has an explicit <label>"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "hidden-explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has a visible explicit <label>"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has an explicit <label>"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "hidden-explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has a visible explicit <label>"
+              }
+            ],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "landmark-main-is-top-level",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the main landmark is at top level",
+        "help": "Main landmark must not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-main-is-top-level?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "landmark-is-top-level",
+                "data": {
+                  "role": "main"
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "The main landmark is at the top level."
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-main",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the document has at most one main landmark",
+        "help": "Document must not have more than one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-no-duplicate-main?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "page-no-duplicate-main",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Document does not have more than one main landmark"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the document has a main landmark",
+        "help": "Document must have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-one-main?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "page-has-main",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"Page\" role=\"main\">",
+                    "target": [
+                      ".Page"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Document has at least one main landmark"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "help": "Ensures landmarks are unique",
+        "description": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-unique?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "landmark-is-unique",
+                "data": {
+                  "role": "main",
+                  "accessibleText": null
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": null,
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "wcag244",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/link-name?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "has-visible-text",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "focusable-no-name",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element is not in tab order or has accessible text"
+              }
+            ],
+            "impact": null,
+            "html": "<a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a>",
+            "target": [
+              "a"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport-large",
+        "impact": null,
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ],
+        "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+        "help": "Users should be able to zoom and scale the text up to 500%",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/meta-viewport-large?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "meta-viewport-large",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "minor",
+                "message": "<meta> tag does not prevent significant zooming on mobile devices"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": null,
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "best-practice"
+        ],
+        "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/meta-viewport?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "meta-viewport",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "<meta> tag does not disable zooming on mobile devices"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "help": "Page must contain a level-one heading",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/page-has-heading-one?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "page-has-heading-one",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<h1 class=\"HeadText\">How Can We Help?</h1>",
+                    "target": [
+                      "h1"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Page has at least one level-one heading"
+              }
+            ],
+            "none": [],
+            "impact": null,
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "target": [
+              "html"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "description": "Ensures all page content is contained by landmarks",
+        "help": "All page content must be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/region?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<noscript>You need to enable JavaScript to run this app.</noscript>",
+            "target": [
+              "noscript"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div id=\"root\">",
+            "target": [
+              "#root"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"App\">",
+            "target": [
+              ".App"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<ul role=\"menubar\"><a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a></ul>",
+            "target": [
+              "ul[role=\"menubar\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a>",
+            "target": [
+              "a"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\">",
+            "target": [
+              "img"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-layout\">",
+            "target": [
+              ".dqpl-layout"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"Page\" role=\"main\">",
+            "target": [
+              ".Page"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2\">",
+            "target": [
+              ".MuiGrid-spacing-xs-2"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7\"><h1 class=\"HeadText\">How Can We Help?</h1><p class=\"BodyText\">Complete this form with your product or services questions. <br>Our Deque Support team will respond within one working day of receiving your contact.</p></div>",
+            "target": [
+              ".MuiGrid-grid-md-7"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<h1 class=\"HeadText\">How Can We Help?</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p class=\"BodyText\">Complete this form with your product or services questions. <br>Our Deque Support team will respond within one working day of receiving your contact.</p>",
+            "target": [
+              ".BodyText"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<br>",
+            "target": [
+              "br"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4\">",
+            "target": [
+              ".MuiGrid-grid-md-4"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<p></p>",
+            "target": [
+              ".MuiGrid-grid-md-4 > p"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<form novalidate=\"\">",
+            "target": [
+              "form"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-field-wrap\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-label\" id=\"x_1_49\">Request Type</div>",
+            "target": [
+              "#x_1_49"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-select\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(1) > .dqpl-select"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_2_7358\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_49 x_2_7358 41j645rw\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div></button>",
+            "target": [
+              "#x_2_7358"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"41j645rw\"></div>",
+            "target": [
+              "#\\34 1j645rw"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-field-wrap\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-label\" id=\"x_4_1977\">Product</div>",
+            "target": [
+              "#x_4_1977"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-select\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(2) > .dqpl-select"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button value=\"\" id=\"x_5_3400\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_1977 x_5_3400 R3tOYhcO\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div></button>",
+            "target": [
+              "#x_5_3400"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"R3tOYhcO\"></div>",
+            "target": [
+              "#R3tOYhcO"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-field-wrap\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(3)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<label class=\"dqpl-label dqpl-required dqpl-error\" for=\"SummaryInput\"><span>Summary</span><span class=\"dqpl-required-text\">Required</span></label>",
+            "target": [
+              "label[for=\"SummaryInput\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span>Summary</span>",
+            "target": [
+              "label[for=\"SummaryInput\"] > span:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span class=\"dqpl-required-text\">Required</span>",
+            "target": [
+              "label[for=\"SummaryInput\"] > .dqpl-required-text"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input class=\"OneLineInput-invalid\" id=\"SummaryInput\" aria-invalid=\"true\" required=\"\" value=\"\" aria-describedby=\" x_6_6824\">",
+            "target": [
+              "#SummaryInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_6824\">Please complete this required field.</div>",
+            "target": [
+              "#x_6_6824"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-field-wrap\">",
+            "target": [
+              ".dqpl-field-wrap:nth-child(4)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<label class=\"dqpl-label dqpl-required dqpl-error\" for=\"DescriptionInput\"><span>Description</span><span class=\"dqpl-required-text\">Required</span></label>",
+            "target": [
+              "label[for=\"DescriptionInput\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span>Description</span>",
+            "target": [
+              "label[for=\"DescriptionInput\"] > span:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span class=\"dqpl-required-text\">Required</span>",
+            "target": [
+              "label[for=\"DescriptionInput\"] > .dqpl-required-text"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput-invalid\" id=\"DescriptionInput\" aria-invalid=\"true\" required=\"\" aria-describedby=\" x_7_5347\"></textarea>",
+            "target": [
+              "#DescriptionInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_5347\">Please complete this required field.</div>",
+            "target": [
+              "#x_7_5347"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-field-wrap\"><label class=\"dqpl-label\" for=\"AdtlInfoInput\"><span>Additional Info</span></label><textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea><div class=\"dqpl-error-wrap\" id=\"x_8_9018\"></div></div>",
+            "target": [
+              ".dqpl-field-wrap:nth-child(5)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<label class=\"dqpl-label\" for=\"AdtlInfoInput\"><span>Additional Info</span></label>",
+            "target": [
+              "label[for=\"AdtlInfoInput\"]"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<span>Additional Info</span>",
+            "target": [
+              "label[for=\"AdtlInfoInput\"] > span"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
+            "target": [
+              "#AdtlInfoInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_9018\"></div>",
+            "target": [
+              "#x_8_9018"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"FailMessage\">Missing required information - please complete all required fields</div>",
+            "target": [
+              ".FailMessage"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1\">",
+            "target": [
+              ".MuiGrid-spacing-xs-1"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6\"><button id=\"SubmitButton\" class=\"FormSubmitButton\" type=\"submit\">Submit</button></div>",
+            "target": [
+              ".MuiGrid-grid-xs-6.MuiGrid-item.MuiGrid-root:nth-child(1)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"SubmitButton\" class=\"FormSubmitButton\" type=\"submit\">Submit</button>",
+            "target": [
+              "#SubmitButton"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6\"><button id=\"CancelButton\" class=\"FormSubmitButton\">Cancel</button></div>",
+            "target": [
+              ".MuiGrid-grid-xs-6.MuiGrid-item.MuiGrid-root:nth-child(2)"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<button id=\"CancelButton\" class=\"FormSubmitButton\">Cancel</button>",
+            "target": [
+              "#CancelButton"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "impact": null,
+        "tags": [
+          "wcag2a",
+          "wcag211"
+        ],
+        "description": "Elements that have scrollable content should be accessible by keyboard",
+        "help": "Ensure that scrollable region has keyboard access",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/scrollable-region-focusable?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "focusable-content",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Element contains focusable elements"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-layout\">",
+            "target": [
+              ".dqpl-layout"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tabindex",
+        "impact": null,
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "description": "Ensures tabindex attribute values are not greater than 0",
+        "help": "Elements should not have tabindex greater than zero",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/tabindex?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "tabindex",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element does not have a tabindex greater than 0"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<a href=\"http://www.deque.com\" class=\"HomeLink\" tabindex=\"0\"><img src=\"https://accessibility.deque.com/hubfs/logo-white.svg\" width=\"100\" alt=\"Link to Deque Home\" title=\"Deque\"></a>",
+            "target": [
+              "a"
+            ]
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143"
+        ],
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#003349",
+                  "contrastRatio": 0,
+                  "fontSize": "34.5pt (46px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<h1 class=\"HeadText\">How Can We Help?</h1>",
+            "target": [
+              "h1"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "15.0pt (20px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"BodyText\">Complete this form with your product or services questions. <br>Our Deque Support team will respond within one working day of receiving your contact.</p>",
+            "target": [
+              ".BodyText"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"dqpl-label\" id=\"x_1_49\">Request Type</div>",
+            "target": [
+              "#x_1_49"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"dqpl-label\" id=\"x_4_1977\">Product</div>",
+            "target": [
+              "#x_4_1977"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Summary</span>",
+            "target": [
+              "label[for=\"SummaryInput\"] > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"dqpl-required-text\">Required</span>",
+            "target": [
+              "label[for=\"SummaryInput\"] > .dqpl-required-text"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_6824\">Please complete this required field.</div>",
+            "target": [
+              "#x_6_6824"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Description</span>",
+            "target": [
+              "label[for=\"DescriptionInput\"] > span:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"dqpl-required-text\">Required</span>",
+            "target": [
+              "label[for=\"DescriptionInput\"] > .dqpl-required-text"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_5347\">Please complete this required field.</div>",
+            "target": [
+              "#x_7_5347"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#1e1e1e",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>Additional Info</span>",
+            "target": [
+              "label[for=\"AdtlInfoInput\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"FailMessage\">Missing required information - please complete all required fields</div>",
+            "target": [
+              ".FailMessage"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ],
+    "inapplicable": [
+      {
+        "id": "accesskeys",
+        "impact": null,
+        "tags": [
+          "best-practice",
+          "cat.keyboard"
+        ],
+        "description": "Ensures every accesskey attribute value is unique",
+        "help": "accesskey attribute value must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/accesskeys?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "area-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures <area> elements of image maps have alternate text",
+        "help": "Active <area> elements must have alternate text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/area-alt?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "aria-hidden-focus",
+        "impact": null,
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "wcag131"
+        ],
+        "description": "Ensures aria-hidden elements do not contain focusable elements",
+        "help": "ARIA hidden element must not contain focusable elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-hidden-focus?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "aria-input-field-name",
+        "impact": null,
+        "tags": [
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures every ARIA input field has an accessible name",
+        "help": "ARIA input fields have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-input-field-name?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "aria-roledescription",
+        "impact": null,
+        "tags": [
+          "cat.aria",
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensure aria-roledescription is only used on elements with an implicit or explicit role",
+        "help": "Use aria-roledescription on elements with a semantic role",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-roledescription?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "aria-toggle-field-name",
+        "impact": null,
+        "tags": [
+          "wcag2a",
+          "wcag412"
+        ],
+        "description": "Ensures every ARIA toggle field has an accessible name",
+        "help": "ARIA toggle fields have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/aria-toggle-field-name?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "autocomplete-valid",
+        "impact": null,
+        "tags": [
+          "cat.forms",
+          "wcag21aa",
+          "wcag135"
+        ],
+        "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+        "help": "autocomplete attribute must be used correctly",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/autocomplete-valid?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "impact": null,
+        "tags": [
+          "wcag21aa",
+          "wcag1412"
+        ],
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "help": "Inline text spacing must be adjustable with custom stylesheets",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/avoid-inline-spacing?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "blink",
+        "impact": null,
+        "tags": [
+          "cat.time-and-media",
+          "wcag2a",
+          "wcag222",
+          "section508",
+          "section508.22.j"
+        ],
+        "description": "Ensures <blink> elements are not used",
+        "help": "<blink> elements are deprecated and must not be used",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/blink?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "definition-list",
+        "impact": null,
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/definition-list?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "dlitem",
+        "impact": null,
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
+        "help": "<dt> and <dd> elements must be contained by a <dl>",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/dlitem?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "frame-tested",
+        "impact": null,
+        "tags": [
+          "cat.structure",
+          "review-item",
+          "best-practice"
+        ],
+        "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
+        "help": "Frames must be tested with axe-core",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/frame-tested?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "frame-title-unique",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "best-practice"
+        ],
+        "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+        "help": "Frames must have a unique title attribute",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/frame-title-unique?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "frame-title",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag241",
+          "wcag412",
+          "section508",
+          "section508.22.i"
+        ],
+        "description": "Ensures <iframe> and <frame> elements contain a non-empty title attribute",
+        "help": "Frames must have title attribute",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/frame-title?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "html-xml-lang-mismatch",
+        "impact": null,
+        "tags": [
+          "cat.language",
+          "wcag2a",
+          "wcag311"
+        ],
+        "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+        "help": "HTML elements with lang and xml:lang must have the same base language",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/html-xml-lang-mismatch?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "input-button-name",
+        "impact": null,
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures input buttons have discernible text",
+        "help": "Input buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/input-button-name?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "input-image-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures <input type=\"image\"> elements have alternate text",
+        "help": "Image buttons must have alternate text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/input-image-alt?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the banner landmark is at top level",
+        "help": "Banner landmark must not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "landmark-complementary-is-top-level",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the complementary landmark or aside is at top level",
+        "help": "Aside must not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-complementary-is-top-level?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark must not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the document has at most one banner landmark",
+        "help": "Document must not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": null,
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensures the document has at most one contentinfo landmark",
+        "help": "Document must not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "list",
+        "impact": null,
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures that lists are structured correctly",
+        "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/list?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "listitem",
+        "impact": null,
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131"
+        ],
+        "description": "Ensures <li> elements are used semantically",
+        "help": "<li> elements must be contained in a <ul> or <ol>",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/listitem?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "marquee",
+        "impact": null,
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag222"
+        ],
+        "description": "Ensures <marquee> elements are not used",
+        "help": "<marquee> elements are deprecated and must not be used",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/marquee?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "meta-refresh",
+        "impact": null,
+        "tags": [
+          "cat.time-and-media",
+          "wcag2a",
+          "wcag2aaa",
+          "wcag221",
+          "wcag224",
+          "wcag325"
+        ],
+        "description": "Ensures <meta http-equiv=\"refresh\"> is not used",
+        "help": "Timed refresh must not exist",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/meta-refresh?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "object-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures <object> elements have alternate text",
+        "help": "<object> elements must have alternate text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/object-alt?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "role-img-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures [role='img'] elements have alternate text",
+        "help": "[role='img'] elements have an alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/role-img-alt?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "scope-attr-valid",
+        "impact": null,
+        "tags": [
+          "cat.tables",
+          "best-practice"
+        ],
+        "description": "Ensures the scope attribute is used correctly on tables",
+        "help": "scope attribute should be used correctly",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/scope-attr-valid?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "server-side-image-map",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag211",
+          "section508",
+          "section508.22.f"
+        ],
+        "description": "Ensures that server-side image maps are not used",
+        "help": "Server-side image maps must not be used",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/server-side-image-map?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "skip-link",
+        "impact": null,
+        "tags": [
+          "cat.keyboard",
+          "best-practice"
+        ],
+        "description": "Ensure all skip links have a focusable target",
+        "help": "The skip-link target should exist and be focusable",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/skip-link?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "svg-img-alt",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures svg elements with an img, graphics-document or graphics-symbol role have an accessible text",
+        "help": "svg elements with an img role have an alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/svg-img-alt?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "table-duplicate-name",
+        "impact": null,
+        "tags": [
+          "cat.tables",
+          "best-practice"
+        ],
+        "description": "Ensure that tables do not have the same summary and caption",
+        "help": "The <caption> element should not contain the same text as the summary attribute",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/table-duplicate-name?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "td-headers-attr",
+        "impact": null,
+        "tags": [
+          "cat.tables",
+          "wcag2a",
+          "wcag131",
+          "section508",
+          "section508.22.g"
+        ],
+        "description": "Ensure that each cell in a table using the headers refers to another cell in that table",
+        "help": "All cells in a table element that use the headers attribute must only refer to other cells of that same table",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/td-headers-attr?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "th-has-data-cells",
+        "impact": null,
+        "tags": [
+          "cat.tables",
+          "wcag2a",
+          "wcag131",
+          "section508",
+          "section508.22.g"
+        ],
+        "description": "Ensure that each table header in a data table refers to data cells",
+        "help": "All th elements and elements with role=columnheader/rowheader must have data cells they describe",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/th-has-data-cells?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "valid-lang",
+        "impact": null,
+        "tags": [
+          "cat.language",
+          "wcag2aa",
+          "wcag312"
+        ],
+        "description": "Ensures lang attributes have valid values",
+        "help": "lang attribute must have a valid value",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/valid-lang?application=axe-puppeteer",
+        "nodes": []
+      },
+      {
+        "id": "video-caption",
+        "impact": null,
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag122",
+          "section508",
+          "section508.22.a"
+        ],
+        "description": "Ensures <video> elements have captions",
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/video-caption?application=axe-puppeteer",
+        "nodes": []
+      }
+    ]
+  }
+}

@@ -1,169 +1,186 @@
-// import puppeteer from "puppeteer"; // 1
-// import { ExpansionPanelActions } from "@material-ui/core";
-// import SelectInput from "@material-ui/core/Select/SelectInput";
+import puppeteer from "puppeteer"; // 1
+import { ExpansionPanelActions } from "@material-ui/core";
+import SelectInput from "@material-ui/core/Select/SelectInput";
+import { AttestPuppeteer } from '@deque/attest-puppeteer';
+import rimraf from 'rimraf';
+import AttestReporter from '@deque/attest-reporter';
 
-// let browser;
-// let page;
+let browser;
+let page;
+let attestReporter;
 
-test("navigates to make request then back to home", async () => {
-console.log("puppeteer turned off")
+beforeAll(async () => {
+  rimraf.sync("../a11y_Results/*.json");
+  attestReporter = new AttestReporter('puppeteer', '../a11y_Results');
+  browser = await puppeteer.launch({
+    headless: false
+  });
+  page = await browser.newPage();
+  await page.goto("http://localhost:4000/home");
 });
 
+test("navigates to make request then back to home", async () => {
 
-// beforeAll(async () => {
-//   browser = await puppeteer.launch({
-//     //headless: false
-//   });
-//   page = await browser.newPage();
-//   await page.goto("http://localhost:4000/home");
-// });
+  expect(page.url()).toBe("http://localhost:4000/home");
 
-// test("navigates to make request then back to home", async () => {
+  const results = await new AttestPuppeteer(page).analyze();
+  attestReporter.logTestResult('Home Page Normal', results);
 
-//   expect(page.url()).toBe("http://localhost:4000/home");
+  await Promise.all([
+    page.click('#requestbtn'),
+    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+  ]);
+  expect(page.url()).toBe("http://localhost:4000/request");
 
-//   await Promise.all([
-//     page.click('#requestbtn'),
-//     page.waitForNavigation({ waitUntil: 'networkidle0' }),
-//   ]);
-//   expect(page.url()).toBe("http://localhost:4000/request");
+  await Promise.all([
+    page.click('#CancelButton'),
+    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+  ]);
+  expect(page.url()).toBe("http://localhost:4000/home");
+});
 
-//   await Promise.all([
-//     page.click('#CancelButton'),
-//     page.waitForNavigation({ waitUntil: 'networkidle0' }),
-//   ]);
-//   expect(page.url()).toBe("http://localhost:4000/home");
-// });
+test("wont submit empty form", async () => {
 
-// test("wont submit empty form", async () => {
+  expect(page.url()).toBe("http://localhost:4000/home");
 
-//   expect(page.url()).toBe("http://localhost:4000/home");
+  await Promise.all([
+    page.click('#requestbtn'),
+    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+  ]);
+  expect(page.url()).toBe("http://localhost:4000/request");
 
-//   await Promise.all([
-//     page.click('#requestbtn'),
-//     page.waitForNavigation({ waitUntil: 'networkidle0' }),
-//   ]);
-//   expect(page.url()).toBe("http://localhost:4000/request");
+  const results = await new AttestPuppeteer(page).analyze();
+  attestReporter.logTestResult('Request Page Normal', results);
 
-//   await Promise.all([
-//     page.click('#SubmitButton'),
-//   ]);
-//   expect(page.url()).toBe("http://localhost:4000/request");
+  await Promise.all([
+    page.click('#SubmitButton'),
+  ]);
+  expect(page.url()).toBe("http://localhost:4000/request");
 
-// });
+});
 
-// test("fill out form", async () => {
+test("fill out form", async () => {
 
-//   expect(page.url()).toBe("http://localhost:4000/request");
+  expect(page.url()).toBe("http://localhost:4000/request");
 
-//   await page.type('#SummaryInput', 'summary test');
-//   await page.type('#DescriptionInput', 'description test');
-//   await page.type('#AdtlInfoInput', 'additional test');
+  const results = await new AttestPuppeteer(page).analyze();
+  attestReporter.logTestResult('Request Page Error', results);
 
-//   const summaryVal = await page.evaluate(() => document.querySelector('#SummaryInput').value);
-//   const descVal = await page.evaluate(() => document.querySelector('#DescriptionInput').value);
-//   const adtlVal = await page.evaluate(() => document.querySelector('#AdtlInfoInput').value);
+  await page.type('#SummaryInput', 'summary test');
+  await page.type('#DescriptionInput', 'description test');
+  await page.type('#AdtlInfoInput', 'additional test');
 
-//   expect(summaryVal).toBe('summary test');
-//   expect(descVal).toBe('description test');
-//   expect(adtlVal).toBe('additional test');
+  const summaryVal = await page.evaluate(() => document.querySelector('#SummaryInput').value);
+  const descVal = await page.evaluate(() => document.querySelector('#DescriptionInput').value);
+  const adtlVal = await page.evaluate(() => document.querySelector('#AdtlInfoInput').value);
 
-// });
+  expect(summaryVal).toBe('summary test');
+  expect(descVal).toBe('description test');
+  expect(adtlVal).toBe('additional test');
 
-// test("submit form", async () => {
+});
 
-//   expect(page.url()).toBe("http://localhost:4000/request");
+test("submit form", async () => {
 
-//   await Promise.all([
-//     page.click('#SubmitButton'),
-//     page.waitForNavigation({ waitUntil: 'networkidle0' }),
-//   ]);
-//   expect(page.url()).toBe("http://localhost:4000/home");
+  expect(page.url()).toBe("http://localhost:4000/request");
+
+  await Promise.all([
+    page.click('#SubmitButton'),
+    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+  ]);
+  expect(page.url()).toBe("http://localhost:4000/home");
  
-// });
+});
 
-// const escapeXpathString = str => {
-//   const splitedQuotes = str.replace(/'/g, `', "'", '`);
-//   return `concat('${splitedQuotes}', '')`;
-// };
+const escapeXpathString = str => {
+  const splitedQuotes = str.replace(/'/g, `', "'", '`);
+  return `concat('${splitedQuotes}', '')`;
+};
 
-// const clickByText = async (page, text) => {
-//   const escapedText = escapeXpathString(text);
-//   const linkHandlers = await page.$x(`//a[contains(text(), ${escapedText})]`);
+const clickByText = async (page, text) => {
+  const escapedText = escapeXpathString(text);
+  const linkHandlers = await page.$x(`//a[contains(text(), ${escapedText})]`);
   
-//   if (linkHandlers.length > 0) {
-//     await linkHandlers[0].click();
-//   } else {
-//     throw new Error(`Link not found: ${text}`);
-//   }
-// };
+  if (linkHandlers.length > 0) {
+    await linkHandlers[0].click();
+  } else {
+    throw new Error(`Link not found: ${text}`);
+  }
+};
 
-// function sleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-// test("view ticket", async () => {
+test("view ticket", async () => {
 
-//   expect(page.url()).toBe("http://localhost:4000/home");
+  expect(page.url()).toBe("http://localhost:4000/home");
 
-//   jest.setTimeout(10000);
-//   await sleep(5500);
+  jest.setTimeout(10000);
+  await sleep(5500);
 
-//   await clickByText(page, `summary test`);
-//   await page.waitForNavigation({ waitUntil: 'networkidle0' });
+  await clickByText(page, `summary test`);
+  await page.waitForNavigation({ waitUntil: 'networkidle0' });
   
-//   expect(page.url()).toContain("http://localhost:4000/detail/");
-// });
+  expect(page.url()).toContain("http://localhost:4000/detail/");
 
-// test("wont make empty comment", async () => {
+  const results = await new AttestPuppeteer(page).analyze();
+  attestReporter.logTestResult('Detail Page Normal', results);
+});
 
-//   jest.setTimeout(10000);
+test("wont make empty comment", async () => {
 
-//   expect(page.url()).toContain("http://localhost:4000/detail/");
+  jest.setTimeout(10000);
 
-//   await page.click('#SubmitCommentBtn');
+  expect(page.url()).toContain("http://localhost:4000/detail/");
 
-//   const pageVal = (await page.content()).match("Can not submit empty comment.");
+  await page.click('#SubmitCommentBtn');
 
-//   expect(pageVal).toContain("Can not submit empty comment.");
+  const pageVal = (await page.content()).match("Can not submit empty comment.");
 
-//   //expect comments list length 0
-//   //const commentsLength = await page.evaluate(() => document.querySelector('#CommentsList').length);
-//   //expect(commentsLength).toBe(0);
+  expect(pageVal).toContain("Can not submit empty comment.");
 
-// });
+  const results = await new AttestPuppeteer(page).analyze();
+  attestReporter.logTestResult('Detail Page Error', results);
 
-// test("enter comment", async () => {
+  //expect comments list length 0
+  //const commentsLength = await page.evaluate(() => document.querySelector('#CommentsList').length);
+  //expect(commentsLength).toBe(0);
 
-//   expect(page.url()).toContain("http://localhost:4000/detail/");
+});
 
-//   await page.type('#CommentField', 'comment test');
+test("enter comment", async () => {
 
-//   const commentVal = await page.evaluate(() => document.querySelector('#CommentField').value);
+  expect(page.url()).toContain("http://localhost:4000/detail/");
 
-//   await expect(commentVal).toBe('comment test');
+  await page.type('#CommentField', 'comment test');
+
+  const commentVal = await page.evaluate(() => document.querySelector('#CommentField').value);
+
+  await expect(commentVal).toBe('comment test');
 
 
-//   // const numComments = await page.evaluate(() => document.querySelector('#CommentList'));
+  // const numComments = await page.evaluate(() => document.querySelector('#CommentList'));
 
-//   // console.log("before num comments:",numComments);
+  // console.log("before num comments:",numComments);
   
-// });
+});
 
-// test("submit comment", async () => {
+test("submit comment", async () => {
 
-//   expect(page.url()).toContain("http://localhost:4000/detail/");
+  expect(page.url()).toContain("http://localhost:4000/detail/");
 
-//   await page.click('#SubmitCommentBtn');
+  await page.click('#SubmitCommentBtn');
 
-//   // const numComments = await page.evaluate(() => document.querySelector('#CommentsList').children.tags("LI"));
+  // const numComments = await page.evaluate(() => document.querySelector('#CommentsList').children.tags("LI"));
 
-//   // console.log("after num comments:",numComments);
-// });
+  // console.log("after num comments:",numComments);
+});
 
-// afterAll(() => {
-//   browser.close();
-// });
+afterAll(async () => {
+  browser.close();
+  await attestReporter.buildHTML('../a11y_Results');
+});
 
 
 
