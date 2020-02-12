@@ -68,8 +68,8 @@ form {
     list-style-type: none;
 }
 
-li {
-    margin-bottom: 20px;
+.Comment {
+    margin-bottom: 30px;
 }
 
 .CommentInput {

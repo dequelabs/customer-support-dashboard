@@ -91,7 +91,7 @@ export default class DetailView extends Component {
         let key = 0;
         this.state.issueComments.forEach(element => {
             comments.push(
-                <li  className='Descriptor Text'key={key++}>
+                <li  className='Descriptor Text Comment'key={key++}>
                     {element.author.displayName} - <DateHandler date={element.created.friendly}/><br/>
                     <span className='Content Text'>
                         {element.body}
