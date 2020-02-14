@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Layout, Main, Toast, } from 'cauldron-react';
+import { TextField, Select, Layout, Main, Toast, } from 'cauldron-react';
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
 import Header from '../Header';
@@ -19,6 +19,11 @@ export default class Home extends Component {
 
         this.state = {
             submitSuccess: props.submitSuccess,
+            searchValue: '',
+            statusValue: 'Open',
+            creatorValue: 'Me',
+            typeValue: 'Any',
+            page: 1,
         }
     }
 
@@ -28,7 +33,7 @@ export default class Home extends Component {
                 <Header></Header>
                 <Layout>
                     <Main className='Page'>
-                     <Toast
+                    <Toast
                         show={this.state.submitSuccess}
                         autoHide={5000}
                         type="confirmation"
@@ -60,16 +65,84 @@ export default class Home extends Component {
                             </p>
                         </Grid>
                         <Grid item xs={12} md={7}>
+
                             <h2 className='SecondHead'>
-                                Open Requests
+                                View Requests
                             </h2>
-                            <div >
-                                <IssueTable></IssueTable>
-                            </div>
+                            {/* here goes the search and filter */}
+                            <Grid container>
+                                <Grid item xs={6} md={3}>
+                                    <TextField
+                                        label="Search"
+                                        value={this.state.searchValue}
+                                        onChange={value => this.setState({
+                                            searchValue: value,
+                                        })}
+                                        className="OneLineInput"
+                                        id="SummaryInput"
+                                    />
+                                </Grid>
+                                <Grid item xs={6} md={3}>
+                                    <Select
+                                        label='Status'
+                                        value={this.state.statusValue}
+                                        options={[
+                                            { label: 'Any' },
+                                            { label: 'Open' },
+                                            { label: 'In progress' },
+                                            { label: 'Closed' }
+                                          ]}
+                                        onSelect={selected => this.setState({
+                                            statusValue: selected.label
+                                        })}
+                                        className='Select'
+                                        id="ProductSelect"
+                                    />
+                                </Grid>
+                                <Grid item xs={6} md={3}>
+                                    <Select
+                                        label='Creator'
+                                        value='Me'
+                                        options={[
+                                            { label: 'Me' },
+                                            { label: 'Anyone' }
+                                          ]}
+                                          onSelect={selected => this.setState({
+                                            creatorValue: selected.label
+                                        })}
+                                        className='Select'
+                                        id="ProductSelect"
+                                    />
+                                </Grid>
+                                <Grid item xs={6} md={3}>
+                                    <Select
+                                        label='Type'
+                                        value={this.state.typeValue}
+                                        options={[
+                                            { label: 'Any' },
+                                            { label: 'Other' },
+                                            { label: 'Bug' }
+                                        ]}
+                                        onSelect={selected => this.setState({
+                                            typeValue: selected.label
+                                        })}
+                                        className='Select'
+                                        id="ProductSelect"
+                                    />
+                                </Grid>
+                            </Grid>
+                            <IssueTable
+                                params={{
+                                    searchValue: this.state.searchValue,
+                                    statusValue: this.state.statusValue,
+                                    creatorValue: this.state.creatorValue,
+                                    typeValue: this.state.typeValue,
+                                    page: this.state.page,
+                                }}
+                            ></IssueTable>
                         </Grid>
                     </Grid>
-                    </Main>
-                    {/* <Footer/> */}
+                </Main>
                 </Layout>
             </div>
         );

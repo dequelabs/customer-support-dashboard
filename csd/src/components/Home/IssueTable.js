@@ -1,11 +1,10 @@
 import React, { Component }from 'react';
 import { Link, Loader } from 'cauldron-react';
-import { get } from '../../services/api';
+import { getParam } from '../../services/api';
 import IssueType from '../Utilities/IssueType'
 import DateHandler from '../Utilities/DateHandler';
 import '../../App.css';
 import '../../styles/IssueTable.css';
-
 
 export default class IssueTable extends Component {
 
@@ -13,12 +12,15 @@ export default class IssueTable extends Component {
         super(props);
     
         this.state = {
-            issues: null
+            issues: null,
+            params: props.params,
         }
     }
 
+    
+
     async getIssues() {
-        await get('request').then((result) => {
+        await getParam('request', this.props.params).then((result) => {
             this.setState({
                 issues: result.values,
             })
@@ -29,8 +31,18 @@ export default class IssueTable extends Component {
         this.getIssues();
     }
 
+    shouldComponentUpdate(nextProps) {
+
+        if (this.props.params === nextProps.params) {
+            this.getIssues();
+        }
+        
+        return true
+    }
+
     render() {
-        this.getIssues();
+       
+        
         if(this.state.issues === null) {
             return (
                 <Loader label="Loading..." />

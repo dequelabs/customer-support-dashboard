@@ -1,7 +1,7 @@
 import React, { Component }from 'react';
-import {Redirect} from 'react-router-dom';
-import {TextField, Select, Workspace, } from 'cauldron-react';
-import {post, get} from '../../services/api'
+import { Redirect} from 'react-router-dom';
+import { TextField, Select, Workspace, } from 'cauldron-react';
+import { post, get} from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../../App.css';
 import '../../styles/submitRequest.css';

@@ -18,13 +18,19 @@ app.get('/request', (req, res) => {
 
     var request = require('request');
 
+    
+    var params = req.url.split('?');
+    console.log(params[1]);
+    //have to build query params to pass in to url
+    //will get params via body of request??
+
     var options = {
         method: 'GET',
-        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request',
+        url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request?'+params[1],
         auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
         headers: {
-            'Accept': 'application/json'
-        }
+            'Accept': 'application/json',
+        },
     };
 
     request(options, function (error, response, body) {

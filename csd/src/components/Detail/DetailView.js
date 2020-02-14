@@ -90,14 +90,16 @@ export default class DetailView extends Component {
         let comments = [];
         let key = 0;
         this.state.issueComments.forEach(element => {
-            comments.push(
-                <li  className='Descriptor Text Comment'key={key++}>
-                    {element.author.displayName} - <DateHandler date={element.created.friendly}/><br/>
-                    <span className='Content Text'>
-                        {element.body}
-                    </span>
-                </li>
-            );
+            if(element.public) {
+                comments.push(
+                    <li  className='Descriptor Text Comment'key={key++}>
+                        {element.author.displayName} - <DateHandler date={element.created.friendly}/><br/>
+                        <span className='Content Text'>
+                            {element.body}
+                        </span>
+                    </li>
+                );
+            }
         });
         return <ul className='CommentList' id='CommentsList'>{comments}</ul>;
         //return comments;
