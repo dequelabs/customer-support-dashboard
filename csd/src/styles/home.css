@@ -105,3 +105,8 @@
   border-bottom: 2px solid black;
   border-radius: 2px 0px 0px 2px;
 }
+
+.PageControl {
+  text-align: center;
+  margin-top: 15px;
+}

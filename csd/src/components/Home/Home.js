@@ -20,7 +20,7 @@ export default class Home extends Component {
         this.state = {
             submitSuccess: props.submitSuccess,
             searchValue: '',
-            statusValue: 'Open',
+            statusValue: 'Any',
             creatorValue: 'Me',
             typeValue: 'Any',
             page: 1,
@@ -89,7 +89,6 @@ export default class Home extends Component {
                                         options={[
                                             { label: 'Any' },
                                             { label: 'Open' },
-                                            { label: 'In progress' },
                                             { label: 'Closed' }
                                           ]}
                                         onSelect={selected => this.setState({
@@ -140,6 +139,7 @@ export default class Home extends Component {
                                     page: this.state.page,
                                 }}
                             ></IssueTable>
+                            
                         </Grid>
                     </Grid>
                 </Main>

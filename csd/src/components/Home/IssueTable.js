@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { Component, Fragment }from 'react';
 import { Link, Loader } from 'cauldron-react';
 import { getParam } from '../../services/api';
 import IssueType from '../Utilities/IssueType'
@@ -19,8 +19,11 @@ export default class IssueTable extends Component {
 
     
 
-    async getIssues() {
-        await getParam('request', this.props.params).then((result) => {
+    async getIssues(params) {
+        await getParam('request', params).then((result) => {
+            if (!result.isLastPage) {
+                console.log("FREAK OUT THIS ISNT THE LAST PAGE")
+            }
             this.setState({
                 issues: result.values,
             })
@@ -28,15 +31,15 @@ export default class IssueTable extends Component {
     }
     
     componentDidMount() {
-        this.getIssues();
+        this.getIssues(this.props.params);
     }
 
     shouldComponentUpdate(nextProps) {
 
-        if (this.props.params === nextProps.params) {
-            this.getIssues();
+        if (this.props.params !== nextProps.params) {
+            this.getIssues(nextProps.params);
         }
-        
+
         return true
     }
 
@@ -73,6 +76,7 @@ export default class IssueTable extends Component {
             );
         });
             return (
+                <Fragment>
                 <table>
                     <thead>
                     <tr className='TableHead '>
@@ -88,6 +92,10 @@ export default class IssueTable extends Component {
                         {elements}
                     </tbody>
                 </table>
+                <div className='PageControl BodyText'>
+                    {this.state.params.page}
+                </div>
+                </Fragment>
             );
         }
     }
