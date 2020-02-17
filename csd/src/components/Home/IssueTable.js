@@ -17,8 +17,8 @@ export default class IssueTable extends Component {
             issues: null,
             params: props.params,
             page: 1,
-            pageSize: 20,
-            lastPage: false
+            pageSize: 5,
+            lastPage: true
         }
     }
 
@@ -82,7 +82,7 @@ export default class IssueTable extends Component {
                     <td>{element.currentStatus.status}</td>
                     <td><IssueType type={element.requestTypeId}/></td>
                     <td><DateHandler date={element.createdDate.friendly}/></td>
-                    <td>{element.reporter.displayName}</td>
+                    {/* <td>{element.reporter.displayName}</td> */}
                 </tr>
             );
         });
@@ -96,7 +96,7 @@ export default class IssueTable extends Component {
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Requester</th>
+                        {/* <th scope="col">Requester</th> */}
                     </tr>
                     </thead>
                     <tbody className='TableBody'>
@@ -105,7 +105,12 @@ export default class IssueTable extends Component {
                 </table>
                 <div className='PageControl BodyText'>
                     <PrevPage page={this.state.page} pageCallback={this.pageCallback}/>
-                    {this.state.page} 
+                    <span aria-live="polite" aria-atomic="true" aria-relevant="all" >
+                    <span className='hidden'>
+                        Page number 
+                    </span>
+                        {this.state.page}
+                    </span> 
                     <NextPage page={this.state.page} lastPage={this.state.lastPage} pageCallback={this.pageCallback}/>
                 </div>
                 </Fragment>

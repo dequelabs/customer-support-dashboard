@@ -9,25 +9,21 @@ export default class PrevPage extends Component {
         }
     }
 
-
     render() {
 
         if(this.props.page === 1) {
             return (
-                <button
-                    onClick={() => {
-                    }}
-                >
-                Back</button>
+                <button aria-disabled={true} className='PageDisabled'>Back</button>
             );
         } else {
             return (
                 <button
-                onClick={() => {
-                    this.props.pageCallback(this.props.page-1);
-                }}
-                >
-                Back
+                    onClick={() => {
+                        this.props.pageCallback(this.props.page-1);
+                    }}
+                    className='PageEnabled'
+                    >
+                    Back
                 </button>
             );
         }

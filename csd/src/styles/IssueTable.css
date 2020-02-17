@@ -26,6 +26,26 @@ td {
     margin: auto;
 }
 
+.PageControl {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.PageEnabled {
+    font-size:calc(10px + .6vw);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.PageDisabled {
+    font-size:calc(10px + .6vw);
+    color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 961px) {
     table {

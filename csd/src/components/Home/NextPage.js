@@ -5,32 +5,28 @@ export default class NextPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            disabled: props.lastPage,
+            //disabled: props.lastPage,
             page: props.page
         }
     }
 
-    handleNext() {
-        //calback for page +1
-    }
-
     render() {
 
-        if(this.state.disabled) {
+        if(this.props.lastPage) {
             return (
-                <button
-                    onClick={() => {
-                    }}
-                >
-                Next</button>
+                <button className='PageDisabled' aria-disabled={true} >
+                    Next
+                </button>
             );
         } else {
             return (
                 <button
-                onClick={() => {
-                    this.props.pageCallback(this.state.page+1);
-                }}
-                >Next
+                    onClick={() => {
+                        this.props.pageCallback(this.props.page+1);
+                    }}
+                    className='PageEnabled'
+                    >
+                    Next
                 </button>
             );
         }
