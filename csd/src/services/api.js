@@ -70,20 +70,11 @@ export async function put(endpoint) {
     return ret;
 }
 
-export async function getParam(endpoint, params) {
-
-// requestOwnership
-//  Array<string>
-
-// OWNED_REQUESTS returns customer requests where the user is the creator.
-// PARTICIPATED_REQUESTS returns customer requests where the user is a participant.
-// ORGANIZATION returns customer requests for an organization of which the user is a member when used in conjunction with organizationId.
-// ALL_ORGANIZATIONS returns customer requests that belong to all organizations of which the user is a member.
-
+export async function getParam(endpoint, params, page, pageSize) {
 
     let ret = ''
 
-    await fetch(baseEndpoint+endpoint+buildParams(params), {
+    await fetch(baseEndpoint+endpoint+buildParams(params, page, pageSize), {
         method: 'GET',
     })
     .then(response => response.json())
@@ -94,15 +85,36 @@ export async function getParam(endpoint, params) {
     return ret;
 }
 
-function buildParams(params) {
+function buildParams(params, page, pageSize) {
 
     let url = '?searchTerm=' + params.searchValue;
 
     if (params.statusValue === 'Open') {
-        url = url+='&requestStatus=OPEN_REQUESTS';
+        url +='&requestStatus=OPEN_REQUESTS';
     } else if (params.statusValue === 'Closed') {
-        url = url+='&requestStatus=CLOSED_REQUESTS'
+        url +='&requestStatus=CLOSED_REQUESTS'
     }
+
+    if (params.typeValue !== 'Any') {
+        console.log('type filter on', params.typeValue)
+        if(params.typeValue === 'Report a Problem') {
+            url += '&serviceDeskId=1&requestTypeId=10008'
+        } else if(params.typeValue === 'Request Training') {
+            url += '&serviceDeskId=1&requestTypeId=10006'
+        } else if(params.typeValue === 'Request A Feature') {
+            url += '&serviceDeskId=1&requestTypeId=10009'
+        }else if(params.typeValue === 'Provide Feedback') {
+            url += '&serviceDeskId=1&requestTypeId=10012'
+        }else if(params.typeValue === 'Other') {
+            url += '&serviceDeskId=1&requestTypeId=10011'
+        }else if(params.typeValue === 'Ask A Question') {
+            url += '&serviceDeskId=1&requestTypeId=10010'
+        }
+    }
+
+    let start = ((page-1)*pageSize);
+    url += ('&start='+start);
+    url += ('&limit='+pageSize)
 
     return url;
 }

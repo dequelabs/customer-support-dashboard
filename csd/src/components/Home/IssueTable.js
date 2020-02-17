@@ -3,6 +3,8 @@ import { Link, Loader } from 'cauldron-react';
 import { getParam } from '../../services/api';
 import IssueType from '../Utilities/IssueType'
 import DateHandler from '../Utilities/DateHandler';
+import PrevPage from './PrevPage';
+import NextPage from './NextPage';
 import '../../App.css';
 import '../../styles/IssueTable.css';
 
@@ -14,30 +16,39 @@ export default class IssueTable extends Component {
         this.state = {
             issues: null,
             params: props.params,
+            page: 1,
+            pageSize: 20,
+            lastPage: false
         }
     }
 
-    
+    pageCallback = (pageNumber) => {
+        this.setState({
+          page: pageNumber,
+        })
+      }
 
-    async getIssues(params) {
-        await getParam('request', params).then((result) => {
-            if (!result.isLastPage) {
-                console.log("FREAK OUT THIS ISNT THE LAST PAGE")
-            }
+    async getIssues(params, page, pageSize) {
+        await getParam('request', params, page, pageSize).then((result) => {
             this.setState({
                 issues: result.values,
+                lastPage: result.isLastPage
             })
          });
     }
     
     componentDidMount() {
-        this.getIssues(this.props.params);
+        this.getIssues(this.props.params, this.state.page, this.state.pageSize);
     }
 
-    shouldComponentUpdate(nextProps) {
+    shouldComponentUpdate(nextProps, nextState) {
 
         if (this.props.params !== nextProps.params) {
-            this.getIssues(nextProps.params);
+            this.getIssues(nextProps.params, this.state.page, this.state.pageSize);
+        }
+
+        if (this.state.page !== nextState.page) {
+            this.getIssues(nextProps.params, nextState.page, nextState.pageSize);
         }
 
         return true
@@ -53,7 +64,7 @@ export default class IssueTable extends Component {
         } else if (this.state.issues.length === 0) {
             return (
                 <span className='BodyText'>
-                    No Open Requests
+                    No Current Requests
                 </span>
             );
         } else {
@@ -93,7 +104,9 @@ export default class IssueTable extends Component {
                     </tbody>
                 </table>
                 <div className='PageControl BodyText'>
-                    {this.state.params.page}
+                    <PrevPage page={this.state.page} pageCallback={this.pageCallback}/>
+                    {this.state.page} 
+                    <NextPage page={this.state.page} lastPage={this.state.lastPage} pageCallback={this.pageCallback}/>
                 </div>
                 </Fragment>
             );

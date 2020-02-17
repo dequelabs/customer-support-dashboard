@@ -17,13 +17,8 @@ var corsOptions = {
 app.get('/request', (req, res) => {
 
     var request = require('request');
-
-    
     var params = req.url.split('?');
-    console.log(params[1]);
-    //have to build query params to pass in to url
-    //will get params via body of request??
-
+   
     var options = {
         method: 'GET',
         url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/request?'+params[1],

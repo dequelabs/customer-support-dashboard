@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import { TextField, Select, Layout, Main, Toast, } from 'cauldron-react';
+import { get} from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import IssueTable from './IssueTable';
 import Header from '../Header';
@@ -12,6 +13,7 @@ export default class Home extends Component {
 
     componentDidMount() {
         document.title = "Support | Deque Systems";
+        this.buildSelectOptions();
     }
 
     constructor(props) {
@@ -19,12 +21,28 @@ export default class Home extends Component {
 
         this.state = {
             submitSuccess: props.submitSuccess,
+            requestTypes: [],
             searchValue: '',
             statusValue: 'Any',
             creatorValue: 'Me',
             typeValue: 'Any',
-            page: 1,
+            
         }
+    }
+
+    buildSelectOptions() {
+        let requestTypeNames = [];
+        get('requesttype').then((result) => {
+          result.values.forEach(element => {
+            if(element.name !== 'Email request') {
+              requestTypeNames.push({ label: element.name }); 
+            }
+          });
+        });
+        requestTypeNames.push({ label: 'Any' }); 
+        this.setState({
+            requestTypes: requestTypeNames
+        });
     }
 
     render() {
@@ -71,7 +89,7 @@ export default class Home extends Component {
                             </h2>
                             {/* here goes the search and filter */}
                             <Grid container>
-                                <Grid item xs={6} md={3}>
+                                <Grid item xs={6} md={4}>
                                     <TextField
                                         label="Search"
                                         value={this.state.searchValue}
@@ -82,7 +100,7 @@ export default class Home extends Component {
                                         id="SummaryInput"
                                     />
                                 </Grid>
-                                <Grid item xs={6} md={3}>
+                                <Grid item xs={6} md={4}>
                                     <Select
                                         label='Status'
                                         value={this.state.statusValue}
@@ -98,7 +116,7 @@ export default class Home extends Component {
                                         id="ProductSelect"
                                     />
                                 </Grid>
-                                <Grid item xs={6} md={3}>
+                                {/* <Grid item xs={6} md={3}>
                                     <Select
                                         label='Creator'
                                         value='Me'
@@ -112,16 +130,12 @@ export default class Home extends Component {
                                         className='Select'
                                         id="ProductSelect"
                                     />
-                                </Grid>
-                                <Grid item xs={6} md={3}>
+                                </Grid> */}
+                                <Grid item xs={12} md={4}>
                                     <Select
                                         label='Type'
                                         value={this.state.typeValue}
-                                        options={[
-                                            { label: 'Any' },
-                                            { label: 'Other' },
-                                            { label: 'Bug' }
-                                        ]}
+                                        options={this.state.requestTypes}
                                         onSelect={selected => this.setState({
                                             typeValue: selected.label
                                         })}
@@ -136,7 +150,6 @@ export default class Home extends Component {
                                     statusValue: this.state.statusValue,
                                     creatorValue: this.state.creatorValue,
                                     typeValue: this.state.typeValue,
-                                    page: this.state.page,
                                 }}
                             ></IssueTable>
                             
