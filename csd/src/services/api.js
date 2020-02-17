@@ -87,6 +87,8 @@ export async function getParam(endpoint, params, page, pageSize) {
 
 function buildParams(params, page, pageSize) {
 
+    console.log('api page:', page)
+
     let url = '?searchTerm=' + params.searchValue;
 
     if (params.statusValue === 'Open') {
@@ -96,8 +98,7 @@ function buildParams(params, page, pageSize) {
     }
 
     if (params.typeValue !== 'Any') {
-        console.log('type filter on', params.typeValue)
-        if(params.typeValue === 'Report a Problem') {
+        if(params.typeValue === 'Report A Problem') {
             url += '&serviceDeskId=1&requestTypeId=10008'
         } else if(params.typeValue === 'Request Training') {
             url += '&serviceDeskId=1&requestTypeId=10006'

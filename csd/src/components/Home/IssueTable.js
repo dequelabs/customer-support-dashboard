@@ -43,12 +43,11 @@ export default class IssueTable extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
 
-        if (this.props.params !== nextProps.params) {
-            this.getIssues(nextProps.params, this.state.page, this.state.pageSize);
-        }
-
-        if (this.state.page !== nextState.page) {
-            this.getIssues(nextProps.params, nextState.page, nextState.pageSize);
+        if (this.props.params !== nextProps.params || this.state.page !== nextState.page) {
+            this.setState({
+                issues: null
+            })
+            this.getIssues(nextProps.params, nextState.page, this.state.pageSize);
         }
 
         return true
@@ -56,6 +55,7 @@ export default class IssueTable extends Component {
 
     render() {
        
+        console.log('issueTable page',this.state.page)
         
         if(this.state.issues === null) {
             return (
