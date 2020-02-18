@@ -87,8 +87,6 @@ export async function getParam(endpoint, params, page, pageSize) {
 
 function buildParams(params, page, pageSize) {
 
-    console.log('api page:', page)
-
     let url = '?searchTerm=' + params.searchValue;
 
     if (params.statusValue === 'Open') {

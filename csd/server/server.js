@@ -1,9 +1,10 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const port = 3000;
 const app = express();
-
+app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -387,6 +388,22 @@ app.post('/requests', cors(corsOptions), (req, res) => {
         );
         res.send(response.statusCode);
     });
+});
+
+app.post('/upload', (req, res) => {
+    if(req.files === null) {
+        return res.status(400).json({msg: 'No File Uploaded'});
+    }
+
+    const file = req.files.file;
+
+    file.mv(`../public/uploads/${file.name}`, err => {
+        console.error(err);
+        return res.status(500).send(err);
+    })
+
+    res.json({ fileName: file.name, filePath: `/public/uplpads/${file.name}`});
+
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

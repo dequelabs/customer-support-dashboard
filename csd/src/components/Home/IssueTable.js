@@ -17,7 +17,7 @@ export default class IssueTable extends Component {
             issues: null,
             params: props.params,
             page: 1,
-            pageSize: 5,
+            pageSize: 8,
             lastPage: true
         }
     }
@@ -54,8 +54,6 @@ export default class IssueTable extends Component {
     }
 
     render() {
-       
-        console.log('issueTable page',this.state.page)
         
         if(this.state.issues === null) {
             return (

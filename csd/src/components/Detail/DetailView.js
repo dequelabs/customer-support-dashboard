@@ -102,7 +102,6 @@ export default class DetailView extends Component {
             }
         });
         return <ul className='CommentList' id='CommentsList'>{comments}</ul>;
-        //return comments;
     }
 
     handleSubmit = e => {
@@ -182,6 +181,7 @@ export default class DetailView extends Component {
                                         Raised This
                                         <span className='Descriptor Text'> <DateHandler date={this.state.issue.createdDate.friendly}/></span>
                                     </p>
+                                    
                                     <div >
                                         {this.detailBuilder()}
                                     </div>

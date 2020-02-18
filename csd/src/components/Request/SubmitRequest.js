@@ -1,12 +1,12 @@
 import React, { Component }from 'react';
 import { Redirect} from 'react-router-dom';
 import { TextField, Select, Workspace, } from 'cauldron-react';
+import axios from 'axios';
 import { post, get} from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../../App.css';
 import '../../styles/submitRequest.css';
 import Header from '../Header';
-
 
 export default class SubmitRequest extends Component {
 
@@ -14,13 +14,16 @@ export default class SubmitRequest extends Component {
     super(props);
   
     this.state = {
+      requestTypes: [],
+      products: [],
       summaryError: null,
       descriptionError: null,
       requestInput: '',
       productInput: '',
+      file: '',
+      fileName: 'Choose File',
+      uploadedFile: {},
       submitStatus: null,
-      requestTypes: [],
-      products: [],
       shouldRedirect: false,
       submitSuccess: null,
     }
@@ -75,6 +78,13 @@ export default class SubmitRequest extends Component {
     }
   }
 
+  onChange = e => {
+    this.setState({
+        file: e.target.files[0],
+        fileName: e.target.files[0].name
+    });
+  }
+
   async validate() {
     const summaryEmpty = !this.summaryInput.value.trim();
     const descriptionEmpty = !this.descriptionInput.value.trim();
@@ -112,13 +122,46 @@ export default class SubmitRequest extends Component {
         description: this.descriptionInput.value,
         additional: this.additionalInfoInput.value,
       }
-      post('requests', requestValues).then((result) => {
-        this.setState({
-            submitSuccess: result.ok,
-            //submitSuccess: false,
-            shouldRedirect: true,
+
+      if (this.state.file) {
+
+        const formData = new FormData();
+      formData.append('file', this.state.file);
+      try {
+        await axios.post('http://localhost:3000/upload', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          }
         });
-     });
+
+        post('requests', requestValues).then((result) => {
+          this.setState({
+              submitSuccess: result.ok,
+              //submitSuccess: false,
+              shouldRedirect: true,
+          });
+        });
+
+      } catch (err) {
+        // if (err.response.status === 500) {
+        //   console.log('there was a problem with the server');
+        // } else {
+        //   console.log(err.response.data.msg);
+        // }
+        this.setState({
+          submitSuccess: false,
+          shouldRedirect: true,
+      });
+      }
+        
+      } else {
+        post('requests', requestValues).then((result) => {
+          this.setState({
+              submitSuccess: result.ok,
+              shouldRedirect: true,
+          });
+        });
+      }
     }
   }
   
@@ -127,6 +170,7 @@ export default class SubmitRequest extends Component {
         <div className="App">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           <Header></Header>
+          
           <Workspace className='Page'>
             <Grid container spacing={2}>
               <Grid item xs={12} md={7}>
@@ -188,6 +232,12 @@ export default class SubmitRequest extends Component {
                   className="MultiLineInput"
                   id="AdtlInfoInput"
                 />
+                <div className="custom-file">
+                    <label className="custom-file-label" htmlFor="customFile">
+                        Upload File <br/>
+                        <input type="file" className="custom-file-input" id="customFile" onChange={this.onChange}/>
+                    </label>
+                </div>
                 {this.submitMessage()}
                 </form>     
                 <Grid container spacing={1}>
