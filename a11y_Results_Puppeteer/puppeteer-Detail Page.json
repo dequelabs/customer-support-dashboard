@@ -2,13 +2,13 @@
   "type": "attest-result",
   "name": "puppeteer",
   "id": "Detail Page",
-  "endTime": "2020-02-18T16:10:57-0500",
+  "endTime": "2020-02-19T15:17:34-0500",
   "platform": {
     "userAgent": "",
     "testMachine": ""
   },
   "testSubject": {
-    "fileName": "http://localhost:4000/detail/10395",
+    "fileName": "http://localhost:4000/detail/10462",
     "lineNum": -1
   },
   "findings": {
@@ -26,8 +26,8 @@
       "orientationAngle": 0,
       "orientationType": "portrait-primary"
     },
-    "timestamp": "2020-02-18T21:10:57.111Z",
-    "url": "http://localhost:4000/detail/10395",
+    "timestamp": "2020-02-19T20:17:34.338Z",
+    "url": "http://localhost:4000/detail/10462",
     "toolOptions": {
       "reporter": "v1"
     },
@@ -66,6 +66,53 @@
               "ul[role=\"menubar\"]"
             ],
             "failureSummary": "Fix any of the following:\n  Required ARIA children role not present: menuitem, menuitemradio, menuitemcheckbox"
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143"
+        ],
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=axe-puppeteer",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8e8e8e",
+                  "bgColor": "#71b3e0",
+                  "contrastRatio": 1.43,
+                  "fontSize": "14.3pt (19px)",
+                  "fontWeight": "bold",
+                  "expectedContrastRatio": "3:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+                    "target": [
+                      "#SubmitCommentBtn"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 1.43 (foreground color: #8e8e8e, background color: #71b3e0, font size: 14.3pt (19px), font weight: bold). Expected contrast ratio of 3:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+            "target": [
+              "#SubmitCommentBtn"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.43 (foreground color: #8e8e8e, background color: #71b3e0, font size: 14.3pt (19px), font weight: bold). Expected contrast ratio of 3:1"
           }
         ]
       },
@@ -136,7 +183,7 @@
               }
             ],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -506,7 +553,7 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -563,7 +610,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -713,34 +760,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "color-contrast",
-                "data": {
-                  "fgColor": "#ffffff",
-                  "bgColor": "#0077c8",
-                  "contrastRatio": 4.69,
-                  "fontSize": "14.3pt (19px)",
-                  "fontWeight": "bold",
-                  "expectedContrastRatio": "3:1"
-                },
-                "relatedNodes": [],
-                "impact": "serious",
-                "message": "Element has sufficient color contrast of 4.69"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
-            "target": [
-              "#SubmitCommentBtn"
             ]
           },
           {
@@ -859,9 +881,27 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "x_0_1415",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_1415\">Can not submit empty comment.</div>",
+            "target": [
+              "#x_0_1415"
             ]
           }
         ]
@@ -912,24 +952,6 @@
             "html": "<ul class=\"CommentList\" id=\"CommentsList\"></ul>",
             "target": [
               "#CommentsList"
-            ]
-          },
-          {
-            "any": [
-              {
-                "id": "duplicate-id",
-                "data": "x_0_2895",
-                "relatedNodes": [],
-                "impact": "minor",
-                "message": "Document has no static elements that share the same id attribute"
-              }
-            ],
-            "all": [],
-            "none": [],
-            "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_2895\"></div>",
-            "target": [
-              "#x_0_2895"
             ]
           }
         ]
@@ -1040,7 +1062,7 @@
                 "data": null,
                 "relatedNodes": [
                   {
-                    "html": "<label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label>",
+                    "html": "<label class=\"dqpl-label dqpl-error\" for=\"CommentField\"><span>Add Comment</span></label>",
                     "target": [
                       "label"
                     ]
@@ -1051,7 +1073,7 @@
               }
             ],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -1361,7 +1383,7 @@
               }
             ],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -1404,7 +1426,7 @@
               }
             ],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -1980,7 +2002,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span></p>",
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 3:17 PM</span></span></p>",
             "target": [
               ".Details > .Content"
             ]
@@ -2016,7 +2038,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span>",
+            "html": "<span class=\"Descriptor Text\"> <span>Today 3:17 PM</span></span>",
             "target": [
               ".Content > .Descriptor:nth-child(2)"
             ]
@@ -2034,7 +2056,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span>Today 4:10 PM</span>",
+            "html": "<span>Today 3:17 PM</span>",
             "target": [
               ".Content > .Descriptor:nth-child(2) > span"
             ]
@@ -2304,7 +2326,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-field-wrap\"><label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label><textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea><div class=\"dqpl-error-wrap\" id=\"x_0_2895\"></div></div>",
+            "html": "<div class=\"dqpl-field-wrap\">",
             "target": [
               ".dqpl-field-wrap"
             ]
@@ -2322,7 +2344,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label>",
+            "html": "<label class=\"dqpl-label dqpl-error\" for=\"CommentField\"><span>Add Comment</span></label>",
             "target": [
               "label"
             ]
@@ -2358,7 +2380,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_1415\"></textarea>",
             "target": [
               "#CommentField"
             ]
@@ -2376,9 +2398,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_2895\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_1415\">Can not submit empty comment.</div>",
             "target": [
-              "#x_0_2895"
+              "#x_0_1415"
             ]
           },
           {
@@ -2592,7 +2614,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 4:10 PM</span></span></p>",
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 3:17 PM</span></span></p>",
             "target": [
               ".MuiGrid-grid-md-4 > div > p:nth-child(3)"
             ]
@@ -2628,7 +2650,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"Content Text\"><span>Today 4:10 PM</span></span>",
+            "html": "<span class=\"Content Text\"><span>Today 3:17 PM</span></span>",
             "target": [
               ".MuiGrid-grid-md-4 > div > p:nth-child(3) > .Content"
             ]
@@ -2646,7 +2668,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span>Today 4:10 PM</span>",
+            "html": "<span>Today 3:17 PM</span>",
             "target": [
               "p:nth-child(3) > .Content > span"
             ]
@@ -2808,7 +2830,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-395</span></p>",
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-462</span></p>",
             "target": [
               "p:nth-child(6)"
             ]
@@ -2844,7 +2866,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<span class=\"Content Text\">DC-395</span>",
+            "html": "<span class=\"Content Text\">DC-462</span>",
             "target": [
               "p:nth-child(6) > .Content"
             ]
@@ -3020,7 +3042,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span></p>",
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 3:17 PM</span></span></p>",
             "target": [
               ".Details > .Content"
             ],
@@ -3086,7 +3108,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<span>Today 4:10 PM</span>",
+            "html": "<span>Today 3:17 PM</span>",
             "target": [
               ".Content > .Descriptor:nth-child(2) > span"
             ],
@@ -3361,6 +3383,39 @@
               {
                 "id": "color-contrast",
                 "data": {
+                  "fgColor": "#d93251",
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_1415\">Can not submit empty comment.</div>",
+            "target": [
+              "#x_0_1415"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
                   "fgColor": "#003349",
                   "contrastRatio": 0,
                   "fontSize": "33.0pt (44px)",
@@ -3548,7 +3603,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 4:10 PM</span></span></p>",
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 3:17 PM</span></span></p>",
             "target": [
               ".MuiGrid-grid-md-4 > div > p:nth-child(3)"
             ],
@@ -3581,7 +3636,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<span>Today 4:10 PM</span>",
+            "html": "<span>Today 3:17 PM</span>",
             "target": [
               "p:nth-child(3) > .Content > span"
             ],
@@ -3713,7 +3768,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-395</span></p>",
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-462</span></p>",
             "target": [
               "p:nth-child(6)"
             ],
@@ -3746,7 +3801,7 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<span class=\"Content Text\">DC-395</span>",
+            "html": "<span class=\"Content Text\">DC-462</span>",
             "target": [
               "p:nth-child(6) > .Content"
             ],
