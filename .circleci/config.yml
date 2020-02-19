@@ -4,9 +4,29 @@ version: 2
 jobs:
   build1:
     docker:
-      - image: node:12.14.1
+      - image: circleci/node:12.14.1
     steps:
       - checkout
-      - save_cache: # Caches dependencies with a cache key
-          key: v1-repo-{{ package.json }}
-      - run: npm start
+      - restore_cache: 
+          keys: 
+            - v1-repo-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Install dependencies with NPM
+          command: npm install # replace with `yarn install` if using yarn
+      
+      - save_cache: # special step to save the dependency cache
+          key: v1-repo-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+
+      - run:
+          name: Run tests
+          # Runs jest with "--maxWorkers=2" argument to avoid OOM issues
+          command: npm test # replace with `yarn test` if using yarn
+
+workflows:
+  version: 2
+  Build and Test:
+    jobs:
+      - build
