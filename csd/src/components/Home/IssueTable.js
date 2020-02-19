@@ -17,7 +17,7 @@ export default class IssueTable extends Component {
             issues: null,
             params: props.params,
             page: 1,
-            pageSize: 8,
+            pageSize: 50,
             lastPage: true
         }
     }

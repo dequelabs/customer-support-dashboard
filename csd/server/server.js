@@ -1,9 +1,15 @@
+const accountSid = 'AC4a87abb82ec5281803d65099d34256a2';
+const authToken = 'b1483e006de65afa0ede5e1ef0959bf1';
+const twillio = require('twilio')(accountSid,authToken);
+
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const Axios = require('axios');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const port = 3000;
 const app = express();
+const axios = Axios.create();
 app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,9 +38,9 @@ app.get('/request', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
-        console.log(
-            'Get Requests Response: ' + response.statusCode + ' ' + response.statusMessage
-        );
+        // console.log(
+        //     'Get Requests Response: ' + response.statusCode + ' ' + response.statusMessage
+        // );
     });
 });
 
@@ -79,9 +85,9 @@ app.get('/requesttypefield', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
-        console.log(
-            'Get Products Response: ' + response.statusCode + ' ' + response.statusMessage
-         );
+        // console.log(
+        //     'Get Products Response: ' + response.statusCode + ' ' + response.statusMessage
+        //  );
     });
 });
 
@@ -103,9 +109,9 @@ app.get('/requesttype', (req, res) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         res.send(body);
-        console.log(
-            'Get Request Types Response: ' + response.statusCode + ' ' + response.statusMessage
-         );
+        // console.log(
+        //     'Get Request Types Response: ' + response.statusCode + ' ' + response.statusMessage
+        //  );
     });
 });
 
@@ -383,26 +389,69 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        console.log(
-            'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
-        );
-        res.send(response.statusCode);
+        // console.log(
+        //     'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
+        // );
+        twillio.messages.create({
+            to: '+12183937222',
+            from: '+12055375658',
+            body: 'New CSD ticket: '+req.body.summary,
+        });
+        res.sendStatus(response.statusCode);
     });
 });
 
 app.post('/upload', (req, res) => {
+
+    var request = require('request');
+
     if(req.files === null) {
-        return res.status(400).json({msg: 'No File Uploaded'});
+        res.status(400).json({msg: 'No File Uploaded'});
     }
 
     const file = req.files.file;
+    console.log('file:', file);
 
-    file.mv(`../public/uploads/${file.name}`, err => {
-        console.error(err);
-        return res.status(500).send(err);
-    })
+    // file.mv(`../public/uploads/${file.name}`, err => {
+    //     console.error(err);
+    //     return res.status(500).send(err);
+    // })
+    // res.json({ fileName: file.name, filePath: `/public/uplpads/${file.name}`});
 
-    res.json({ fileName: file.name, filePath: `/public/uplpads/${file.name}`});
+        // axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile', file, {
+        //   headers: {
+        //     'X-ExperimentalApi': 'opt-in',
+        //     'X-Atlassian-Token': 'no-check',
+        //     'contentType': 'false',
+        //   },
+        //   auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' }
+        // }).then(response => {
+        //     console.log('post jira response success', response);
+        // }).catch(err => {
+        //     console.log('async err catch:', err.response.status);
+        //     console.log('async err catch:', err.response);
+        // })
+
+    // var options = {
+    //     method: 'POST',
+    //     auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+    //     url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile',
+    //     headers: {
+    //         'X-ExperimentalApi': 'opt-in',
+    //         'X-Atlassian-Token': 'no-check',
+    //         'Content-Type': 'multipart/form-data'
+    //     },
+    // };
+    // request(options, function (error, response, body) {
+    //     //if (error) throw new Error(error);
+    //     console.log(
+    //         'Post file Response: ' + response.statusCode
+    //     );
+    // });
+    //attach file to ticket
+    //delete file from public
+
+    res.sendStatus(200);
 
 });
 

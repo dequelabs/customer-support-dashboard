@@ -2,7 +2,7 @@
   "type": "attest-result",
   "name": "puppeteer",
   "id": "Request Page",
-  "endTime": "2020-02-12T13:21:19-0500",
+  "endTime": "2020-02-18T16:10:47-0500",
   "platform": {
     "userAgent": "",
     "testMachine": ""
@@ -20,13 +20,13 @@
       "name": "worldspace"
     },
     "testEnvironment": {
-      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.0 Safari/537.36",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/80.0.3987.0 Safari/537.36",
       "windowWidth": 800,
       "windowHeight": 600,
       "orientationAngle": 0,
       "orientationType": "portrait-primary"
     },
-    "timestamp": "2020-02-12T18:21:19.988Z",
+    "timestamp": "2020-02-18T21:10:47.540Z",
     "url": "http://localhost:4000/request",
     "toolOptions": {
       "reporter": "v1"
@@ -136,9 +136,9 @@
               }
             ],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
@@ -162,9 +162,9 @@
               }
             ],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
@@ -307,9 +307,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<ul id=\"x_0_5512\" aria-labelledby=\"x_2_5696\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
+            "html": "<ul id=\"x_0_3846\" aria-labelledby=\"x_2_5016\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
             "target": [
-              "#x_0_5512"
+              "#x_0_3846"
             ]
           },
           {
@@ -325,9 +325,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<ul id=\"x_3_4746\" aria-labelledby=\"x_5_2398\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
+            "html": "<ul id=\"x_3_4494\" aria-labelledby=\"x_5_2611\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
             "target": [
-              "#x_3_4746"
+              "#x_3_4494"
             ]
           }
         ]
@@ -620,9 +620,9 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
@@ -645,9 +645,9 @@
             ],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
@@ -752,9 +752,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
@@ -770,9 +770,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
@@ -865,9 +865,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
@@ -890,9 +890,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
@@ -1211,7 +1211,7 @@
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "x_1_2221",
+                "data": "x_1_552",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1220,16 +1220,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-label\" id=\"x_1_2221\">Request Type</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_1_552\">Request Type</div>",
             "target": [
-              "#x_1_2221"
+              "#x_1_552"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "x_2_5696",
+                "data": "x_2_5016",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1238,16 +1238,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "YZpcSsaD",
+                "data": "mqODGLOW",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1256,16 +1256,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div>",
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div>",
             "target": [
-              "#YZpcSsaD"
+              "#mqODGLOW"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "x_4_3595",
+                "data": "x_4_7062",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1274,16 +1274,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-label\" id=\"x_4_3595\">Product</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_4_7062\">Product</div>",
             "target": [
-              "#x_4_3595"
+              "#x_4_7062"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "x_5_2398",
+                "data": "x_5_2611",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1292,16 +1292,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id-aria",
-                "data": "WfULCaZk",
+                "data": "qd2qSo8G",
                 "relatedNodes": [],
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
@@ -1310,9 +1310,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div>",
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div>",
             "target": [
-              "#WfULCaZk"
+              "#qd2qSo8G"
             ]
           },
           {
@@ -1368,6 +1368,24 @@
             "target": [
               "#AdtlInfoInput"
             ]
+          },
+          {
+            "any": [
+              {
+                "id": "duplicate-id-aria",
+                "data": "customFile",
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
+            ]
           }
         ]
       },
@@ -1405,7 +1423,7 @@
             "any": [
               {
                 "id": "duplicate-id",
-                "data": "x_0_5512",
+                "data": "x_0_3846",
                 "relatedNodes": [],
                 "impact": "minor",
                 "message": "Document has no static elements that share the same id attribute"
@@ -1414,16 +1432,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<ul id=\"x_0_5512\" aria-labelledby=\"x_2_5696\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
+            "html": "<ul id=\"x_0_3846\" aria-labelledby=\"x_2_5016\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
             "target": [
-              "#x_0_5512"
+              "#x_0_3846"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id",
-                "data": "x_3_4746",
+                "data": "x_3_4494",
                 "relatedNodes": [],
                 "impact": "minor",
                 "message": "Document has no static elements that share the same id attribute"
@@ -1432,16 +1450,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<ul id=\"x_3_4746\" aria-labelledby=\"x_5_2398\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
+            "html": "<ul id=\"x_3_4494\" aria-labelledby=\"x_5_2611\" tabindex=\"-1\" aria-required=\"true\" class=\"dqpl-listbox\" role=\"listbox\" aria-activedescendant=\"\"></ul>",
             "target": [
-              "#x_3_4746"
+              "#x_3_4494"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id",
-                "data": "x_6_3091",
+                "data": "x_6_105",
                 "relatedNodes": [],
                 "impact": "minor",
                 "message": "Document has no static elements that share the same id attribute"
@@ -1450,16 +1468,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_3091\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_105\"></div>",
             "target": [
-              "#x_6_3091"
+              "#x_6_105"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id",
-                "data": "x_7_3990",
+                "data": "x_7_1583",
                 "relatedNodes": [],
                 "impact": "minor",
                 "message": "Document has no static elements that share the same id attribute"
@@ -1468,16 +1486,16 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_3990\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_1583\"></div>",
             "target": [
-              "#x_7_3990"
+              "#x_7_1583"
             ]
           },
           {
             "any": [
               {
                 "id": "duplicate-id",
-                "data": "x_8_6991",
+                "data": "x_8_3941",
                 "relatedNodes": [],
                 "impact": "minor",
                 "message": "Document has no static elements that share the same id attribute"
@@ -1486,9 +1504,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_6991\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_3941\"></div>",
             "target": [
-              "#x_8_6991"
+              "#x_8_3941"
             ]
           }
         ]
@@ -1609,6 +1627,31 @@
             "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
             "target": [
               "#AdtlInfoInput"
+            ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "multiple-label",
+                "data": null,
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"custom-file-label\" for=\"customFile\">Upload File <br><input type=\"file\" class=\"custom-file-input\" id=\"customFile\"></label>",
+                    "target": [
+                      ".custom-file-label"
+                    ]
+                  }
+                ],
+                "impact": "moderate",
+                "message": "Form field does not have multiple label elements"
+              }
+            ],
+            "impact": null,
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
             ]
           }
         ]
@@ -1902,6 +1945,24 @@
             "target": [
               "#AdtlInfoInput"
             ]
+          },
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "title-only",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Form element does not solely use title attribute for its label"
+              }
+            ],
+            "impact": null,
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
+            ]
           }
         ]
       },
@@ -1996,6 +2057,39 @@
             "html": "<textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea>",
             "target": [
               "#AdtlInfoInput"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "implicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has an implicit (wrapped) <label>"
+              },
+              {
+                "id": "explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has an explicit <label>"
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "hidden-explicit-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "critical",
+                "message": "Form element has a visible explicit <label>"
+              }
+            ],
+            "impact": null,
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
             ]
           }
         ]
@@ -2521,7 +2615,7 @@
             "impact": null,
             "html": "<br>",
             "target": [
-              "br"
+              ".BodyText > br"
             ]
           },
           {
@@ -2609,9 +2703,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-label\" id=\"x_1_2221\">Request Type</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_1_552\">Request Type</div>",
             "target": [
-              "#x_1_2221"
+              "#x_1_552"
             ]
           },
           {
@@ -2645,9 +2739,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_2_5696\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_2221 x_2_5696 YZpcSsaD\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div></button>",
+            "html": "<button value=\"\" id=\"x_2_5016\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_1_552 x_2_5016 mqODGLOW\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div></button>",
             "target": [
-              "#x_2_5696"
+              "#x_2_5016"
             ]
           },
           {
@@ -2663,9 +2757,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-pseudo-value\" id=\"YZpcSsaD\"></div>",
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"mqODGLOW\"></div>",
             "target": [
-              "#YZpcSsaD"
+              "#mqODGLOW"
             ]
           },
           {
@@ -2699,9 +2793,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-label\" id=\"x_4_3595\">Product</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_4_7062\">Product</div>",
             "target": [
-              "#x_4_3595"
+              "#x_4_7062"
             ]
           },
           {
@@ -2735,9 +2829,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<button value=\"\" id=\"x_5_2398\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_3595 x_5_2398 WfULCaZk\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div></button>",
+            "html": "<button value=\"\" id=\"x_5_2611\" aria-haspopup=\"listbox\" class=\"dqpl-listbox-button Select\" aria-labelledby=\"x_4_7062 x_5_2611 qd2qSo8G\" aria-expanded=\"false\" type=\"button\"><div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div></button>",
             "target": [
-              "#x_5_2398"
+              "#x_5_2611"
             ]
           },
           {
@@ -2753,9 +2847,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-pseudo-value\" id=\"WfULCaZk\"></div>",
+            "html": "<div class=\"dqpl-pseudo-value\" id=\"qd2qSo8G\"></div>",
             "target": [
-              "#WfULCaZk"
+              "#qd2qSo8G"
             ]
           },
           {
@@ -2861,9 +2955,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_3091\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_6_105\"></div>",
             "target": [
-              "#x_6_3091"
+              "#x_6_105"
             ]
           },
           {
@@ -2969,9 +3063,9 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_3990\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_7_1583\"></div>",
             "target": [
-              "#x_7_3990"
+              "#x_7_1583"
             ]
           },
           {
@@ -2987,7 +3081,7 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-field-wrap\"><label class=\"dqpl-label\" for=\"AdtlInfoInput\"><span>Additional Info</span></label><textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea><div class=\"dqpl-error-wrap\" id=\"x_8_6991\"></div></div>",
+            "html": "<div class=\"dqpl-field-wrap\"><label class=\"dqpl-label\" for=\"AdtlInfoInput\"><span>Additional Info</span></label><textarea class=\"MultiLineInput\" id=\"AdtlInfoInput\" aria-invalid=\"false\"></textarea><div class=\"dqpl-error-wrap\" id=\"x_8_3941\"></div></div>",
             "target": [
               ".dqpl-field-wrap:nth-child(5)"
             ]
@@ -3059,9 +3153,81 @@
             "all": [],
             "none": [],
             "impact": null,
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_6991\"></div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_8_3941\"></div>",
             "target": [
-              "#x_8_6991"
+              "#x_8_3941"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<div class=\"custom-file\"><label class=\"custom-file-label\" for=\"customFile\">Upload File <br><input type=\"file\" class=\"custom-file-input\" id=\"customFile\"></label></div>",
+            "target": [
+              ".custom-file"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<label class=\"custom-file-label\" for=\"customFile\">Upload File <br><input type=\"file\" class=\"custom-file-input\" id=\"customFile\"></label>",
+            "target": [
+              ".custom-file-label"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<br>",
+            "target": [
+              ".custom-file-label > br"
+            ]
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": null,
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
             ]
           },
           {
@@ -3325,9 +3491,9 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<div class=\"dqpl-label\" id=\"x_1_2221\">Request Type</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_1_552\">Request Type</div>",
             "target": [
-              "#x_1_2221"
+              "#x_1_552"
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
           },
@@ -3358,9 +3524,9 @@
             "all": [],
             "none": [],
             "impact": "serious",
-            "html": "<div class=\"dqpl-label\" id=\"x_4_3595\">Product</div>",
+            "html": "<div class=\"dqpl-label\" id=\"x_4_7062\">Product</div>",
             "target": [
-              "#x_4_3595"
+              "#x_4_7062"
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
           },
@@ -3526,6 +3692,72 @@
             "html": "<span>Additional Info</span>",
             "target": [
               "label[for=\"AdtlInfoInput\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#666666",
+                  "contrastRatio": 0,
+                  "fontSize": "11.3pt (15px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<label class=\"custom-file-label\" for=\"customFile\">Upload File <br><input type=\"file\" class=\"custom-file-input\" id=\"customFile\"></label>",
+            "target": [
+              ".custom-file-label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#666666",
+                  "contrastRatio": 0,
+                  "fontSize": "8.3pt (11px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<input type=\"file\" class=\"custom-file-input\" id=\"customFile\">",
+            "target": [
+              "#customFile"
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
           }

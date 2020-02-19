@@ -28,6 +28,8 @@ test("navigates to make request then back to home", async () => {
 
     expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/home");
 
+    await sleep(2000);
+
     const results = await new AttestBuilder(driver).analyze();
     reporter.logTestResult('Home Page', results)
 

@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer"; // 1
-import { ExpansionPanelActions } from "@material-ui/core";
-import SelectInput from "@material-ui/core/Select/SelectInput";
+// import { ExpansionPanelActions } from "@material-ui/core";
+// import SelectInput from "@material-ui/core/Select/SelectInput";
 import { AttestPuppeteer } from '@deque/attest-puppeteer';
 import rimraf from 'rimraf';
 import AttestReporter from '@deque/attest-reporter';
@@ -18,7 +18,7 @@ beforeAll(async () => {
 
   //launch web driver
   browser = await puppeteer.launch({
-    headless: false
+    headless: true
   });
   page = await browser.newPage();
 

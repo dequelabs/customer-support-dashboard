@@ -232,10 +232,10 @@ export default class SubmitRequest extends Component {
                   className="MultiLineInput"
                   id="AdtlInfoInput"
                 />
-                <div className="custom-file">
-                    <label className="custom-file-label" htmlFor="customFile">
+                <div className="dqpl-field-wrap">
+                    <label className="dqpl-label" htmlFor="customFile">
                         Upload File <br/>
-                        <input type="file" className="custom-file-input" id="customFile" onChange={this.onChange}/>
+                        <input type="file" className="FileInput" id="customFile" onChange={this.onChange}/>
                     </label>
                 </div>
                 {this.submitMessage()}

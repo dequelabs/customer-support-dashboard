@@ -259,3 +259,26 @@ form {
   border-bottom: 2px solid black;
   border-radius: 2px 0px 0px 2px;
 }
+
+.FileInput {
+  position: relative;
+  margin-top: 3px;
+  margin-bottom: 32px;
+  border: 3px solid black;
+  height: 30px;
+  border-radius: 6px;
+  width: 93%;
+  padding: 1%;
+  margin-right: 2%;
+  font-size: 18px;
+  padding-top: 10px;
+  justify-items: center;
+}
+
+.FileInput:hover {
+  border: 3px solid black;
+}
+
+.FileInput:focus {
+  border: 3px solid black;
+}

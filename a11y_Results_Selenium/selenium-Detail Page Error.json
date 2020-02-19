@@ -2,13 +2,13 @@
   "type": "attest-result",
   "name": "selenium",
   "id": "Detail Page Error",
-  "endTime": "2020-02-12T13:21:26-0500",
+  "endTime": "2020-02-18T16:10:55-0500",
   "platform": {
     "userAgent": "",
     "testMachine": ""
   },
   "testSubject": {
-    "fileName": "http://localhost:4000/detail/10248",
+    "fileName": "http://localhost:4000/detail/10396",
     "lineNum": -1
   },
   "findings": {
@@ -601,7 +601,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 1:21 PM</span></span></p>",
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span></p>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -669,7 +669,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<span>Today 1:21 PM</span>",
+            "html": "<span>Today 4:10 PM</span>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -975,11 +975,11 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_205\">Can not submit empty comment.</div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_6193\">Can not submit empty comment.</div>",
             "impact": "serious",
             "none": [],
             "target": [
-              "#x_0_205"
+              "#x_0_6193"
             ]
           },
           {
@@ -1179,7 +1179,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 1:21 PM</span></span></p>",
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 4:10 PM</span></span></p>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -1213,7 +1213,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<span>Today 1:21 PM</span>",
+            "html": "<span>Today 4:10 PM</span>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -1349,7 +1349,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-248</span></p>",
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-396</span></p>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -1383,7 +1383,7 @@
               }
             ],
             "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-            "html": "<span class=\"Content Text\">DC-248</span>",
+            "html": "<span class=\"Content Text\">DC-396</span>",
             "impact": "serious",
             "none": [],
             "target": [
@@ -1417,7 +1417,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [
               {
@@ -1795,7 +1795,7 @@
               }
             ],
             "any": [],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
@@ -1852,7 +1852,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
@@ -2003,7 +2003,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
@@ -2151,7 +2151,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
@@ -2162,18 +2162,18 @@
             "all": [],
             "any": [
               {
-                "data": "x_0_205",
+                "data": "x_0_6193",
                 "id": "duplicate-id-aria",
                 "impact": "critical",
                 "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_205\">Can not submit empty comment.</div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_6193\">Can not submit empty comment.</div>",
             "impact": null,
             "none": [],
             "target": [
-              "#x_0_205"
+              "#x_0_6193"
             ]
           }
         ],
@@ -2328,7 +2328,7 @@
           {
             "all": [],
             "any": [],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [
               {
@@ -2646,7 +2646,7 @@
           {
             "all": [],
             "any": [],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [
               {
@@ -2685,7 +2685,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [
               {
@@ -3273,7 +3273,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 1:21 PM</span></span></p>",
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span></p>",
             "impact": null,
             "none": [],
             "target": [
@@ -3309,7 +3309,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<span class=\"Descriptor Text\"> <span>Today 1:21 PM</span></span>",
+            "html": "<span class=\"Descriptor Text\"> <span>Today 4:10 PM</span></span>",
             "impact": null,
             "none": [],
             "target": [
@@ -3327,7 +3327,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<span>Today 1:21 PM</span>",
+            "html": "<span>Today 4:10 PM</span>",
             "impact": null,
             "none": [],
             "target": [
@@ -3651,7 +3651,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_205\"></textarea>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"true\" aria-describedby=\" x_0_6193\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
@@ -3669,11 +3669,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_205\">Can not submit empty comment.</div>",
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_6193\">Can not submit empty comment.</div>",
             "impact": null,
             "none": [],
             "target": [
-              "#x_0_205"
+              "#x_0_6193"
             ]
           },
           {
@@ -3885,7 +3885,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 1:21 PM</span></span></p>",
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 4:10 PM</span></span></p>",
             "impact": null,
             "none": [],
             "target": [
@@ -3921,7 +3921,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<span class=\"Content Text\"><span>Today 1:21 PM</span></span>",
+            "html": "<span class=\"Content Text\"><span>Today 4:10 PM</span></span>",
             "impact": null,
             "none": [],
             "target": [
@@ -3939,7 +3939,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<span>Today 1:21 PM</span>",
+            "html": "<span>Today 4:10 PM</span>",
             "impact": null,
             "none": [],
             "target": [
@@ -4101,7 +4101,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-248</span></p>",
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-396</span></p>",
             "impact": null,
             "none": [],
             "target": [
@@ -4137,7 +4137,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<span class=\"Content Text\">DC-248</span>",
+            "html": "<span class=\"Content Text\">DC-396</span>",
             "impact": null,
             "none": [],
             "target": [
@@ -4220,18 +4220,18 @@
     "testEnvironment": {
       "orientationAngle": 0,
       "orientationType": "landscape-primary",
-      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.100 Safari/537.36",
-      "windowHeight": 890,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36",
+      "windowHeight": 663,
       "windowWidth": 1200
     },
     "testRunner": {
       "name": "worldspace"
     },
-    "timestamp": "2020-02-12T18:21:26.172Z",
+    "timestamp": "2020-02-18T21:10:55.683Z",
     "toolOptions": {
       "reporter": "v1"
     },
-    "url": "http://localhost:4000/detail/10248",
+    "url": "http://localhost:4000/detail/10396",
     "violations": [
       {
         "description": "Ensures elements with an ARIA role that require child roles contain them",
