@@ -2,12 +2,12 @@
 version: 2
 
 jobs:
-  build:
+  build: build and test
     docker:
       - image: node:12.14.1
     working_directory: ~/repo
 
-      - restore_cache:
+      - save_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
