@@ -11,6 +11,8 @@ jobs:
           keys: 
             - v1-repo-{{ checksum "package-lock.json" }}
 
+      -run: pwd
+
       - run:
           name: Install dependencies with NPM
           command: npm install # replace with `yarn install` if using yarn
