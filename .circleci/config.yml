@@ -11,7 +11,9 @@ jobs:
           keys: 
             - v1-repo-{{ checksum "package-lock.json" }}
 
-      -run: pwd
+      run:
+          name: check directory
+          command: pwd
 
       - run:
           name: Install dependencies with NPM
