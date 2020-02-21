@@ -26,6 +26,7 @@ jobs:
 
       - run:
           name: Install dependencies with NPM
+          command: cd csd
           command: npm install # replace with `yarn install` if using yarn
       
       - save_cache: # special step to save the dependency cache
