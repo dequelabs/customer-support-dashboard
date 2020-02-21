@@ -18,7 +18,11 @@ jobs:
 
       - run:
           name: check directory
-          command: cd ~/home
+          command: cd csd
+
+      - run:
+          name: check directory
+          command: pwd
 
       - run:
           name: check contents
