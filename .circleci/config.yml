@@ -9,12 +9,20 @@ jobs:
       - checkout
       
       - run:
-          name: change directory
+          name: check directory
           command: pwd
 
       - run:
+          name: check contents
+          command: ls
+
+      - run:
           name: check directory
-          command: cd ~/csd
+          command: cd ~/home
+
+      - run:
+          name: check contents
+          command: ls
 
       - restore_cache: 
           keys: 
