@@ -17,16 +17,8 @@ jobs:
           command: ls
 
       - run:
-          name: change directory
-          command: cd ./csd
-
-      - run:
-          name: check directory
-          command: pwd
-
-      - run:
-          name: check contents
-          command: ls
+          name: check sub contents
+          command: ls ./csd
 
       - restore_cache: 
           keys: 
