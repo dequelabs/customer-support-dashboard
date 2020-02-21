@@ -11,7 +11,7 @@ jobs:
           keys: 
             - v1-repo-{{ checksum "package-lock.json" }}
 
-      run:
+      - run:
           name: check directory
           command: pwd
 
@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Run tests
           # Runs jest with "--maxWorkers=2" argument to avoid OOM issues
-          command: npm test # replace with `yarn test` if using yarn
+          command: yarn test # replace with `yarn test` if using yarn
 
 workflows:
   version: 2
