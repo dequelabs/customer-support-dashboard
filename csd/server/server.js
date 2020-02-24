@@ -447,6 +447,7 @@ app.post('/upload', (req, res) => {
 app.post('/attach', (req, res) => { 
 
     console.log('attach file:', req.body.body.temporaryAttachmentIds[0]);
+    console.log('to ticket', req.body.body.id);
 
     let ticket = req.body.body.id;
     let attachmentId = req.body.body.temporaryAttachmentIds[0];
@@ -455,18 +456,21 @@ app.post('/attach', (req, res) => {
         auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }, 
         body: {
             "temporaryAttachmentIds": [
                 attachmentId,
-              ],
-              "public": true,
+            ],
+            "public": true,
+            "additionalComment": {
+                "body": "test."
+            }
         },
     }).then(response => {
         res.status(201).json({ticket: ticket, id: attachmentId })
     }).catch(err => {
-        console.log(err.response);
+        console.log('error:', err.response.status);
         res.sendStatus(err.response.status);
     })
 });

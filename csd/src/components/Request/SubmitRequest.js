@@ -163,15 +163,31 @@ export default class SubmitRequest extends Component {
                 }
               }).then(resp => {
                 console.log('attach file result:', resp.data);
+                this.setState({
+                  submitSuccess: true,
+                  shouldRedirect: true,
+                });
               }).catch(err => {
                 console.log('attachment error:', err.response.status);
+                this.setState({
+                  submitSuccess: false,
+                  shouldRedirect: true,
+                });
               })
             }).catch(err => {
               console.log('upload file error:', err.response.status);
+              this.setState({
+                submitSuccess: false,
+                shouldRedirect: true,
+              });
             })
           }
         }).catch(err => {
           console.log('post new request error:', err.response.status);
+          this.setState({
+            submitSuccess: false,
+            shouldRedirect: true,
+          });
         })
 
 
