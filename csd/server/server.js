@@ -231,7 +231,7 @@ app.delete('/request/*/notification', (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        res.send(response.statusCode);
+        res.sendStatus(response.statusCode);
         console.log(
             'Notifications Unsubscribe Response: ' + response.statusCode + ' ' + response.statusMessage
          );
