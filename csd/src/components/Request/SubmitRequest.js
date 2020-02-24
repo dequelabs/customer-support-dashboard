@@ -2,7 +2,7 @@ import React, { Component }from 'react';
 import { Redirect} from 'react-router-dom';
 import { TextField, Select, Workspace, } from 'cauldron-react';
 import axios from 'axios';
-import { get } from '../../services/api'
+import { get, } from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../../App.css';
 import '../../styles/submitRequest.css';
@@ -123,39 +123,78 @@ export default class SubmitRequest extends Component {
         additional: this.additionalInfoInput.value,
       }
 
-      if (this.state.file) { 
-
-        const formData = new FormData();
-        formData.append('file', this.state.file);
-        console.log(formData);
-
-        axios.post('http://localhost:3000/upload', formData, {
+      //post ticket
+      axios.post('http://localhost:3000/requests', {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
           },
-        }).then(response => {
-            console.log('post jira response success', response.status);
+          body: requestValues
+      }).then(response => {
+
+          let id = response.data.id;
+
+          console.log('posted new ticket with id', id);
+
+          if (this.state.file) { 
+
+            const formData = new FormData();
+            formData.append('file', this.state.file);
+
+            //post attachment
+            axios.post('http://localhost:3000/upload', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Accept': 'application/json',
+              },
+            }).then(response => {
+              console.log('post file success, attaching ' + response.data.tempAttachments[0].fileName + ' to ticket ' + id);
+              //attach to ticket
+              axios.post('http://localhost:3000/attach', {
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                },
+                body: {
+                  "temporaryAttachmentIds": [
+                    response.data.tempAttachments[0].temporaryAttachmentId,
+                  ],
+                  'id': id,
+                }
+              }).then(resp => {
+                console.log('attach file result:', resp.data);
+              }).catch(err => {
+                console.log('attachment error:', err.response.status);
+              })
+            }).catch(err => {
+              console.log('upload file error:', err.response.status);
+            })
+          }
         }).catch(err => {
-            console.log('async err catch:', err.response.status);
-            console.log('async err catch:', err.response);
+          console.log('post new request error:', err.response.status);
         })
-        
 
-      } else {
-        console.log('post with no file');
-      }
 
-      // if (this.state.file) {
+      // if (this.state.file) { 
 
       //   const formData = new FormData();
-      // formData.append('file', this.state.file);
-      // try {
-      //   await axios.post('http://localhost:3000/', formData, {
+      //   formData.append('file', this.state.file);
+
+      //   axios.post('http://localhost:3000/upload', formData, {
       //     headers: {
       //       'Content-Type': 'multipart/form-data',
+      //       'Accept': 'application/json',
       //     },
-      //     body: JSON.stringify(requestValues)
-      //   });
+      //   }).then(response => {
+      //       console.log('post jira response success', response.status);
+      //   }).catch(err => {
+      //       console.log('client error:', err.response.status);
+      //       //console.log('async err catch:', err.response);
+      //   })
+      // } else {
+      //   console.log('post with no file');
+      // }
+
 
       //   // post('requests', requestValues).then((result) => {
       //   //   this.setState({

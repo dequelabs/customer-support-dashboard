@@ -343,15 +343,8 @@ app.post('/comments', cors(corsOptions), (req, res) => {
 //create new request
 app.post('/requests', cors(corsOptions), (req, res) => {
 
-    if(req.files === null) {
-        console.log('no file upload')
-    } else {
-        const file = req.files.file;
-        console.log('file:', file);
-    }
-
     var request = require('request');
-    let type = req.body.type;
+    let type = req.body.body.type;
     let value = '';
 
     if(type === 'Report A Problem') {
@@ -370,20 +363,20 @@ app.post('/requests', cors(corsOptions), (req, res) => {
         value = type;
     }
 
-    if (req.body.product === '') {
-        req.body.product = 'Other';
+    if (req.body.body.product === '') {
+        req.body.body.product = 'Other';
     }
 
     var bodyData = {
         serviceDeskId: "1",
         requestTypeId: value,
         requestFieldValues: {
-            summary: req.body.summary,
-            description: req.body.description,
+            summary: req.body.body.summary,
+            description: req.body.body.description,
             customfield_10036: {
-                value: req.body.product
+                value: req.body.body.product
             },
-            customfield_10038: req.body.additional
+            customfield_10038: req.body.body.additional
         }
     };
 
@@ -400,15 +393,14 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        console.log(
-            'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
-        );
-        twillio.messages.create({
-            to: '+12183937222',
-            from: '+12055375658',
-            body: 'New CSD ticket: '+req.body.summary,
-        });
-        res.sendStatus(response.statusCode);
+        console.log('Post Request Response: ' + response.statusCode);
+        // twillio.messages.create({
+        //     to: '+12183937222',
+        //     from: '+12055375658',
+        //     body: 'New CSD ticket: '+req.body.summary,
+        // });
+        // console.log(JSON.parse(body).issueId);
+        res.status(response.statusCode).json({id: JSON.parse(body).issueId});
     });
 });
 
@@ -417,41 +409,66 @@ app.post('/upload', (req, res) => {
     if(req.files === null) {
         res.status(400).json({msg: 'No File Uploaded'});
     }
+
+    const file = req.files.file;
     
-    // file.mv(`../public/uploads/${file.name}`, err => {
-    //     return res.status(500).send(err);
-    // })
+    file.mv(`../public/uploads/${file.name}`, err => {
+        if (err) {
+            console.log('file move error:', err);
+            return res.status(500).send(err);
+        }
+    })
 
-    //fs.readFile(`../public/uploads/${file.name}`, "utf8", (err, data) => {
-    // fs.readFile('../public/uploads/testFile.txt', "utf8", (err, data) => {
-    //     if (!err) {
-    //         console.log('successful open of file');
-    //         console.log(data)
-    //     } else {
-    //         console.log('unsuccessful open of file');
-    //         console.log(err);
-    //     }
-    // });
-
-    //const form = req.files.file;
     const form = new FormData();
-    //form.append('file', fs.createReadStream('../public/uploads/testFile.txt'));
-    form.append('file', fs.readFileSync('../public/uploads/testFile.txt'));
+    form.append('file', fs.createReadStream(`../public/uploads/${file.name}`));
+
+    const formHeaders = form.getHeaders();
 
     axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile', form, {
         headers: {
             'X-ExperimentalApi': 'opt-in',
             'X-Atlassian-Token': 'no-check',
-            'Content-Type': 'false',
+            ...formHeaders,
         },
         auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' }, 
     }).then(response => {
-        console.log('post jira response success', response.status);
-        res.sendStatus(response.response.status);
+        console.log('attach file response', response.status);
+        fs.unlink(`../public/uploads/${file.name}`, (err) => {
+            if (err) throw err;
+          });
+        res.status(201).json({tempAttachments: response.data.temporaryAttachments});
     }).catch(err => {
-        console.log('err catch:', err.response);
-        res.sendStatus(err.response.status);
+        console.log('attach file response:', err.response.status);
+        res.sendStatus(500);
     });
+});
+
+
+app.post('/attach', (req, res) => { 
+
+    console.log('attach file:', req.body.body.temporaryAttachmentIds[0]);
+
+    let ticket = req.body.body.id;
+    let attachmentId = req.body.body.temporaryAttachmentIds[0];
+
+    axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+ ticket +'/attachment', {
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }, 
+        body: {
+            "temporaryAttachmentIds": [
+                attachmentId,
+              ],
+              "public": true,
+        },
+    }).then(response => {
+        res.status(201).json({ticket: ticket, id: attachmentId })
+    }).catch(err => {
+        console.log(err.response);
+        res.sendStatus(err.response.status);
+    })
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
