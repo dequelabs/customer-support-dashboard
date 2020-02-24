@@ -1,15 +1,19 @@
 const accountSid = 'AC4a87abb82ec5281803d65099d34256a2';
 const authToken = 'b1483e006de65afa0ede5e1ef0959bf1';
-const twillio = require('twilio')(accountSid,authToken);
+// const twillio = require('twilio')(accountSid,authToken);
 
+var FormData = require('form-data');
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const Axios = require('axios');
 var cors = require('cors');
 const bodyParser = require('body-parser');
+const fs = require('fs');
+
 const port = 3000;
 const app = express();
 const axios = Axios.create();
+
 app.use(fileUpload());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -338,7 +342,14 @@ app.post('/comments', cors(corsOptions), (req, res) => {
 
 //create new request
 app.post('/requests', cors(corsOptions), (req, res) => {
-    
+
+    if(req.files === null) {
+        console.log('no file upload')
+    } else {
+        const file = req.files.file;
+        console.log('file:', file);
+    }
+
     var request = require('request');
     let type = req.body.type;
     let value = '';
@@ -389,9 +400,9 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        // console.log(
-        //     'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
-        // );
+        console.log(
+            'Post Request Response: ' + response.statusCode + ' ' + response.statusMessage
+        );
         twillio.messages.create({
             to: '+12183937222',
             from: '+12055375658',
@@ -403,56 +414,44 @@ app.post('/requests', cors(corsOptions), (req, res) => {
 
 app.post('/upload', (req, res) => {
 
-    var request = require('request');
-
     if(req.files === null) {
         res.status(400).json({msg: 'No File Uploaded'});
     }
-
-    const file = req.files.file;
-    console.log('file:', file);
-
+    
     // file.mv(`../public/uploads/${file.name}`, err => {
-    //     console.error(err);
     //     return res.status(500).send(err);
     // })
-    // res.json({ fileName: file.name, filePath: `/public/uplpads/${file.name}`});
 
-        // axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile', file, {
-        //   headers: {
-        //     'X-ExperimentalApi': 'opt-in',
-        //     'X-Atlassian-Token': 'no-check',
-        //     'contentType': 'false',
-        //   },
-        //   auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' }
-        // }).then(response => {
-        //     console.log('post jira response success', response);
-        // }).catch(err => {
-        //     console.log('async err catch:', err.response.status);
-        //     console.log('async err catch:', err.response);
-        // })
-
-    // var options = {
-    //     method: 'POST',
-    //     auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
-    //     url: 'https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile',
-    //     headers: {
-    //         'X-ExperimentalApi': 'opt-in',
-    //         'X-Atlassian-Token': 'no-check',
-    //         'Content-Type': 'multipart/form-data'
-    //     },
-    // };
-    // request(options, function (error, response, body) {
-    //     //if (error) throw new Error(error);
-    //     console.log(
-    //         'Post file Response: ' + response.statusCode
-    //     );
+    //fs.readFile(`../public/uploads/${file.name}`, "utf8", (err, data) => {
+    // fs.readFile('../public/uploads/testFile.txt', "utf8", (err, data) => {
+    //     if (!err) {
+    //         console.log('successful open of file');
+    //         console.log(data)
+    //     } else {
+    //         console.log('unsuccessful open of file');
+    //         console.log(err);
+    //     }
     // });
-    //attach file to ticket
-    //delete file from public
 
-    res.sendStatus(200);
+    //const form = req.files.file;
+    const form = new FormData();
+    //form.append('file', fs.createReadStream('../public/uploads/testFile.txt'));
+    form.append('file', fs.readFileSync('../public/uploads/testFile.txt'));
 
+    axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/servicedesk/1/attachTemporaryFile', form, {
+        headers: {
+            'X-ExperimentalApi': 'opt-in',
+            'X-Atlassian-Token': 'no-check',
+            'Content-Type': 'false',
+        },
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' }, 
+    }).then(response => {
+        console.log('post jira response success', response.status);
+        res.sendStatus(response.response.status);
+    }).catch(err => {
+        console.log('err catch:', err.response);
+        res.sendStatus(err.response.status);
+    });
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

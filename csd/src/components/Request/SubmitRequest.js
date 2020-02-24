@@ -2,7 +2,7 @@ import React, { Component }from 'react';
 import { Redirect} from 'react-router-dom';
 import { TextField, Select, Workspace, } from 'cauldron-react';
 import axios from 'axios';
-import { post, get} from '../../services/api'
+import { get } from '../../services/api'
 import Grid from '@material-ui/core/Grid';
 import '../../App.css';
 import '../../styles/submitRequest.css';
@@ -123,45 +123,68 @@ export default class SubmitRequest extends Component {
         additional: this.additionalInfoInput.value,
       }
 
-      if (this.state.file) {
+      if (this.state.file) { 
 
         const formData = new FormData();
-      formData.append('file', this.state.file);
-      try {
-        await axios.post('http://localhost:3000/upload', formData, {
+        formData.append('file', this.state.file);
+        console.log(formData);
+
+        axios.post('http://localhost:3000/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
-          }
-        });
-
-        post('requests', requestValues).then((result) => {
-          this.setState({
-              submitSuccess: result.ok,
-              //submitSuccess: false,
-              shouldRedirect: true,
-          });
-        });
-
-      } catch (err) {
-        // if (err.response.status === 500) {
-        //   console.log('there was a problem with the server');
-        // } else {
-        //   console.log(err.response.data.msg);
-        // }
-        this.setState({
-          submitSuccess: false,
-          shouldRedirect: true,
-      });
-      }
+          },
+        }).then(response => {
+            console.log('post jira response success', response.status);
+        }).catch(err => {
+            console.log('async err catch:', err.response.status);
+            console.log('async err catch:', err.response);
+        })
         
+
       } else {
-        post('requests', requestValues).then((result) => {
-          this.setState({
-              submitSuccess: result.ok,
-              shouldRedirect: true,
-          });
-        });
+        console.log('post with no file');
       }
+
+      // if (this.state.file) {
+
+      //   const formData = new FormData();
+      // formData.append('file', this.state.file);
+      // try {
+      //   await axios.post('http://localhost:3000/', formData, {
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data',
+      //     },
+      //     body: JSON.stringify(requestValues)
+      //   });
+
+      //   // post('requests', requestValues).then((result) => {
+      //   //   this.setState({
+      //   //       submitSuccess: result.ok,
+      //   //       //submitSuccess: false,
+      //   //       shouldRedirect: true,
+      //   //   });
+      //   // });
+
+      // } catch (err) {
+      //   // if (err.response.status === 500) {
+      //   //   console.log('there was a problem with the server');
+      //   // } else {
+      //   //   console.log(err.response.data.msg);
+      //   // }
+      //   this.setState({
+      //     submitSuccess: false,
+      //     shouldRedirect: true,
+      // });
+      // }
+        
+      // } else {
+      //   post('requests', requestValues).then((result) => {
+      //     this.setState({
+      //         submitSuccess: result.ok,
+      //         shouldRedirect: true,
+      //     });
+      //   });
+      // }
     }
   }
   
@@ -244,7 +267,6 @@ export default class SubmitRequest extends Component {
                   <Grid item xs={6}>
                     <button id="SubmitButton" className='FormSubmitButton' type="submit" onClick={() => {
                       this.validate();
-                      //this.handleRedirect();
                     }}>
                       Submit
                     </button>
