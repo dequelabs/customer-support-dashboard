@@ -5,10 +5,10 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.14.1
-    # working_directory: ./csd
+    working_directory: ./csd
 
     steps:
-      - checkout
+      - checkout ../
       
       - run:
           name: check directory
@@ -18,9 +18,9 @@ jobs:
           name: check contents
           command: ls
 
-      - run:
-          name: check inner contents
-          command: ls ./csd
+      # - run:
+      #     name: check inner contents
+      #     command: ls ./csd
 
       - restore_cache: 
           keys: 
