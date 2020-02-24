@@ -8,8 +8,8 @@ jobs:
 
     steps:
       - checkout
-      
-      - working_directory: ~/csd
+
+      working_directory: ~/csd
 
       - run:
           name: check directory
