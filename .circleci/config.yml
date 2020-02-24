@@ -5,7 +5,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.14.1
-    working_directory: ./csd
+    
     steps:
       - checkout
       
@@ -21,7 +21,7 @@ jobs:
           keys: 
             - v1-repo-{{ checksum "./csd/package-lock.json" }}
           
-
+      working_directory: ./csd
       - run:
           name: Install dependencies with NPM
           command: cd csd && npm install # replace with `yarn install` if using yarn
