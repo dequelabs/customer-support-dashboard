@@ -181,65 +181,19 @@ export default class SubmitRequest extends Component {
                 shouldRedirect: true,
               });
             })
-          }
-        }).catch(err => {
-          console.log('post new request error:', err.response.status);
+        } else {
           this.setState({
-            submitSuccess: false,
+            submitSuccess: true,
             shouldRedirect: true,
           });
-        })
-
-
-      // if (this.state.file) { 
-
-      //   const formData = new FormData();
-      //   formData.append('file', this.state.file);
-
-      //   axios.post('http://localhost:3000/upload', formData, {
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //       'Accept': 'application/json',
-      //     },
-      //   }).then(response => {
-      //       console.log('post jira response success', response.status);
-      //   }).catch(err => {
-      //       console.log('client error:', err.response.status);
-      //       //console.log('async err catch:', err.response);
-      //   })
-      // } else {
-      //   console.log('post with no file');
-      // }
-
-
-      //   // post('requests', requestValues).then((result) => {
-      //   //   this.setState({
-      //   //       submitSuccess: result.ok,
-      //   //       //submitSuccess: false,
-      //   //       shouldRedirect: true,
-      //   //   });
-      //   // });
-
-      // } catch (err) {
-      //   // if (err.response.status === 500) {
-      //   //   console.log('there was a problem with the server');
-      //   // } else {
-      //   //   console.log(err.response.data.msg);
-      //   // }
-      //   this.setState({
-      //     submitSuccess: false,
-      //     shouldRedirect: true,
-      // });
-      // }
-        
-      // } else {
-      //   post('requests', requestValues).then((result) => {
-      //     this.setState({
-      //         submitSuccess: result.ok,
-      //         shouldRedirect: true,
-      //     });
-      //   });
-      // }
+        }
+      }).catch(err => {
+        console.log('post new request error:', err.response.status);
+        this.setState({
+          submitSuccess: false,
+          shouldRedirect: true,
+        });
+      });
     }
   }
   
