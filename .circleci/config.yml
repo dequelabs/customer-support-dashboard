@@ -9,9 +9,13 @@ jobs:
 
     steps:
       - checkout
+
+      - run:
+          name: check directory root
+          command: cd ~ && pwd
       
       - run:
-          name: check directory
+          name: check working directory
           command: pwd
 
       - run:
