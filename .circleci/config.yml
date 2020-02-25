@@ -5,14 +5,11 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.14.1
-    # working_directory:
+    working_directory: ~/project/csd
 
     steps:
-      - checkout
-
-      - run:
-          name: check directory root
-          command: cd ~ && pwd
+      - checkout:
+          path: ~/project
       
       - run:
           name: check working directory
@@ -22,18 +19,18 @@ jobs:
           name: check contents
           command: ls
 
-      - run:
-          name: check inner contents
-          command: ls ./csd
+      # - run:
+      #     name: check inner contents
+      #     command: ls ./csd
 
-      - restore_cache: 
-          keys: 
-            - v1-repo-{{ checksum "./csd/package-lock.json" }}
+      # - restore_cache: 
+      #     keys: 
+      #       - v1-repo-{{ checksum "./csd/package-lock.json" }}
           
 
-      - run:
-          name: Install dependencies with NPM
-          command: npm install # replace with `yarn install` if using yarn
+      # - run:
+      #     name: Install dependencies with NPM
+      #     command: npm install # replace with `yarn install` if using yarn
       
       # - save_cache: # special step to save the dependency cache
       #     key: v1-repo-{{ checksum "package-lock.json" }}
