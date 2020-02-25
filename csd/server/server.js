@@ -453,11 +453,11 @@ app.post('/attach', (req, res) => {
     let attachmentId = req.body.body.temporaryAttachmentIds[0];
 
     axios.post('https://dequecsddev.atlassian.net/rest/servicedeskapi/request/'+ ticket +'/attachment', {
-        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' },
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         }, 
+        auth: { username: 'jonathan.thickens@deque.com', password: 'j0VEP5Ia8BngJnzcIm6pC00B' }, 
         body: {
             "temporaryAttachmentIds": [
                 attachmentId,
