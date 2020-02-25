@@ -27,6 +27,11 @@ jobs:
       - run:
           name: Install dependencies with NPM
           command: npm install # replace with `yarn install` if using yarn
+          - save_cache:
+          key: v4-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+            - ~/.cache
       
       # - save_cache: # special step to save the dependency cache
       #     key: v1-repo-{{ checksum "package-lock.json" }}
