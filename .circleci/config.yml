@@ -5,10 +5,11 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.14.1
-    #working_directory:
+    working_directory:
 
-      -checkout
-
+    steps:
+      - checkout
+      
       - run:
           name: check directory
           command: pwd
