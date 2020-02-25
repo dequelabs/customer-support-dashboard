@@ -2,13 +2,13 @@
   "type": "attest-result",
   "name": "selenium",
   "id": "Detail Page",
-  "endTime": "2020-02-21T10:16:32-0500",
+  "endTime": "2020-02-25T13:08:58-0500",
   "platform": {
     "userAgent": "",
     "testMachine": ""
   },
   "testSubject": {
-    "fileName": "http://localhost:4000/detail/10467",
+    "fileName": "http://localhost:4000/detail/10555",
     "lineNum": -1
   },
   "findings": {
@@ -132,34 +132,6 @@
         ]
       },
       {
-        "description": "Ensures buttons have discernible text",
-        "help": "Buttons must have discernible text",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/button-name?application=webdriverjs",
-        "id": "button-name",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.name-role-value",
-          "wcag2a",
-          "wcag412",
-          "section508",
-          "section508.22.a"
-        ]
-      },
-      {
-        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
-        "help": "Elements must have sufficient color contrast",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=webdriverjs",
-        "id": "color-contrast",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.color",
-          "wcag2aa",
-          "wcag143"
-        ]
-      },
-      {
         "description": "Ensures <dl> elements are structured correctly",
         "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
         "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/definition-list?application=webdriverjs",
@@ -183,57 +155,6 @@
           "cat.structure",
           "wcag2a",
           "wcag131"
-        ]
-      },
-      {
-        "description": "Ensures every id attribute value of active elements is unique",
-        "help": "IDs of active elements must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-active?application=webdriverjs",
-        "id": "duplicate-id-active",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.parsing",
-          "wcag2a",
-          "wcag411"
-        ]
-      },
-      {
-        "description": "Ensures every id attribute value used in ARIA and in labels is unique",
-        "help": "IDs used in ARIA and labels must be unique",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-aria?application=webdriverjs",
-        "id": "duplicate-id-aria",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.parsing",
-          "wcag2a",
-          "wcag411"
-        ]
-      },
-      {
-        "description": "Ensures headings have discernible text",
-        "help": "Headings must not be empty",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/empty-heading?application=webdriverjs",
-        "id": "empty-heading",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.name-role-value",
-          "best-practice"
-        ]
-      },
-      {
-        "description": "Ensures form field does not have multiple label elements",
-        "help": "Form field should not have multiple label elements",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/form-field-multiple-labels?application=webdriverjs",
-        "id": "form-field-multiple-labels",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.forms",
-          "wcag2a",
-          "wcag332"
         ]
       },
       {
@@ -278,18 +199,6 @@
         ]
       },
       {
-        "description": "Ensures the order of headings is semantically correct",
-        "help": "Heading levels should only increase by one",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/heading-order?application=webdriverjs",
-        "id": "heading-order",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.semantics",
-          "best-practice"
-        ]
-      },
-      {
         "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
         "help": "HTML elements with lang and xml:lang must have the same base language",
         "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/html-xml-lang-mismatch?application=webdriverjs",
@@ -330,34 +239,6 @@
           "wcag111",
           "section508",
           "section508.22.a"
-        ]
-      },
-      {
-        "description": "Ensures that every form element is not solely labeled using the title or aria-describedby attributes",
-        "help": "Form elements should have a visible label",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label-title-only?application=webdriverjs",
-        "id": "label-title-only",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.forms",
-          "best-practice"
-        ]
-      },
-      {
-        "description": "Ensures every form element has a label",
-        "help": "Form elements must have labels",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label?application=webdriverjs",
-        "id": "label",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.forms",
-          "wcag2a",
-          "wcag332",
-          "wcag131",
-          "section508",
-          "section508.22.n"
         ]
       },
       {
@@ -418,19 +299,6 @@
         "tags": [
           "cat.semantics",
           "best-practice"
-        ]
-      },
-      {
-        "description": "Ensures that lists are structured correctly",
-        "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/list?application=webdriverjs",
-        "id": "list",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "cat.structure",
-          "wcag2a",
-          "wcag131"
         ]
       },
       {
@@ -515,18 +383,6 @@
         "tags": [
           "cat.tables",
           "best-practice"
-        ]
-      },
-      {
-        "description": "Elements that have scrollable content should be accessible by keyboard",
-        "help": "Ensure that scrollable region has keyboard access",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/scrollable-region-focusable?application=webdriverjs",
-        "id": "scrollable-region-focusable",
-        "impact": null,
-        "nodes": [],
-        "tags": [
-          "wcag2a",
-          "wcag211"
         ]
       },
       {
@@ -642,7 +498,872 @@
         ]
       }
     ],
-    "incomplete": [],
+    "incomplete": [
+      {
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=webdriverjs",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "3:1",
+                  "fgColor": "#003349",
+                  "fontSize": "29.4pt (39.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<h1 class=\"HeadText\">selenium summary test</h1>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "3:1",
+                  "fgColor": "#003349",
+                  "fontSize": "18.0pt (24px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<h2 class=\"ThirdHead\">Request Details</h2>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".ThirdHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 1:08 PM</span></span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Descriptor Text\">Jonathan Thickens </span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Content > .Descriptor:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span>Today 1:08 PM</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Content > .Descriptor:nth-child(2) > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Product <br><span class=\"Content Text\">Other</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">Other</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(1) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Description <br><span class=\"Content Text\">selenium description test</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(2)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">selenium description test</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(2) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Additional Info <br><span class=\"Content Text\">selenium additional test</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(3)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">selenium additional test</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(3) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "3:1",
+                  "fgColor": "#003349",
+                  "fontSize": "27.9pt (37.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<h2 class=\"SecondHead\">Follow Up Comments:</h2>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-8 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "13.5pt (18px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span>Add Comment</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "label > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "3:1",
+                  "fgColor": "#003349",
+                  "fontSize": "27.9pt (37.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<h2 class=\"SecondHead\">Status</h2>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Request type<br><span class=\"Content Text\"><span>Other</span></span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span>Other</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "p:nth-child(1) > .Content > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Status<br><span class=\"Content Text\">Open</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(2)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">Open</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(2) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 1:08 PM</span></span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(3)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span>Today 1:08 PM</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "p:nth-child(3) > .Content > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Reporter<br><span class=\"Content Text\">Jonathan Thickens</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "span > p"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">Jonathan Thickens</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "span > p > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "span[aria-live=\"polite\"]"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#003349",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-555</span></p>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "p:nth-child(6)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": null,
+                  "contrastRatio": 0,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#1e1e1e",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured"
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "relatedNodes": [
+                  {
+                    "html": "<body class=\"dqpl-no-sidebar\">",
+                    "target": [
+                      "body"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "html": "<span class=\"Content Text\">DC-555</span>",
+            "impact": "serious",
+            "none": [],
+            "target": [
+              "p:nth-child(6) > .Content"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143"
+        ]
+      }
+    ],
     "passes": [
       {
         "description": "Ensures ARIA attributes are allowed for an element's role",
@@ -662,7 +1383,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-loader\" aria-label=\"Loading...\"></div>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
             "impact": null,
             "none": [
               {
@@ -674,7 +1395,33 @@
               }
             ],
             "target": [
-              ".dqpl-loader"
+              "#CommentField"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "aria-allowed-attr",
+                "impact": "critical",
+                "message": "ARIA attributes are used correctly for the defined role",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span>",
+            "impact": null,
+            "none": [
+              {
+                "data": null,
+                "id": "aria-unsupported-attr",
+                "impact": "critical",
+                "message": "ARIA attribute is supported",
+                "relatedNodes": []
+              }
+            ],
+            "target": [
+              "span[aria-live=\"polite\"]"
             ]
           }
         ],
@@ -706,7 +1453,7 @@
             "impact": null,
             "none": [],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           },
           {
@@ -720,11 +1467,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -787,7 +1534,7 @@
             "impact": null,
             "none": [],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           },
           {
@@ -801,11 +1548,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -833,11 +1580,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -869,7 +1616,7 @@
             "impact": null,
             "none": [],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           },
           {
@@ -883,11 +1630,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -940,13 +1687,13 @@
               }
             ],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           },
           {
             "all": [],
             "any": [],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [
               {
@@ -979,7 +1726,7 @@
               }
             ],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -1014,11 +1761,36 @@
               }
             ],
             "any": [],
-            "html": "<div class=\"dqpl-loader\" aria-label=\"Loading...\"></div>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-loader"
+              "#CommentField"
+            ]
+          },
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "aria-valid-attr-value",
+                "impact": "critical",
+                "message": "ARIA attribute values are valid",
+                "relatedNodes": []
+              },
+              {
+                "data": null,
+                "id": "aria-errormessage",
+                "impact": "critical",
+                "message": "Uses a supported aria-errormessage technique",
+                "relatedNodes": []
+              }
+            ],
+            "any": [],
+            "html": "<span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span[aria-live=\"polite\"]"
             ]
           }
         ],
@@ -1046,11 +1818,29 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-loader\" aria-label=\"Loading...\"></div>",
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-loader"
+              "#CommentField"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "aria-valid-attr",
+                "impact": "critical",
+                "message": "ARIA attribute name is valid",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span[aria-live=\"polite\"]"
             ]
           }
         ],
@@ -1058,6 +1848,58 @@
           "cat.aria",
           "wcag2a",
           "wcag412"
+        ]
+      },
+      {
+        "description": "Ensures buttons have discernible text",
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/button-name?application=webdriverjs",
+        "id": "button-name",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "Save",
+                "id": "button-has-visible-text",
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#SubmitCommentBtn"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "Change Status",
+                "id": "button-has-visible-text",
+                "impact": "critical",
+                "message": "Element has inner text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button class=\"ChangeStatus\">Change Status</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ChangeStatus"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.a"
         ]
       },
       {
@@ -1070,6 +1912,13 @@
           {
             "all": [],
             "any": [
+              {
+                "data": null,
+                "id": "header-present",
+                "impact": "serious",
+                "message": "Page has a header",
+                "relatedNodes": []
+              },
               {
                 "data": null,
                 "id": "landmark",
@@ -1092,6 +1941,98 @@
           "wcag241",
           "section508",
           "section508.22.o"
+        ]
+      },
+      {
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+        "help": "Elements must have sufficient color contrast",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/color-contrast?application=webdriverjs",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 21,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#000000",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": null
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 21",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#CommentField"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": "#0077c8",
+                  "contrastRatio": 4.69,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#ffffff",
+                  "fontSize": "12.9pt (17.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": null
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 4.69",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#SubmitCommentBtn"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": {
+                  "bgColor": "#0077c8",
+                  "contrastRatio": 4.69,
+                  "expectedContrastRatio": "4.5:1",
+                  "fgColor": "#ffffff",
+                  "fontSize": "11.4pt (15.2px)",
+                  "fontWeight": "bold",
+                  "messageKey": null
+                },
+                "id": "color-contrast",
+                "impact": "serious",
+                "message": "Element has sufficient color contrast of 4.69",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button class=\"ChangeStatus\">Change Status</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ChangeStatus"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143"
         ]
       },
       {
@@ -1127,6 +2068,70 @@
         ]
       },
       {
+        "description": "Ensures every id attribute value of active elements is unique",
+        "help": "IDs of active elements must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-active?application=webdriverjs",
+        "id": "duplicate-id-active",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "SubmitCommentBtn",
+                "id": "duplicate-id-active",
+                "impact": "serious",
+                "message": "Document has no active elements that share the same id attribute",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#SubmitCommentBtn"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag411"
+        ]
+      },
+      {
+        "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+        "help": "IDs used in ARIA and labels must be unique",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id-aria?application=webdriverjs",
+        "id": "duplicate-id-aria",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "CommentField",
+                "id": "duplicate-id-aria",
+                "impact": "critical",
+                "message": "Document has no elements referenced with ARIA or labels that share the same id attribute",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#CommentField"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.parsing",
+          "wcag2a",
+          "wcag411"
+        ]
+      },
+      {
         "description": "Ensures every id attribute value is unique",
         "help": "id attribute value must be unique",
         "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/duplicate-id?application=webdriverjs",
@@ -1150,12 +2155,257 @@
             "target": [
               "#root"
             ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "CommentsList",
+                "id": "duplicate-id",
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<ul class=\"CommentList\" id=\"CommentsList\"></ul>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#CommentsList"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": "x_0_3302",
+                "id": "duplicate-id",
+                "impact": "minor",
+                "message": "Document has no static elements that share the same id attribute",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_3302\"></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#x_0_3302"
+            ]
           }
         ],
         "tags": [
           "cat.parsing",
           "wcag2a",
           "wcag411"
+        ]
+      },
+      {
+        "description": "Ensures headings have discernible text",
+        "help": "Headings must not be empty",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/empty-heading?application=webdriverjs",
+        "id": "empty-heading",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "has-visible-text",
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h1 class=\"HeadText\">selenium summary test</h1>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "has-visible-text",
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"ThirdHead\">Request Details</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ThirdHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "has-visible-text",
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Follow Up Comments:</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-8 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "has-visible-text",
+                "impact": "minor",
+                "message": "Element has text that is visible to screen readers",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Status</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > .SecondHead"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.name-role-value",
+          "best-practice"
+        ]
+      },
+      {
+        "description": "Ensures form field does not have multiple label elements",
+        "help": "Form field should not have multiple label elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/form-field-multiple-labels?application=webdriverjs",
+        "id": "form-field-multiple-labels",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [
+              {
+                "data": null,
+                "id": "multiple-label",
+                "impact": "moderate",
+                "message": "Form field does not have multiple label elements",
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label>",
+                    "target": [
+                      "label"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "target": [
+              "#CommentField"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.forms",
+          "wcag2a",
+          "wcag332"
+        ]
+      },
+      {
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/heading-order?application=webdriverjs",
+        "id": "heading-order",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": 1,
+                "id": "heading-order",
+                "impact": "moderate",
+                "message": "Heading order valid",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h1 class=\"HeadText\">selenium summary test</h1>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": 2,
+                "id": "heading-order",
+                "impact": "moderate",
+                "message": "Heading order valid",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"ThirdHead\">Request Details</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ThirdHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": 2,
+                "id": "heading-order",
+                "impact": "moderate",
+                "message": "Heading order valid",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Follow Up Comments:</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-8 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": 2,
+                "id": "heading-order",
+                "impact": "moderate",
+                "message": "Heading order valid",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Status</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > .SecondHead"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.semantics",
+          "best-practice"
         ]
       },
       {
@@ -1353,6 +2603,80 @@
         ]
       },
       {
+        "description": "Ensures that every form element is not solely labeled using the title or aria-describedby attributes",
+        "help": "Form elements should have a visible label",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label-title-only?application=webdriverjs",
+        "id": "label-title-only",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [
+              {
+                "data": null,
+                "id": "title-only",
+                "impact": "serious",
+                "message": "Form element does not solely use title attribute for its label",
+                "relatedNodes": []
+              }
+            ],
+            "target": [
+              "#CommentField"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.forms",
+          "best-practice"
+        ]
+      },
+      {
+        "description": "Ensures every form element has a label",
+        "help": "Form elements must have labels",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/label?application=webdriverjs",
+        "id": "label",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "explicit-label",
+                "impact": "critical",
+                "message": "Form element has an explicit <label>",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [
+              {
+                "data": null,
+                "id": "hidden-explicit-label",
+                "impact": "critical",
+                "message": "Form element has a visible explicit <label>",
+                "relatedNodes": []
+              }
+            ],
+            "target": [
+              "#CommentField"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.forms",
+          "wcag2a",
+          "wcag332",
+          "wcag131",
+          "section508",
+          "section508.22.n"
+        ]
+      },
+      {
         "description": "Ensures the main landmark is at top level",
         "help": "Main landmark must not be contained in another landmark",
         "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/landmark-main-is-top-level?application=webdriverjs",
@@ -1372,11 +2696,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -1403,11 +2727,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -1432,9 +2756,9 @@
                 "message": "Document has at least one main landmark",
                 "relatedNodes": [
                   {
-                    "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+                    "html": "<div class=\"Page\" role=\"main\">",
                     "target": [
-                      ".dqpl-main-content"
+                      ".Page"
                     ]
                   }
                 ]
@@ -1475,11 +2799,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           }
         ],
@@ -1529,6 +2853,38 @@
           "wcag244",
           "section508",
           "section508.22.a"
+        ]
+      },
+      {
+        "description": "Ensures that lists are structured correctly",
+        "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/list?application=webdriverjs",
+        "id": "list",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [],
+            "html": "<ul class=\"CommentList\" id=\"CommentsList\"></ul>",
+            "impact": null,
+            "none": [
+              {
+                "data": null,
+                "id": "only-listitems",
+                "impact": "serious",
+                "message": "List element only has direct children that are allowed inside <li> elements",
+                "relatedNodes": []
+              }
+            ],
+            "target": [
+              "#CommentsList"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131"
         ]
       },
       {
@@ -1594,6 +2950,44 @@
         ]
       },
       {
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "help": "Page must contain a level-one heading",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/page-has-heading-one?application=webdriverjs",
+        "id": "page-has-heading-one",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [
+              {
+                "data": null,
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "message": "Page has at least one level-one heading",
+                "relatedNodes": [
+                  {
+                    "html": "<h1 class=\"HeadText\">selenium summary test</h1>",
+                    "target": [
+                      "h1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "any": [],
+            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              "html"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      },
+      {
         "description": "Ensures all page content is contained by landmarks",
         "help": "All page content must be contained by landmarks",
         "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/region?application=webdriverjs",
@@ -1647,11 +3041,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"App\">",
+            "html": "<div>",
             "impact": null,
             "none": [],
             "target": [
-              ".App"
+              "#root > div"
             ]
           },
           {
@@ -1669,7 +3063,7 @@
             "impact": null,
             "none": [],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           },
           {
@@ -1719,7 +3113,7 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-layout\"><div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div></div>",
+            "html": "<div class=\"dqpl-layout\">",
             "impact": null,
             "none": [],
             "target": [
@@ -1737,11 +3131,11 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-main-content\" role=\"main\"><div class=\"dqpl-loader\" aria-label=\"Loading...\"></div></div>",
+            "html": "<div class=\"Page\" role=\"main\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-main-content"
+              ".Page"
             ]
           },
           {
@@ -1755,17 +3149,1002 @@
                 "relatedNodes": []
               }
             ],
-            "html": "<div class=\"dqpl-loader\" aria-label=\"Loading...\"></div>",
+            "html": "<div class=\"MuiGrid-root MuiGrid-container\">",
             "impact": null,
             "none": [],
             "target": [
-              ".dqpl-loader"
+              ".MuiGrid-container"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-8\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-8"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h1 class=\"HeadText\">selenium summary test</h1>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"Details\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"ThirdHead\">Request Details</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ThirdHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Content Text\"><span class=\"Descriptor Text\">Jonathan Thickens </span>Raised This<span class=\"Descriptor Text\"> <span>Today 1:08 PM</span></span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Descriptor Text\">Jonathan Thickens </span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Content > .Descriptor:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Descriptor Text\"> <span>Today 1:08 PM</span></span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Content > .Descriptor:nth-child(2)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span>Today 1:08 PM</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Content > .Descriptor:nth-child(2) > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Product <br><span class=\"Content Text\">Other</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(1) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">Other</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(1) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Description <br><span class=\"Content Text\">selenium description test</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(2)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(2) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">selenium description test</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(2) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Additional Info <br><span class=\"Content Text\">selenium additional test</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(3)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(3) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">selenium additional test</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Details > div > p:nth-child(3) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Follow Up Comments:</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-8 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"Comments\"><ul class=\"CommentList\" id=\"CommentsList\"></ul></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".Comments"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<ul class=\"CommentList\" id=\"CommentsList\"></ul>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#CommentsList"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<form novalidate=\"\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              "form"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"dqpl-field-wrap\"><label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label><textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea><div class=\"dqpl-error-wrap\" id=\"x_0_3302\"></div></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".dqpl-field-wrap"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<label class=\"dqpl-label\" for=\"CommentField\"><span>Add Comment</span></label>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "label"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span>Add Comment</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "label > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<textarea class=\"CommentInput\" id=\"CommentField\" aria-invalid=\"false\"></textarea>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#CommentField"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"dqpl-error-wrap\" id=\"x_0_3302\"></div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#x_0_3302"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button type=\"submit\" id=\"SubmitCommentBtn\" class=\"SaveButton Text\">Save</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "#SubmitCommentBtn"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<h2 class=\"SecondHead\">Status</h2>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > .SecondHead"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Request type<br><span class=\"Content Text\"><span>Other</span></span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(1)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(1) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\"><span>Other</span></span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(1) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span>Other</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(1) > .Content > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Status<br><span class=\"Content Text\">Open</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(2)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(2) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">Open</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(2) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Date Created<br><span class=\"Content Text\"><span>Today 1:08 PM</span></span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(3)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(3) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\"><span>Today 1:08 PM</span></span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".MuiGrid-grid-md-4 > div > p:nth-child(3) > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span>Today 1:08 PM</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(3) > .Content > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span><p class=\"Descriptor Text\">Reporter<br><span class=\"Content Text\">Jonathan Thickens</span></p></span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "div > span"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Reporter<br><span class=\"Content Text\">Jonathan Thickens</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span > p"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span > p > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">Jonathan Thickens</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span > p > .Content"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\"><span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span><br><button class=\"ChangeStatus\">Change Status</button></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(5)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span aria-live=\"polite\" aria-atomic=\"true\" aria-relevant=\"all\">Notifications On</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "span[aria-live=\"polite\"]"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(5) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<button class=\"ChangeStatus\">Change Status</button>",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".ChangeStatus"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<p class=\"Descriptor Text\">Issue Key<br><span class=\"Content Text\">DC-555</span></p>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(6)"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<br>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(6) > br"
+            ]
+          },
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "region",
+                "impact": "moderate",
+                "message": "All page content is contained by landmarks",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<span class=\"Content Text\">DC-555</span>",
+            "impact": null,
+            "none": [],
+            "target": [
+              "p:nth-child(6) > .Content"
             ]
           }
         ],
         "tags": [
           "cat.keyboard",
           "best-practice"
+        ]
+      },
+      {
+        "description": "Elements that have scrollable content should be accessible by keyboard",
+        "help": "Ensure that scrollable region has keyboard access",
+        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/scrollable-region-focusable?application=webdriverjs",
+        "id": "scrollable-region-focusable",
+        "impact": null,
+        "nodes": [
+          {
+            "all": [],
+            "any": [
+              {
+                "data": null,
+                "id": "focusable-content",
+                "impact": "moderate",
+                "message": "Element contains focusable elements",
+                "relatedNodes": []
+              }
+            ],
+            "html": "<div class=\"dqpl-layout\">",
+            "impact": null,
+            "none": [],
+            "target": [
+              ".dqpl-layout"
+            ]
+          }
+        ],
+        "tags": [
+          "wcag2a",
+          "wcag211"
         ]
       },
       {
@@ -1807,18 +4186,18 @@
     "testEnvironment": {
       "orientationAngle": 0,
       "orientationType": "landscape-primary",
-      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36",
-      "windowHeight": 663,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36",
+      "windowHeight": 710,
       "windowWidth": 1200
     },
     "testRunner": {
       "name": "worldspace"
     },
-    "timestamp": "2020-02-21T15:16:32.182Z",
+    "timestamp": "2020-02-25T18:08:58.545Z",
     "toolOptions": {
       "reporter": "v1"
     },
-    "url": "http://localhost:4000/detail/10467",
+    "url": "http://localhost:4000/detail/10555",
     "violations": [
       {
         "description": "Ensures elements with an ARIA role that require child roles contain them",
@@ -1847,7 +4226,7 @@
             "impact": "critical",
             "none": [],
             "target": [
-              "ul"
+              "ul[role=\"menubar\"]"
             ]
           }
         ],
@@ -1855,38 +4234,6 @@
           "cat.aria",
           "wcag2a",
           "wcag131"
-        ]
-      },
-      {
-        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
-        "help": "Page must contain a level-one heading",
-        "helpUrl": "https://dequeuniversity.com/rules/worldspace/3.5/page-has-heading-one?application=webdriverjs",
-        "id": "page-has-heading-one",
-        "impact": "moderate",
-        "nodes": [
-          {
-            "all": [
-              {
-                "data": null,
-                "id": "page-has-heading-one",
-                "impact": "moderate",
-                "message": "Page must have a level-one heading",
-                "relatedNodes": []
-              }
-            ],
-            "any": [],
-            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading",
-            "html": "<html class=\"fa-events-icons-ready\" lang=\"en\">",
-            "impact": "moderate",
-            "none": [],
-            "target": [
-              "html"
-            ]
-          }
-        ],
-        "tags": [
-          "cat.semantics",
-          "best-practice"
         ]
       },
       {
