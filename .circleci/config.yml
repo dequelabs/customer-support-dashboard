@@ -27,9 +27,10 @@ jobs:
             - v1-repo-{{ checksum "./csd/package-lock.json" }}
           
 
-      # - run:
-      #     name: Install dependencies with NPM
-      #     command: npm install # replace with `yarn install` if using yarn
+      - run:
+          name: Install dependencies with NPM
+          command: npm install # replace with `yarn install` if using yarn
+            - path: csd
       
       # - save_cache: # special step to save the dependency cache
       #     key: v1-repo-{{ checksum "package-lock.json" }}
