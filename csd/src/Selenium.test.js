@@ -31,7 +31,19 @@ test("navigates to make request then back to home", async () => {
     await sleep(2000);
 
     const results = await new AttestBuilder(driver).analyze();
-    reporter.logTestResult('Home Page', results)
+    reporter.logTestResult('Home Page Base', results)
+
+    const axe340 = require('../axe-core-3.4.0');
+    const results3 = await new AttestBuilder(driver, axe340).analyze();
+    reporter.logTestResult('Home Page 3.4.0', results3)
+
+    const axe341 = require('../axe-core-3.4.1');
+    const results1 = await new AttestBuilder(driver, axe341).analyze();
+    reporter.logTestResult('Home Page 3.4.1', results1)
+
+    const axe351 = require('../axe-core-3.5.1');
+    const results2 = await new AttestBuilder(driver, axe351).analyze();
+    reporter.logTestResult('Home Page 3.5.1', results2)
 
 
     await driver.findElement(By.css(".RequestLink")).click()
@@ -43,80 +55,80 @@ test("navigates to make request then back to home", async () => {
     expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/home");
 });
 
-test("should not submit empty form", async () => {
+// test("should not submit empty form", async () => {
 
-    await driver.findElement(By.css(".RequestLink")).click()
+//     await driver.findElement(By.css(".RequestLink")).click()
     
-    expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/request");
+//     expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/request");
 
-    const results = await new AttestBuilder(driver).analyze();
-    reporter.logTestResult('Request Page', results)
+//     const results = await new AttestBuilder(driver).analyze();
+//     reporter.logTestResult('Request Page', results)
 
-    await driver.findElement(By.id("SubmitButton")).click()
+//     await driver.findElement(By.id("SubmitButton")).click()
 
-    expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/request");
-});
+//     expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/request");
+// });
 
-test("form should be able to be filled out", async () => {
+// test("form should be able to be filled out", async () => {
 
-    const results = await new AttestBuilder(driver).analyze();
-    reporter.logTestResult('Request Page Error', results)
+//     const results = await new AttestBuilder(driver).analyze();
+//     reporter.logTestResult('Request Page Error', results)
 
-    await driver.findElement(By.id('SummaryInput')).sendKeys('selenium summary test');
-    await driver.findElement(By.id('DescriptionInput')).sendKeys('selenium description test');
-    await driver.findElement(By.id('AdtlInfoInput')).sendKeys('selenium additional test');
+//     await driver.findElement(By.id('SummaryInput')).sendKeys('selenium summary test');
+//     await driver.findElement(By.id('DescriptionInput')).sendKeys('selenium description test');
+//     await driver.findElement(By.id('AdtlInfoInput')).sendKeys('selenium additional test');
 
-    expect(await driver.findElement(By.id('SummaryInput')).getAttribute("value")).toBe("selenium summary test");
-    expect(await driver.findElement(By.id('DescriptionInput')).getAttribute("value")).toBe("selenium description test");
-    expect(await driver.findElement(By.id('AdtlInfoInput')).getAttribute("value")).toBe("selenium additional test");
+//     expect(await driver.findElement(By.id('SummaryInput')).getAttribute("value")).toBe("selenium summary test");
+//     expect(await driver.findElement(By.id('DescriptionInput')).getAttribute("value")).toBe("selenium description test");
+//     expect(await driver.findElement(By.id('AdtlInfoInput')).getAttribute("value")).toBe("selenium additional test");
 
-});
+// });
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-test("submit button should submit ticket", async () => {
+// test("submit button should submit ticket", async () => {
 
-    await driver.findElement(By.id("SubmitButton")).click();
+//     await driver.findElement(By.id("SubmitButton")).click();
 
-    await sleep(2000);
+//     await sleep(2000);
     
-    expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/home");
+//     expect(await driver.getCurrentUrl()).toBe("http://localhost:4000/home");
 
-});
+// });
 
-test("view ticket", async () => {
-    await sleep(2000);
-    await driver.findElement(By.linkText('selenium summary test')).click();
-    await sleep(2000);
-    expect(await driver.getCurrentUrl()).toContain("http://localhost:4000/detail/");
+// test("view ticket", async () => {
+//     await sleep(2000);
+//     await driver.findElement(By.linkText('selenium summary test')).click();
+//     await sleep(2000);
+//     expect(await driver.getCurrentUrl()).toContain("http://localhost:4000/detail/");
     
-    const results = await new AttestBuilder(driver).analyze();
-    reporter.logTestResult('Detail Page', results)
-});
+//     const results = await new AttestBuilder(driver).analyze();
+//     reporter.logTestResult('Detail Page', results)
+// });
 
-test("wont make empty comment", async () => {
+// test("wont make empty comment", async () => {
 
-    await driver.findElement(By.id("SubmitCommentBtn")).click()
+//     await driver.findElement(By.id("SubmitCommentBtn")).click()
 
-    //check for empty comment warning
+//     //check for empty comment warning
 
-    const results = await new AttestBuilder(driver).analyze();
-    reporter.logTestResult('Detail Page Error', results)
-});
+//     const results = await new AttestBuilder(driver).analyze();
+//     reporter.logTestResult('Detail Page Error', results)
+// });
 
-test("enter comment", async () => {
+// test("enter comment", async () => {
 
-    await driver.findElement(By.id('CommentField')).sendKeys('selenium comment test');
+//     await driver.findElement(By.id('CommentField')).sendKeys('selenium comment test');
 
-    expect(await driver.findElement(By.id('CommentField')).getAttribute("value")).toBe("selenium comment test");
+//     expect(await driver.findElement(By.id('CommentField')).getAttribute("value")).toBe("selenium comment test");
     
-});
+// });
 
-test("submit comment", async () => { 
-    await driver.findElement(By.id("SubmitCommentBtn")).click()
-});
+// test("submit comment", async () => { 
+//     await driver.findElement(By.id("SubmitCommentBtn")).click()
+// });
 
 afterAll(async () => {
     await driver.quit();
